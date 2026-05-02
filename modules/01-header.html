@@ -237,24 +237,31 @@
 
 <script>
 (function(){
-  var h = document.getElementById('ohhHeader');
-
-  // Elementor applies CSS transforms on ancestor containers which breaks
-  // position:fixed — moving the header to <body> fixes it completely
-  function mountHeader() {
-    if (h && h.parentNode !== document.body) {
-      document.body.insertBefore(h, document.body.firstChild);
-    }
-    init();
+  function hideAstraHeader() {
+    // Astra's native header — remove from layout completely
+    var selectors = ['#masthead', '.site-header', '.ast-site-header-wrap',
+                     '.main-header-bar-wrap', '.ast-above-header-wrap', '.ast-below-header-wrap'];
+    selectors.forEach(function(sel) {
+      var el = document.querySelector(sel);
+      if (el) { el.style.cssText = 'display:none!important;height:0!important;'; }
+    });
+    // Kill any padding-top Astra set on body
+    document.body.style.paddingTop = '0';
+    document.documentElement.style.paddingTop = '0';
   }
 
-  function init() {
-    // Scroll: transparent → dark
-    function onScroll() {
-      h.classList.toggle('scrolled', window.scrollY > 60);
+  function mountHeader() {
+    var h = document.getElementById('ohhHeader');
+    if (!h) return;
+    // Move header out of Elementor containers so position:fixed works correctly
+    if (h.parentNode !== document.body) {
+      document.body.insertBefore(h, document.body.firstChild);
     }
+
+    // Scroll: transparent → dark
+    function onScroll() { h.classList.toggle('scrolled', window.scrollY > 60); }
     window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll(); // apply immediately on load
+    onScroll();
 
     // Mobile hamburger
     var btn = document.getElementById('ohhBurger');
@@ -267,10 +274,15 @@
     }
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', mountHeader);
-  } else {
+  function init() {
+    hideAstraHeader();
     mountHeader();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 })();
 </script>
