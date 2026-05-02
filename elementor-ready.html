@@ -50,12 +50,27 @@
     width: 100% !important;
   }
 
-  /* 4. Astra adds padding-top to body for its fixed header — reset it */
-  body.elementor-page {
+  /* 4. Hide Astra native header + reset any body padding it adds */
+  body.elementor-page,
+  body.elementor-page .site-header,
+  body.elementor-page #masthead,
+  body.elementor-page .ast-site-header-wrap,
+  body.elementor-page .main-header-bar-wrap,
+  body.elementor-page .ast-above-header-wrap,
+  body.elementor-page .ast-below-header-wrap {
     padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+  body.elementor-page #masthead,
+  body.elementor-page .site-header,
+  body.elementor-page .ast-site-header-wrap {
+    display: none !important;
   }
 
-  /* 5. Prevent Astra from overriding our heading styles */
+  /* 5. Anchor scroll offset: compensate for our 80px fixed header */
+  [id] { scroll-margin-top: 88px; }
+
+  /* 6. Prevent Astra from overriding our heading styles */
   .ohh-hero h1, .ohh-why-left h2, .ohh-exp-header h2,
   .ohh-dest-header h2, .ohh-how-header h2, .ohh-testi-header h2,
   .ohh-contact-left h2, .ohh-how-step h4, .ohh-why-card h4,
