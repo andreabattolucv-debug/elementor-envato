@@ -1,30 +1,68 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  /* ── Astra + Elementor reset: full-bleed HTML widget ── */
+  /* ════════════════════════════════════════
+     FULL-BLEED: break out of every Elementor
+     and Astra container
+  ════════════════════════════════════════ */
+
+  /* 1. The Elementor widget itself */
   .elementor-widget-html,
   .elementor-widget-html .elementor-widget-container {
     padding: 0 !important;
     margin: 0 !important;
     max-width: none !important;
-    width: 100% !important;
+    width: 100vw !important;
+    position: relative !important;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
   }
-  .elementor-section.elementor-section-boxed > .elementor-container {
+
+  /* 2. Elementor section & column containers */
+  .elementor-section.elementor-section-boxed > .elementor-container,
+  .elementor-column-wrap,
+  .elementor-widget-wrap,
+  .e-con-inner,
+  .e-con {
     max-width: 100% !important;
     padding: 0 !important;
+    width: 100% !important;
   }
-  /* Astra theme resets */
-  .ast-container, .site-content, #content, #primary, .entry-content {
+
+  /* 3. Astra theme global containers */
+  .ast-container,
+  .ast-flex,
+  .site-content,
+  #content,
+  #primary,
+  .entry-content,
+  .post-content,
+  main.site-main,
+  .elementor-page .elementor {
     max-width: 100% !important;
     padding: 0 !important;
     margin: 0 !important;
+    width: 100% !important;
   }
-  /* Prevent Astra heading overrides */
+
+  /* 4. Astra adds padding-top to body for its fixed header — reset it
+        since we have our own fixed header */
+  body.elementor-page {
+    padding-top: 0 !important;
+  }
+
+  /* 5. Prevent Astra from overriding our heading styles */
   .ohh-hero h1, .ohh-why-left h2, .ohh-exp-header h2,
   .ohh-dest-header h2, .ohh-how-header h2, .ohh-testi-header h2,
-  .ohh-contact-left h2, .ohh-how-step h4, .ohh-why-card h4 {
+  .ohh-contact-left h2, .ohh-how-step h4, .ohh-why-card h4,
+  .ohh-exp-card h3, .ohh-dest-name {
     line-height: inherit !important;
-    margin: inherit !important;
+    margin-top: 0 !important;
+    margin-bottom: inherit !important;
+    padding: 0 !important;
+    font-weight: inherit !important;
   }
 
   html { scroll-behavior: smooth; }
@@ -89,14 +127,12 @@
   justify-content: space-between;
   height: 80px;
 }
-.ohh-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #fff;
-  letter-spacing: 0.04em;
+.ohh-logo img {
+  height: 48px;
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
-.ohh-logo span { color: var(--terracotta); }
 
 .ohh-nav {
   display: flex;
@@ -164,7 +200,10 @@
 
 <header class="ohh-header" id="ohhHeader">
   <nav class="ohh-navbar">
-    <a href="#hero" class="ohh-logo">OHH<span>!</span> Italy</a>
+    <a href="#hero" class="ohh-logo">
+      <img src="https://ohhitaly.com/wp-content/uploads/2019/11/logo-ohh-italy-white-180x75.png"
+           alt="OHH! Italy — Luxury Italian Travel">
+    </a>
 
     <ul class="ohh-nav" id="ohhNav">
       <li><a href="#experiences">Experiences</a></li>
@@ -1164,14 +1203,14 @@ function ohhFormSubmit(e) {
   border-bottom: 1px solid rgba(255,255,255,0.07);
 }
 .ohh-footer-brand-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 16px;
   display: block;
+  margin-bottom: 20px;
 }
-.ohh-footer-brand-logo span { color: var(--terracotta); }
+.ohh-footer-brand-logo img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+}
 .ohh-footer-brand p { font-size: 14px; line-height: 1.8; color: rgba(255,255,255,.45); font-weight: 300; max-width: 300px; margin-bottom: 28px; }
 
 .ohh-footer-social { display: flex; gap: 10px; }
@@ -1213,7 +1252,10 @@ function ohhFormSubmit(e) {
 <footer class="ohh-footer">
   <div class="ohh-footer-grid">
     <div class="ohh-footer-brand">
-      <span class="ohh-footer-brand-logo">OHH<span>!</span> Italy</span>
+      <a href="#hero" class="ohh-footer-brand-logo">
+        <img src="https://ohhitaly.com/wp-content/uploads/2019/11/logo-ohh-italy-white-180x75.png"
+             alt="OHH! Italy">
+      </a>
       <p>Your personal Italian travel concierge. We craft bespoke luxury journeys for travelers who want to experience Italy the way it was meant to be — extraordinary, intimate, and unforgettable.</p>
       <div class="ohh-footer-social">
         <a href="#" aria-label="Instagram">

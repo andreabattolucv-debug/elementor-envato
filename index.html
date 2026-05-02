@@ -108,14 +108,12 @@
   justify-content: space-between;
   height: 80px;
 }
-.ohh-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #fff;
-  letter-spacing: 0.04em;
+.ohh-logo img {
+  height: 48px;
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
-.ohh-logo span { color: var(--terracotta); }
 
 .ohh-nav {
   display: flex;
@@ -183,7 +181,10 @@
 
 <header class="ohh-header" id="ohhHeader">
   <nav class="ohh-navbar">
-    <a href="#hero" class="ohh-logo">OHH<span>!</span> Italy</a>
+    <a href="#hero" class="ohh-logo">
+      <img src="https://ohhitaly.com/wp-content/uploads/2019/11/logo-ohh-italy-white-180x75.png"
+           alt="OHH! Italy — Luxury Italian Travel">
+    </a>
 
     <ul class="ohh-nav" id="ohhNav">
       <li><a href="#experiences">Experiences</a></li>
@@ -1155,14 +1156,14 @@ function ohhFormSubmit(e) {
   border-bottom: 1px solid rgba(255,255,255,0.07);
 }
 .ohh-footer-brand-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 16px;
   display: block;
+  margin-bottom: 20px;
 }
-.ohh-footer-brand-logo span { color: var(--terracotta); }
+.ohh-footer-brand-logo img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+}
 .ohh-footer-brand p { font-size: 14px; line-height: 1.8; color: rgba(255,255,255,.45); font-weight: 300; max-width: 300px; margin-bottom: 28px; }
 
 .ohh-footer-social { display: flex; gap: 10px; }
@@ -1204,7 +1205,9 @@ function ohhFormSubmit(e) {
 <footer class="ohh-footer">
   <div class="ohh-footer-grid">
     <div class="ohh-footer-brand">
-      <span class="ohh-footer-brand-logo">OHH<span>!</span> Italy</span>
+      <a href="#hero" class="ohh-footer-brand-logo">
+        <img src="https://ohhitaly.com/wp-content/uploads/2019/11/logo-ohh-italy-white-180x75.png" alt="OHH! Italy">
+      </a>
       <p>Your personal Italian travel concierge. We craft bespoke luxury journeys for travelers who want to experience Italy the way it was meant to be — extraordinary, intimate, and unforgettable.</p>
       <div class="ohh-footer-social">
         <a href="#" aria-label="Instagram">
