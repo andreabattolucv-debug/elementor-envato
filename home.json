@@ -30,24 +30,24 @@
                 },
                 "flex_justify_content": "center",
                 "background_image": {
-                    "url": "",
+                    "url": "https://ohhitaly.com/wp-content/uploads/2026/05/dan-novac-1naE8177_bI-unsplash-scaled.jpg",
                     "id": "",
                     "size": "",
-                    "alt": "",
+                    "alt": "Italy, beyond the ordinary - Vernazza, Cinque Terre",
                     "source": "library"
                 },
                 "background_position": "center center",
                 "background_repeat": "no-repeat",
                 "background_size": "cover",
                 "background_background": "video",
-                "background_video_link": "https:\/\/www.youtube.com\/watch?v=H1CIBqDeWQ0",
+                "background_video_link": "https://www.youtube.com/watch?v=H1CIBqDeWQ0",
                 "background_video_start": 5,
                 "background_video_end": 120,
                 "background_video_fallback": {
-                    "url": "",
+                    "url": "https://ohhitaly.com/wp-content/uploads/2026/05/dan-novac-1naE8177_bI-unsplash-scaled.jpg",
                     "id": "",
                     "size": "",
-                    "alt": "",
+                    "alt": "Italy, beyond the ordinary - Vernazza, Cinque Terre",
                     "source": "library"
                 },
                 "background_play_on_mobile": "yes",
@@ -58,7 +58,7 @@
                     "sizes": []
                 },
                 "__globals__": {
-                    "background_overlay_color": "globals\/colors?id=secondary"
+                    "background_overlay_color": "globals/colors?id=secondary"
                 },
                 "_title": "Home Hero"
             },
@@ -78,9 +78,9 @@
                         ],
                         "icon_align_tablet": "center",
                         "__globals__": {
-                            "icon_typography_typography": "globals\/typography?id=d491dd1",
-                            "text_color": "globals\/colors?id=accent",
-                            "icon_color": "globals\/colors?id=accent"
+                            "icon_typography_typography": "globals/typography?id=d491dd1",
+                            "text_color": "globals/colors?id=accent",
+                            "icon_color": "globals/colors?id=accent"
                         }
                     },
                     "elements": [],
@@ -100,7 +100,7 @@
                             "sizes": []
                         },
                         "__globals__": {
-                            "title_color": "globals\/colors?id=accent"
+                            "title_color": "globals/colors?id=accent"
                         },
                         "align_tablet": "center",
                         "_element_custom_width_tablet": {
@@ -130,7 +130,7 @@
                             "sizes": []
                         },
                         "__globals__": {
-                            "text_color": "globals\/colors?id=accent"
+                            "text_color": "globals/colors?id=accent"
                         },
                         "align_tablet": "center",
                         "_element_custom_width_tablet": {
@@ -154,10 +154,10 @@
                     "settings": {
                         "text": "Discover More",
                         "__globals__": {
-                            "button_hover_border_color": "globals\/colors?id=accent",
-                            "hover_color": "globals\/colors?id=accent",
-                            "button_text_color": "globals\/colors?id=accent",
-                            "border_color": "globals\/colors?id=accent"
+                            "button_hover_border_color": "globals/colors?id=accent",
+                            "hover_color": "globals/colors?id=accent",
+                            "button_text_color": "globals/colors?id=accent",
+                            "border_color": "globals/colors?id=accent"
                         },
                         "align_tablet": "center",
                         "hover_animation": "shrink",
@@ -357,15 +357,15 @@
                                                     "sizes": []
                                                 },
                                                 "image": {
-                                                    "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/03\/Signature1.png",
+                                                    "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/Signature1.png",
                                                     "id": 37,
                                                     "size": "",
                                                     "alt": "",
                                                     "source": "library"
                                                 },
                                                 "__globals__": {
-                                                    "description_color": "globals\/colors?id=primary",
-                                                    "description_typography_typography": "globals\/typography?id=d491dd1"
+                                                    "description_color": "globals/colors?id=primary",
+                                                    "description_typography_typography": "globals/typography?id=d491dd1"
                                                 },
                                                 "text_align_tablet": "center",
                                                 "image_size_tablet": {
@@ -448,15 +448,15 @@
                                         "carousel": [
                                             {
                                                 "id": 86,
-                                                "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/03\/LXNMVXE.jpg"
+                                                "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/LXNMVXE.jpg"
                                             },
                                             {
                                                 "id": 85,
-                                                "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/03\/ELAWAPV.jpg"
+                                                "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/ELAWAPV.jpg"
                                             },
                                             {
                                                 "id": 986,
-                                                "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/04\/3HFCJPS.jpg"
+                                                "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/04/3HFCJPS.jpg"
                                             }
                                         ],
                                         "thumbnail_size": "full",
@@ -558,8 +558,8 @@
                                                     "value": "icon icon-play1",
                                                     "library": "ekiticons"
                                                 },
-                                                "ekit_video_popup_url": "https:\/\/www.youtube.com\/watch?v=VhBl3dHT5SY",
-                                                "ekit_video_self_external_url": "https:\/\/wpmet.com\/plugin\/elementskit\/wp-content\/uploads\/2022\/11\/selfhosted_video.mp4",
+                                                "ekit_video_popup_url": "https://www.youtube.com/watch?v=VhBl3dHT5SY",
+                                                "ekit_video_self_external_url": "https://wpmet.com/plugin/elementskit/wp-content/uploads/2022/11/selfhosted_video.mp4",
                                                 "ekit_video_popup_btn_glow_size": {
                                                     "unit": "px",
                                                     "size": 15,
@@ -577,13 +577,13 @@
                                                     "isLinked": true
                                                 },
                                                 "__globals__": {
-                                                    "ekit_video_popup_btn_bg_color_color": "globals\/colors?id=360d9af",
-                                                    "ekit_video_popup_btn_text_color": "globals\/colors?id=primary",
-                                                    "ekit_video_popup_btn_glow_color": "globals\/colors?id=primary",
-                                                    "ekit_video_popup_btn_bg_hover_color_color": "globals\/colors?id=360d9af",
-                                                    "ekit_video_popup_btn_hover_color": "globals\/colors?id=secondary",
-                                                    "ekit_video_popup_btn_border_color": "globals\/colors?id=primary",
-                                                    "ekit_video_popup_btn_hover_border_color": "globals\/colors?id=secondary"
+                                                    "ekit_video_popup_btn_bg_color_color": "globals/colors?id=360d9af",
+                                                    "ekit_video_popup_btn_text_color": "globals/colors?id=primary",
+                                                    "ekit_video_popup_btn_glow_color": "globals/colors?id=primary",
+                                                    "ekit_video_popup_btn_bg_hover_color_color": "globals/colors?id=360d9af",
+                                                    "ekit_video_popup_btn_hover_color": "globals/colors?id=secondary",
+                                                    "ekit_video_popup_btn_border_color": "globals/colors?id=primary",
+                                                    "ekit_video_popup_btn_hover_border_color": "globals/colors?id=secondary"
                                                 },
                                                 "_flex_align_self_tablet": "center"
                                             },
@@ -623,7 +623,7 @@
                                 {
                                     "id": "2e2d32c1",
                                     "settings": {
-                                        "editor": "<p>Fusce egestas tincidunt velit, id venenatis lacus pellentesque viverra. Praesent ornare sed erat non fermentum. Donec feugiat tortor justo, rhoncus elementum metus consequat a<\/p>",
+                                        "editor": "<p>Fusce egestas tincidunt velit, id venenatis lacus pellentesque viverra. Praesent ornare sed erat non fermentum. Donec feugiat tortor justo, rhoncus elementum metus consequat a</p>",
                                         "align_tablet": "center"
                                     },
                                     "elements": [],
@@ -785,11 +785,11 @@
                                             "sizes": []
                                         },
                                         "__globals__": {
-                                            "ekit_icon_title_color": "globals\/colors?id=text",
+                                            "ekit_icon_title_color": "globals/colors?id=text",
                                             "ekit_icon_title_typography_group_typography": "",
-                                            "ekit_icon_description_color": "globals\/colors?id=secondary",
-                                            "ekit_icon_description_typography_group_typography": "globals\/typography?id=419b4ea",
-                                            "ekit_icon_box_icon_primary_color": "globals\/colors?id=primary"
+                                            "ekit_icon_description_color": "globals/colors?id=secondary",
+                                            "ekit_icon_description_typography_group_typography": "globals/typography?id=419b4ea",
+                                            "ekit_icon_box_icon_primary_color": "globals/colors?id=primary"
                                         },
                                         "_flex_align_self_tablet": "center"
                                     },
@@ -849,7 +849,7 @@
                 },
                 "__globals__": {
                     "border_color": "",
-                    "background_color": "globals\/colors?id=178b693"
+                    "background_color": "globals/colors?id=178b693"
                 },
                 "_title": "Our Room"
             },
@@ -901,7 +901,7 @@
                 {
                     "id": "70415879",
                     "settings": {
-                        "editor": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula odio ac consectetur commodo. Sed diam elit, tincidunt quis accumsan non, porta in neque. Nam in ex nec elit lobortis dignissim eu quis magna.<\/p>",
+                        "editor": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula odio ac consectetur commodo. Sed diam elit, tincidunt quis accumsan non, porta in neque. Nam in ex nec elit lobortis dignissim eu quis magna.</p>",
                         "align": "center",
                         "_element_width": "initial",
                         "_element_custom_width": {
@@ -988,8 +988,8 @@
                                     "isLinked": false
                                 },
                                 "__globals__": {
-                                    "border_color": "globals\/colors?id=text",
-                                    "border_hover_color": "globals\/colors?id=primary"
+                                    "border_color": "globals/colors?id=text",
+                                    "border_hover_color": "globals/colors?id=primary"
                                 },
                                 "animation": "fadeInUp"
                             },
@@ -998,7 +998,7 @@
                                     "id": "67965dc",
                                     "settings": {
                                         "ekit_image_box_image": {
-                                            "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/03\/N939E9E.jpg",
+                                            "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/N939E9E.jpg",
                                             "id": 162,
                                             "size": "",
                                             "alt": "",
@@ -1087,7 +1087,7 @@
                                                         "title_size": "h4",
                                                         "text_align": "left",
                                                         "__globals__": {
-                                                            "title_color": "globals\/colors?id=secondary"
+                                                            "title_color": "globals/colors?id=secondary"
                                                         },
                                                         "text_align_mobile": "left"
                                                     },
@@ -1145,10 +1145,10 @@
                                                             "isLinked": false
                                                         },
                                                         "__globals__": {
-                                                            "primary_color": "globals\/colors?id=secondary",
-                                                            "secondary_color": "globals\/colors?id=360d9af",
-                                                            "hover_primary_color": "globals\/colors?id=primary",
-                                                            "hover_secondary_color": "globals\/colors?id=360d9af"
+                                                            "primary_color": "globals/colors?id=secondary",
+                                                            "secondary_color": "globals/colors?id=360d9af",
+                                                            "hover_primary_color": "globals/colors?id=primary",
+                                                            "hover_secondary_color": "globals/colors?id=360d9af"
                                                         },
                                                         "align_mobile": "left"
                                                     },
@@ -1223,8 +1223,8 @@
                                     "isLinked": false
                                 },
                                 "__globals__": {
-                                    "border_color": "globals\/colors?id=text",
-                                    "border_hover_color": "globals\/colors?id=primary"
+                                    "border_color": "globals/colors?id=text",
+                                    "border_hover_color": "globals/colors?id=primary"
                                 },
                                 "animation": "fadeInUp",
                                 "animation_duration": "fast"
@@ -1234,7 +1234,7 @@
                                     "id": "27125029",
                                     "settings": {
                                         "ekit_image_box_image": {
-                                            "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/03\/Q2WYWXG-e1711221458211.jpg",
+                                            "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/Q2WYWXG-e1711221458211.jpg",
                                             "id": 163,
                                             "size": "",
                                             "alt": "",
@@ -1323,7 +1323,7 @@
                                                         "title_size": "h4",
                                                         "text_align": "left",
                                                         "__globals__": {
-                                                            "title_color": "globals\/colors?id=secondary"
+                                                            "title_color": "globals/colors?id=secondary"
                                                         }
                                                     },
                                                     "elements": [],
@@ -1380,10 +1380,10 @@
                                                             "isLinked": false
                                                         },
                                                         "__globals__": {
-                                                            "primary_color": "globals\/colors?id=secondary",
-                                                            "secondary_color": "globals\/colors?id=360d9af",
-                                                            "hover_primary_color": "globals\/colors?id=primary",
-                                                            "hover_secondary_color": "globals\/colors?id=360d9af"
+                                                            "primary_color": "globals/colors?id=secondary",
+                                                            "secondary_color": "globals/colors?id=360d9af",
+                                                            "hover_primary_color": "globals/colors?id=primary",
+                                                            "hover_secondary_color": "globals/colors?id=360d9af"
                                                         },
                                                         "align_mobile": "left"
                                                     },
@@ -1458,8 +1458,8 @@
                                     "isLinked": false
                                 },
                                 "__globals__": {
-                                    "border_color": "globals\/colors?id=text",
-                                    "border_hover_color": "globals\/colors?id=primary"
+                                    "border_color": "globals/colors?id=text",
+                                    "border_hover_color": "globals/colors?id=primary"
                                 },
                                 "animation": "fadeInUp",
                                 "animation_duration": "slow"
@@ -1469,7 +1469,7 @@
                                     "id": "446a9142",
                                     "settings": {
                                         "ekit_image_box_image": {
-                                            "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/03\/B7XZECA.jpg",
+                                            "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/B7XZECA.jpg",
                                             "id": 161,
                                             "size": "",
                                             "alt": "",
@@ -1558,7 +1558,7 @@
                                                         "title_size": "h4",
                                                         "text_align": "left",
                                                         "__globals__": {
-                                                            "title_color": "globals\/colors?id=secondary"
+                                                            "title_color": "globals/colors?id=secondary"
                                                         }
                                                     },
                                                     "elements": [],
@@ -1615,10 +1615,10 @@
                                                             "isLinked": false
                                                         },
                                                         "__globals__": {
-                                                            "primary_color": "globals\/colors?id=secondary",
-                                                            "secondary_color": "globals\/colors?id=360d9af",
-                                                            "hover_primary_color": "globals\/colors?id=primary",
-                                                            "hover_secondary_color": "globals\/colors?id=360d9af"
+                                                            "primary_color": "globals/colors?id=secondary",
+                                                            "secondary_color": "globals/colors?id=360d9af",
+                                                            "hover_primary_color": "globals/colors?id=primary",
+                                                            "hover_secondary_color": "globals/colors?id=360d9af"
                                                         },
                                                         "align_mobile": "left"
                                                     },
@@ -1700,15 +1700,15 @@
                                 "carousel": [
                                     {
                                         "id": 80,
-                                        "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/03\/9CUXTHW.jpg"
+                                        "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/9CUXTHW.jpg"
                                     },
                                     {
                                         "id": 83,
-                                        "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/03\/KA8XPUN.jpg"
+                                        "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/KA8XPUN.jpg"
                                     },
                                     {
                                         "id": 84,
-                                        "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/03\/68DVWPR.jpg"
+                                        "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/68DVWPR.jpg"
                                     }
                                 ],
                                 "thumbnail_size": "full",
@@ -1732,8 +1732,8 @@
                                     "sizes": []
                                 },
                                 "__globals__": {
-                                    "dots_inactive_color": "globals\/colors?id=text",
-                                    "dots_color": "globals\/colors?id=secondary"
+                                    "dots_inactive_color": "globals/colors?id=text",
+                                    "dots_color": "globals/colors?id=secondary"
                                 }
                             },
                             "elements": [],
@@ -1755,7 +1755,7 @@
                 "flex_direction": "column",
                 "background_background": "classic",
                 "__globals__": {
-                    "background_color": "globals\/colors?id=178b693"
+                    "background_color": "globals/colors?id=178b693"
                 },
                 "_title": "Dining & Drinks"
             },
@@ -1808,7 +1808,7 @@
                             "isLinked": true
                         },
                         "__globals__": {
-                            "border_color": "globals\/colors?id=text"
+                            "border_color": "globals/colors?id=text"
                         }
                     },
                     "elements": [
@@ -1872,7 +1872,7 @@
                                 },
                                 "z_index": 1,
                                 "__globals__": {
-                                    "background_color": "globals\/colors?id=178b693"
+                                    "background_color": "globals/colors?id=178b693"
                                 },
                                 "width_tablet": {
                                     "unit": "%",
@@ -1915,7 +1915,7 @@
                                     "id": "6f929ca7",
                                     "settings": {
                                         "align_tablet": "center",
-                                        "editor": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula odio ac consectetur commodo. Sed diam elit, tincidunt quis accumsan non, porta in neque. Nam in ex nec elit lobortis dignissim eu quis magna.<\/p>"
+                                        "editor": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula odio ac consectetur commodo. Sed diam elit, tincidunt quis accumsan non, porta in neque. Nam in ex nec elit lobortis dignissim eu quis magna.</p>"
                                     },
                                     "elements": [],
                                     "isInner": false,
@@ -1999,10 +1999,10 @@
                                             "settings": {
                                                 "title": "Luxurious Suites & Exclusive Villas",
                                                 "__globals__": {
-                                                    "typography_number_typography": "globals\/typography?id=f495112",
-                                                    "typography_title_typography": "globals\/typography?id=419b4ea",
-                                                    "title_color": "globals\/colors?id=secondary",
-                                                    "number_color": "globals\/colors?id=primary"
+                                                    "typography_number_typography": "globals/typography?id=f495112",
+                                                    "typography_title_typography": "globals/typography?id=419b4ea",
+                                                    "title_color": "globals/colors?id=secondary",
+                                                    "number_color": "globals/colors?id=primary"
                                                 },
                                                 "ending_number": 52,
                                                 "suffix": "+"
@@ -2028,10 +2028,10 @@
                                             "settings": {
                                                 "title": "Average Guest Satisfaction Rate",
                                                 "__globals__": {
-                                                    "typography_number_typography": "globals\/typography?id=f495112",
-                                                    "typography_title_typography": "globals\/typography?id=419b4ea",
-                                                    "title_color": "globals\/colors?id=secondary",
-                                                    "number_color": "globals\/colors?id=primary"
+                                                    "typography_number_typography": "globals/typography?id=f495112",
+                                                    "typography_title_typography": "globals/typography?id=419b4ea",
+                                                    "title_color": "globals/colors?id=secondary",
+                                                    "number_color": "globals/colors?id=primary"
                                                 },
                                                 "ending_number": 99,
                                                 "suffix": "%"
@@ -2057,10 +2057,10 @@
                                             "settings": {
                                                 "title": "Excellence Award in Luxury Hotel",
                                                 "__globals__": {
-                                                    "typography_number_typography": "globals\/typography?id=f495112",
-                                                    "typography_title_typography": "globals\/typography?id=419b4ea",
-                                                    "title_color": "globals\/colors?id=secondary",
-                                                    "number_color": "globals\/colors?id=primary"
+                                                    "typography_number_typography": "globals/typography?id=f495112",
+                                                    "typography_title_typography": "globals/typography?id=419b4ea",
+                                                    "title_color": "globals/colors?id=secondary",
+                                                    "number_color": "globals/colors?id=primary"
                                                 },
                                                 "ending_number": 43,
                                                 "suffix": "+"
@@ -2117,7 +2117,7 @@
                 "flex_direction_tablet": "column",
                 "background_background": "classic",
                 "__globals__": {
-                    "background_color": "globals\/colors?id=178b693"
+                    "background_color": "globals/colors?id=178b693"
                 },
                 "_title": "Review"
             },
@@ -2139,7 +2139,7 @@
                             "id": "75f20fe0",
                             "settings": {
                                 "image": {
-                                    "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/03\/8C5HB37.jpg",
+                                    "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/8C5HB37.jpg",
                                     "id": 157,
                                     "size": "",
                                     "alt": "",
@@ -2217,8 +2217,8 @@
                                     "isLinked": false
                                 },
                                 "__globals__": {
-                                    "background_color": "globals\/colors?id=178b693",
-                                    "border_color": "globals\/colors?id=178b693"
+                                    "background_color": "globals/colors?id=178b693",
+                                    "border_color": "globals/colors?id=178b693"
                                 },
                                 "border_color": "#FFFFFF"
                             },
@@ -2234,7 +2234,7 @@
                                                 "designation": "Designation",
                                                 "review": "Morbi faucibus ut lacus in iaculis. Nullam eu elit tempor, dictum quam at, venenatis ante. Aliquam erat volutpat. Integer sem magna.",
                                                 "client_photo": {
-                                                    "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/03\/YK2UXCUc.jpg",
+                                                    "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/YK2UXCUc.jpg",
                                                     "id": 138,
                                                     "size": "",
                                                     "alt": "",
@@ -2247,7 +2247,7 @@
                                                 "review": "Morbi faucibus ut lacus in iaculis. Nullam eu elit tempor, dictum quam at, venenatis ante. Aliquam erat volutpat. Integer sem magna.",
                                                 "_id": "1907c95",
                                                 "client_photo": {
-                                                    "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/03\/YK2UXCUd.jpg",
+                                                    "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/YK2UXCUd.jpg",
                                                     "id": 139,
                                                     "size": "",
                                                     "alt": "",
@@ -2260,7 +2260,7 @@
                                                 "review": "Morbi faucibus ut lacus in iaculis. Nullam eu elit tempor, dictum quam at, venenatis ante. Aliquam erat volutpat. Integer sem magna.",
                                                 "_id": "6aa51f4",
                                                 "client_photo": {
-                                                    "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/03\/YK2UXCUh.jpg",
+                                                    "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/YK2UXCUh.jpg",
                                                     "id": 140,
                                                     "size": "",
                                                     "alt": "",
@@ -2273,7 +2273,7 @@
                                                 "review": "Morbi faucibus ut lacus in iaculis. Nullam eu elit tempor, dictum quam at, venenatis ante. Aliquam erat volutpat. Integer sem magna.",
                                                 "_id": "910c37c",
                                                 "client_photo": {
-                                                    "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/03\/YK2UXCUa.jpg",
+                                                    "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/YK2UXCUa.jpg",
                                                     "id": 137,
                                                     "size": "",
                                                     "alt": "",
@@ -2361,17 +2361,17 @@
                                         },
                                         "__globals__": {
                                             "ekit_testimonial_description_typography_typography": "",
-                                            "ekit_testimonial_description_color": "globals\/colors?id=secondary",
-                                            "ekit_testimonial_client_name_normal_color": "globals\/colors?id=text",
-                                            "ekit_testimonial_client_name_typography_typography": "globals\/typography?id=ac52333",
+                                            "ekit_testimonial_description_color": "globals/colors?id=secondary",
+                                            "ekit_testimonial_client_name_normal_color": "globals/colors?id=text",
+                                            "ekit_testimonial_client_name_typography_typography": "globals/typography?id=ac52333",
                                             "ekit_testimonial_designation_typography_typography": "",
-                                            "ekit_testimonial_section_wathermark_color": "globals\/colors?id=178b693",
-                                            "ekit_testimonial_client_dot_active_background_color": "globals\/colors?id=360d9af",
-                                            "ekit_testimonial_client_dot_background_color": "globals\/colors?id=primary",
-                                            "ekit_testimonial_client_dot_border_color": "globals\/colors?id=primary",
-                                            "ekit_testimonial_client_dot_active_border_color": "globals\/colors?id=secondary",
-                                            "ekit_testimonial_layout_background_color": "globals\/colors?id=accent",
-                                            "ekit_testimonial_review_ratting_color": "globals\/colors?id=primary"
+                                            "ekit_testimonial_section_wathermark_color": "globals/colors?id=178b693",
+                                            "ekit_testimonial_client_dot_active_background_color": "globals/colors?id=360d9af",
+                                            "ekit_testimonial_client_dot_background_color": "globals/colors?id=primary",
+                                            "ekit_testimonial_client_dot_border_color": "globals/colors?id=primary",
+                                            "ekit_testimonial_client_dot_active_border_color": "globals/colors?id=secondary",
+                                            "ekit_testimonial_layout_background_color": "globals/colors?id=accent",
+                                            "ekit_testimonial_review_ratting_color": "globals/colors?id=primary"
                                         },
                                         "ekit_testimonial_show_dot": "yes",
                                         "ekit_testimonial_layout_margin": {
@@ -2631,7 +2631,7 @@
                                     "id": "41519ab7",
                                     "settings": {
                                         "align_tablet": "center",
-                                        "editor": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper enim sit amet dolor finibus, sed gravida elit accumsan. Nulla suscipit, magna sit amet rhoncus egestas, mi elit aliquam enim, eget semper ligula elit vel mi. Fusce in ipsum vel est malesuada consequat.<\/p>"
+                                        "editor": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper enim sit amet dolor finibus, sed gravida elit accumsan. Nulla suscipit, magna sit amet rhoncus egestas, mi elit aliquam enim, eget semper ligula elit vel mi. Fusce in ipsum vel est malesuada consequat.</p>"
                                     },
                                     "elements": [],
                                     "isInner": false,
@@ -2684,7 +2684,7 @@
                                                         "align_tablet": "center",
                                                         "_flex_align_self_tablet": "center",
                                                         "__globals__": {
-                                                            "title_color": "globals\/colors?id=secondary"
+                                                            "title_color": "globals/colors?id=secondary"
                                                         }
                                                     },
                                                     "elements": [],
@@ -2735,7 +2735,7 @@
                                                             "sizes": []
                                                         },
                                                         "__globals__": {
-                                                            "icon_color": "globals\/colors?id=primary"
+                                                            "icon_color": "globals/colors?id=primary"
                                                         }
                                                     },
                                                     "elements": [],
@@ -2746,11 +2746,11 @@
                                                 {
                                                     "id": "632882c9",
                                                     "settings": {
-                                                        "title": "Average Rating 5\/5",
+                                                        "title": "Average Rating 5/5",
                                                         "header_size": "h6",
                                                         "align_tablet": "center",
                                                         "__globals__": {
-                                                            "title_color": "globals\/colors?id=text"
+                                                            "title_color": "globals/colors?id=text"
                                                         }
                                                     },
                                                     "elements": [],
@@ -2776,7 +2776,7 @@
                                             "sizes": []
                                         },
                                         "__globals__": {
-                                            "color": "globals\/colors?id=text"
+                                            "color": "globals/colors?id=text"
                                         }
                                     },
                                     "elements": [],
@@ -2803,7 +2803,7 @@
                                                     "id": "2cf21c99",
                                                     "settings": {
                                                         "image": {
-                                                            "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/03\/BX7T9Fa.png",
+                                                            "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/BX7T9Fa.png",
                                                             "id": 128,
                                                             "size": "",
                                                             "alt": "",
@@ -2843,7 +2843,7 @@
                                                     "id": "c15d38d",
                                                     "settings": {
                                                         "image": {
-                                                            "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/03\/9364LH.png",
+                                                            "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/9364LH.png",
                                                             "id": 130,
                                                             "size": "",
                                                             "alt": "",
@@ -2883,7 +2883,7 @@
                                                     "id": "551d229b",
                                                     "settings": {
                                                         "image": {
-                                                            "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/03\/USPFWKH.png",
+                                                            "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/USPFWKH.png",
                                                             "id": 129,
                                                             "size": "",
                                                             "alt": "",
@@ -2950,7 +2950,7 @@
                 "flex_justify_content": "center",
                 "background_background": "classic",
                 "background_image": {
-                    "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/03\/EQ5HBBM.jpg",
+                    "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/EQ5HBBM.jpg",
                     "id": 153,
                     "size": "",
                     "alt": "",
@@ -2962,7 +2962,7 @@
                 "background_size": "cover",
                 "background_overlay_background": "classic",
                 "__globals__": {
-                    "background_overlay_color": "globals\/colors?id=secondary"
+                    "background_overlay_color": "globals/colors?id=secondary"
                 },
                 "background_overlay_opacity": {
                     "unit": "px",
@@ -2976,8 +2976,8 @@
                     "id": "7b7044a9",
                     "settings": {
                         "ekit_video_popup_button_title": "Play Video",
-                        "ekit_video_popup_url": "https:\/\/www.youtube.com\/watch?v=VhBl3dHT5SY",
-                        "ekit_video_self_external_url": "https:\/\/wpmet.com\/plugin\/elementskit\/wp-content\/uploads\/2022\/11\/selfhosted_video.mp4",
+                        "ekit_video_popup_url": "https://www.youtube.com/watch?v=VhBl3dHT5SY",
+                        "ekit_video_self_external_url": "https://wpmet.com/plugin/elementskit/wp-content/uploads/2022/11/selfhosted_video.mp4",
                         "ekit_video_popup_icon_size": {
                             "unit": "px",
                             "size": 25,
@@ -3016,13 +3016,13 @@
                         },
                         "_flex_align_self_tablet": "center",
                         "__globals__": {
-                            "ekit_video_popup_btn_bg_color_color": "globals\/colors?id=360d9af",
-                            "ekit_video_popup_btn_text_color": "globals\/colors?id=accent",
-                            "ekit_video_popup_btn_glow_color": "globals\/colors?id=accent",
-                            "ekit_video_popup_btn_bg_hover_color_color": "globals\/colors?id=360d9af",
-                            "ekit_video_popup_btn_hover_color": "globals\/colors?id=primary",
-                            "ekit_video_popup_btn_border_color": "globals\/colors?id=accent",
-                            "ekit_video_popup_btn_hover_border_color": "globals\/colors?id=primary"
+                            "ekit_video_popup_btn_bg_color_color": "globals/colors?id=360d9af",
+                            "ekit_video_popup_btn_text_color": "globals/colors?id=accent",
+                            "ekit_video_popup_btn_glow_color": "globals/colors?id=accent",
+                            "ekit_video_popup_btn_bg_hover_color_color": "globals/colors?id=360d9af",
+                            "ekit_video_popup_btn_hover_color": "globals/colors?id=primary",
+                            "ekit_video_popup_btn_border_color": "globals/colors?id=accent",
+                            "ekit_video_popup_btn_hover_border_color": "globals/colors?id=primary"
                         }
                     },
                     "elements": [],
@@ -3036,7 +3036,7 @@
                         "title": "Book Your Luxurious Escape Today!",
                         "align": "center",
                         "__globals__": {
-                            "title_color": "globals\/colors?id=accent"
+                            "title_color": "globals/colors?id=accent"
                         }
                     },
                     "elements": [],
@@ -3047,7 +3047,7 @@
                 {
                     "id": "31d5a91d",
                     "settings": {
-                        "editor": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula odio ac consectetur commodo. Sed diam elit, tincidunt quis accumsan non, porta in neque. Nam in ex nec elit lobortis dignissim eu quis magna.<\/p>",
+                        "editor": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula odio ac consectetur commodo. Sed diam elit, tincidunt quis accumsan non, porta in neque. Nam in ex nec elit lobortis dignissim eu quis magna.</p>",
                         "align": "center",
                         "_element_width": "initial",
                         "_element_custom_width": {
@@ -3057,7 +3057,7 @@
                         },
                         "_flex_align_self": "center",
                         "__globals__": {
-                            "text_color": "globals\/colors?id=accent"
+                            "text_color": "globals/colors?id=accent"
                         },
                         "_element_custom_width_mobile": {
                             "unit": "%",
@@ -3136,8 +3136,8 @@
                         },
                         "z_index": 1,
                         "__globals__": {
-                            "background_color": "globals\/colors?id=accent",
-                            "border_color": "globals\/colors?id=text"
+                            "background_color": "globals/colors?id=accent",
+                            "border_color": "globals/colors?id=text"
                         },
                         "border_border": "solid",
                         "border_width": {
@@ -3293,7 +3293,7 @@
                             "id": "4e39fe23",
                             "settings": {
                                 "align_tablet": "center",
-                                "editor": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper enim sit amet dolor finibus, sed gravida elit accumsan. Nulla suscipit, magna sit amet rhoncus egestas,.<\/p>"
+                                "editor": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper enim sit amet dolor finibus, sed gravida elit accumsan. Nulla suscipit, magna sit amet rhoncus egestas,.</p>"
                             },
                             "elements": [],
                             "isInner": false,
@@ -3380,7 +3380,7 @@
                                 },
                                 "background_background": "classic",
                                 "background_image": {
-                                    "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/03\/SDPTWGG.jpg",
+                                    "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/SDPTWGG.jpg",
                                     "id": 207,
                                     "size": "",
                                     "alt": "",
@@ -3404,10 +3404,10 @@
                                 },
                                 "__globals__": {
                                     "background_hover_color": "",
-                                    "background_overlay_hover_color": "globals\/colors?id=360d9af",
-                                    "background_overlay_hover_color_b": "globals\/colors?id=secondary",
-                                    "background_overlay_color": "globals\/colors?id=360d9af",
-                                    "background_overlay_color_b": "globals\/colors?id=secondary"
+                                    "background_overlay_hover_color": "globals/colors?id=360d9af",
+                                    "background_overlay_hover_color_b": "globals/colors?id=secondary",
+                                    "background_overlay_color": "globals/colors?id=360d9af",
+                                    "background_overlay_color_b": "globals/colors?id=secondary"
                                 },
                                 "animation": "fadeInUp"
                             },
@@ -3511,16 +3511,16 @@
                                             "isLinked": false
                                         },
                                         "__globals__": {
-                                            "ekit_image_box_image_floating_box_background_color": "globals\/colors?id=360d9af",
-                                            "ekit_image_box_title_typography_typography": "globals\/typography?id=419b4ea",
-                                            "ekit_image_box_heading_color": "globals\/colors?id=accent",
-                                            "ekit_image_box_title_typography_description_typography": "globals\/typography?id=text",
-                                            "ekit_image_box_heading_color_description": "globals\/colors?id=178b693",
-                                            "ekit_image_box_btn_background_group_color": "globals\/colors?id=360d9af",
-                                            "ekit_image_box_button_text_color": "globals\/colors?id=primary",
-                                            "ekit_image_box_btn_hover_color": "globals\/colors?id=accent",
-                                            "ekit_image_box_typography_group_typography": "globals\/typography?id=accent",
-                                            "ekit_image_box_heading_color_hover": "globals\/colors?id=primary"
+                                            "ekit_image_box_image_floating_box_background_color": "globals/colors?id=360d9af",
+                                            "ekit_image_box_title_typography_typography": "globals/typography?id=419b4ea",
+                                            "ekit_image_box_heading_color": "globals/colors?id=accent",
+                                            "ekit_image_box_title_typography_description_typography": "globals/typography?id=text",
+                                            "ekit_image_box_heading_color_description": "globals/colors?id=178b693",
+                                            "ekit_image_box_btn_background_group_color": "globals/colors?id=360d9af",
+                                            "ekit_image_box_button_text_color": "globals/colors?id=primary",
+                                            "ekit_image_box_btn_hover_color": "globals/colors?id=accent",
+                                            "ekit_image_box_typography_group_typography": "globals/typography?id=accent",
+                                            "ekit_image_box_heading_color_hover": "globals/colors?id=primary"
                                         }
                                     },
                                     "elements": [],
@@ -3561,7 +3561,7 @@
                                 },
                                 "background_background": "classic",
                                 "background_image": {
-                                    "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/03\/TP7ZBQW.jpg",
+                                    "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/TP7ZBQW.jpg",
                                     "id": 208,
                                     "size": "",
                                     "alt": "",
@@ -3585,10 +3585,10 @@
                                 },
                                 "__globals__": {
                                     "background_hover_color": "",
-                                    "background_overlay_hover_color": "globals\/colors?id=360d9af",
-                                    "background_overlay_hover_color_b": "globals\/colors?id=secondary",
-                                    "background_overlay_color": "globals\/colors?id=360d9af",
-                                    "background_overlay_color_b": "globals\/colors?id=secondary"
+                                    "background_overlay_hover_color": "globals/colors?id=360d9af",
+                                    "background_overlay_hover_color_b": "globals/colors?id=secondary",
+                                    "background_overlay_color": "globals/colors?id=360d9af",
+                                    "background_overlay_color_b": "globals/colors?id=secondary"
                                 },
                                 "animation": "fadeInUp",
                                 "animation_duration": "slow"
@@ -3693,16 +3693,16 @@
                                             "isLinked": false
                                         },
                                         "__globals__": {
-                                            "ekit_image_box_image_floating_box_background_color": "globals\/colors?id=360d9af",
-                                            "ekit_image_box_title_typography_typography": "globals\/typography?id=419b4ea",
-                                            "ekit_image_box_heading_color": "globals\/colors?id=accent",
-                                            "ekit_image_box_title_typography_description_typography": "globals\/typography?id=text",
-                                            "ekit_image_box_heading_color_description": "globals\/colors?id=178b693",
-                                            "ekit_image_box_btn_background_group_color": "globals\/colors?id=360d9af",
-                                            "ekit_image_box_button_text_color": "globals\/colors?id=primary",
-                                            "ekit_image_box_btn_hover_color": "globals\/colors?id=accent",
-                                            "ekit_image_box_typography_group_typography": "globals\/typography?id=accent",
-                                            "ekit_image_box_heading_color_hover": "globals\/colors?id=primary"
+                                            "ekit_image_box_image_floating_box_background_color": "globals/colors?id=360d9af",
+                                            "ekit_image_box_title_typography_typography": "globals/typography?id=419b4ea",
+                                            "ekit_image_box_heading_color": "globals/colors?id=accent",
+                                            "ekit_image_box_title_typography_description_typography": "globals/typography?id=text",
+                                            "ekit_image_box_heading_color_description": "globals/colors?id=178b693",
+                                            "ekit_image_box_btn_background_group_color": "globals/colors?id=360d9af",
+                                            "ekit_image_box_button_text_color": "globals/colors?id=primary",
+                                            "ekit_image_box_btn_hover_color": "globals/colors?id=accent",
+                                            "ekit_image_box_typography_group_typography": "globals/typography?id=accent",
+                                            "ekit_image_box_heading_color_hover": "globals/colors?id=primary"
                                         }
                                     },
                                     "elements": [],
@@ -3767,8 +3767,8 @@
                     "isLinked": true
                 },
                 "__globals__": {
-                    "background_overlay_color": "globals\/colors?id=secondary",
-                    "background_color": "globals\/colors?id=7f348a2"
+                    "background_overlay_color": "globals/colors?id=secondary",
+                    "background_color": "globals/colors?id=7f348a2"
                 },
                 "background_overlay_color": "#111111",
                 "_title": "Event"
@@ -3824,7 +3824,7 @@
                 {
                     "id": "4fe76685",
                     "settings": {
-                        "editor": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula odio ac consectetur commodo. Sed diam elit, tincidunt quis accumsan non, porta in neque. Nam in ex nec elit lobortis dignissim eu quis magna.<\/p>",
+                        "editor": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula odio ac consectetur commodo. Sed diam elit, tincidunt quis accumsan non, porta in neque. Nam in ex nec elit lobortis dignissim eu quis magna.</p>",
                         "align": "center",
                         "_element_width": "initial",
                         "_element_custom_width": {
@@ -3869,7 +3869,7 @@
                                         "content_width": "full",
                                         "background_background": "classic",
                                         "background_image": {
-                                            "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/03\/9KSYUET.jpg",
+                                            "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/9KSYUET.jpg",
                                             "id": 236,
                                             "size": "",
                                             "alt": "",
@@ -3904,8 +3904,8 @@
                                             "isLinked": true
                                         },
                                         "__globals__": {
-                                            "background_overlay_color": "globals\/colors?id=secondary",
-                                            "background_overlay_hover_color": "globals\/colors?id=secondary"
+                                            "background_overlay_color": "globals/colors?id=secondary",
+                                            "background_overlay_hover_color": "globals/colors?id=secondary"
                                         },
                                         "background_overlay_hover_background": "classic",
                                         "background_overlay_hover_opacity": {
@@ -3928,8 +3928,8 @@
                                                 "description_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.",
                                                 "text_align": "left",
                                                 "__globals__": {
-                                                    "title_color": "globals\/colors?id=accent",
-                                                    "description_color": "globals\/colors?id=accent"
+                                                    "title_color": "globals/colors?id=accent",
+                                                    "description_color": "globals/colors?id=accent"
                                                 },
                                                 "text_align_mobile": "center",
                                                 "title_bottom_space": {
@@ -3949,10 +3949,10 @@
                                             "settings": {
                                                 "text": "Get Maried in Bali",
                                                 "__globals__": {
-                                                    "button_hover_border_color": "globals\/colors?id=accent",
-                                                    "hover_color": "globals\/colors?id=accent",
-                                                    "button_text_color": "globals\/colors?id=accent",
-                                                    "border_color": "globals\/colors?id=accent"
+                                                    "button_hover_border_color": "globals/colors?id=accent",
+                                                    "hover_color": "globals/colors?id=accent",
+                                                    "button_text_color": "globals/colors?id=accent",
+                                                    "border_color": "globals/colors?id=accent"
                                                 },
                                                 "align_tablet": "center",
                                                 "hover_animation": "shrink",
@@ -3992,7 +3992,7 @@
                                         "content_width": "full",
                                         "background_background": "classic",
                                         "background_image": {
-                                            "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/03\/BHBEFUT.jpg",
+                                            "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/BHBEFUT.jpg",
                                             "id": 237,
                                             "size": "",
                                             "alt": "",
@@ -4027,8 +4027,8 @@
                                             "isLinked": true
                                         },
                                         "__globals__": {
-                                            "background_overlay_color": "globals\/colors?id=secondary",
-                                            "background_overlay_hover_color": "globals\/colors?id=secondary"
+                                            "background_overlay_color": "globals/colors?id=secondary",
+                                            "background_overlay_hover_color": "globals/colors?id=secondary"
                                         },
                                         "flex_justify_content": "flex-end",
                                         "background_overlay_hover_background": "classic",
@@ -4053,8 +4053,8 @@
                                                 "description_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.",
                                                 "text_align": "left",
                                                 "__globals__": {
-                                                    "title_color": "globals\/colors?id=accent",
-                                                    "description_color": "globals\/colors?id=accent"
+                                                    "title_color": "globals/colors?id=accent",
+                                                    "description_color": "globals/colors?id=accent"
                                                 },
                                                 "text_align_mobile": "center",
                                                 "title_bottom_space": {
@@ -4074,10 +4074,10 @@
                                             "settings": {
                                                 "text": "Reserve now",
                                                 "__globals__": {
-                                                    "button_hover_border_color": "globals\/colors?id=accent",
-                                                    "hover_color": "globals\/colors?id=accent",
-                                                    "button_text_color": "globals\/colors?id=accent",
-                                                    "border_color": "globals\/colors?id=accent"
+                                                    "button_hover_border_color": "globals/colors?id=accent",
+                                                    "hover_color": "globals/colors?id=accent",
+                                                    "button_text_color": "globals/colors?id=accent",
+                                                    "border_color": "globals/colors?id=accent"
                                                 },
                                                 "align_tablet": "center",
                                                 "hover_animation": "shrink",
@@ -4117,7 +4117,7 @@
                                         "content_width": "full",
                                         "background_background": "classic",
                                         "background_image": {
-                                            "url": "https:\/\/askit.dextheme.net\/delux\/wp-content\/uploads\/sites\/11\/2024\/03\/CP956UJ.jpg",
+                                            "url": "https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/CP956UJ.jpg",
                                             "id": 238,
                                             "size": "",
                                             "alt": "",
@@ -4152,8 +4152,8 @@
                                             "isLinked": true
                                         },
                                         "__globals__": {
-                                            "background_overlay_color": "globals\/colors?id=secondary",
-                                            "background_overlay_hover_color": "globals\/colors?id=secondary"
+                                            "background_overlay_color": "globals/colors?id=secondary",
+                                            "background_overlay_hover_color": "globals/colors?id=secondary"
                                         },
                                         "background_overlay_hover_background": "classic",
                                         "background_overlay_hover_opacity": {
@@ -4177,8 +4177,8 @@
                                                 "description_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.",
                                                 "text_align": "left",
                                                 "__globals__": {
-                                                    "title_color": "globals\/colors?id=accent",
-                                                    "description_color": "globals\/colors?id=accent"
+                                                    "title_color": "globals/colors?id=accent",
+                                                    "description_color": "globals/colors?id=accent"
                                                 },
                                                 "text_align_mobile": "center",
                                                 "title_bottom_space": {
@@ -4198,10 +4198,10 @@
                                             "settings": {
                                                 "text": "Call us now",
                                                 "__globals__": {
-                                                    "button_hover_border_color": "globals\/colors?id=accent",
-                                                    "hover_color": "globals\/colors?id=accent",
-                                                    "button_text_color": "globals\/colors?id=accent",
-                                                    "border_color": "globals\/colors?id=accent"
+                                                    "button_hover_border_color": "globals/colors?id=accent",
+                                                    "hover_color": "globals/colors?id=accent",
+                                                    "button_text_color": "globals/colors?id=accent",
+                                                    "border_color": "globals/colors?id=accent"
                                                 },
                                                 "align_tablet": "center",
                                                 "hover_animation": "shrink",
