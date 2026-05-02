@@ -1,0 +1,128 @@
+<!-- ══════════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════════ -->
+<style>
+.ohh-testi { padding: 112px 5%; background: var(--cream); }
+.ohh-testi-header { text-align: center; margin-bottom: 64px; }
+.ohh-testi-header h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: var(--text); }
+.ohh-testi-header h2 em { font-style: italic; color: var(--terracotta); }
+
+.ohh-testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.ohh-testi-card {
+  background: #fff;
+  padding: 36px 32px;
+  border: 1px solid var(--border);
+  position: relative;
+  transition: box-shadow .3s, border-color .3s;
+}
+.ohh-testi-card:hover { box-shadow: 0 12px 48px rgba(0,0,0,0.08); border-color: var(--terracotta); }
+.ohh-testi-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+  color: var(--terracotta);
+  line-height: 1;
+  margin-bottom: -10px;
+  opacity: .4;
+}
+.ohh-testi-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+.ohh-testi-stars { color: var(--gold); font-size: 16px; margin-bottom: 16px; }
+.ohh-testi-author strong { display: block; font-size: 14px; font-weight: 600; color: var(--text); }
+.ohh-testi-author span { font-size: 12px; color: var(--text-muted); letter-spacing: 0.05em; }
+
+.ohh-testi-bar {
+  display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap;
+  padding: 40px 0 0;
+  margin-top: 56px;
+  border-top: 1px solid var(--border);
+}
+.ohh-testi-stat { text-align: center; }
+.ohh-testi-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: var(--terracotta); line-height: 1; }
+.ohh-testi-stat-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+@media (max-width: 900px) { .ohh-testi-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .ohh-testi-grid { grid-template-columns: 1fr; } .ohh-testi { padding: 72px 5%; } }
+</style>
+
+<section class="ohh-testi" id="testimonials">
+  <div class="ohh-testi-header">
+    <span class="section-label">Guest Stories</span>
+    <h2>What travelers say<br>about their <em>Italian experience.</em></h2>
+  </div>
+
+  <div class="ohh-testi-grid">
+    <div class="ohh-testi-card">
+      <div class="ohh-testi-quote">"</div>
+      <p class="ohh-testi-text">OHH! Italy didn't just plan our honeymoon — they gave us the most magical two weeks of our lives. The private villa in Chianti, the cooking class with a local nonna, the sunset boat in Positano. Absolutely flawless.</p>
+      <div class="ohh-testi-stars">★★★★★</div>
+      <div class="ohh-testi-author">
+        <strong>James &amp; Clara W.</strong>
+        <span>New York, USA — Honeymoon in Tuscany</span>
+      </div>
+    </div>
+    <div class="ohh-testi-card">
+      <div class="ohh-testi-quote">"</div>
+      <p class="ohh-testi-text">I've traveled all over the world, but Italy with OHH! was different. They took us to places I didn't even know existed — a 14th-century library in Rome, a truffle hunt in Umbria. Truly remarkable.</p>
+      <div class="ohh-testi-stars">★★★★★</div>
+      <div class="ohh-testi-author">
+        <strong>Margaret L.</strong>
+        <span>London, UK — The Great Beauty Tour</span>
+      </div>
+    </div>
+    <div class="ohh-testi-card">
+      <div class="ohh-testi-quote">"</div>
+      <p class="ohh-testi-text">From the moment we arrived to the last espresso at the airport, everything was perfect. Our guide felt like a friend, not a service. We're already planning our return trip with them.</p>
+      <div class="ohh-testi-stars">★★★★★</div>
+      <div class="ohh-testi-author">
+        <strong>The Nakamura Family</strong>
+        <span>Tokyo, Japan — La Dolce Vita</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ohh-testi-bar">
+    <div class="ohh-testi-stat">
+      <div class="ohh-testi-stat-num" data-target="500">0</div>
+      <div class="ohh-testi-stat-label">Journeys Crafted</div>
+    </div>
+    <div class="ohh-testi-stat">
+      <div class="ohh-testi-stat-num">5.0</div>
+      <div class="ohh-testi-stat-label">Average Review Score</div>
+    </div>
+    <div class="ohh-testi-stat">
+      <div class="ohh-testi-stat-num" data-target="94">0</div>
+      <div class="ohh-testi-stat-label">% Guests Return</div>
+    </div>
+    <div class="ohh-testi-stat">
+      <div class="ohh-testi-stat-num" data-target="20">0</div>
+      <div class="ohh-testi-stat-label">Italian Regions Covered</div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.ohh-testi-stat-num[data-target]');
+  var seen = new Set();
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting || seen.has(e.target)) return;
+      seen.add(e.target);
+      var el = e.target, target = parseInt(el.getAttribute('data-target')), n = 0;
+      var t = setInterval(function(){
+        n = Math.min(n + Math.max(1, Math.ceil(target/60)), target);
+        el.textContent = n + (target >= 94 ? '%' : '+');
+        if (n >= target) clearInterval(t);
+      }, 22);
+    });
+  }, { threshold: 0.5 });
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>

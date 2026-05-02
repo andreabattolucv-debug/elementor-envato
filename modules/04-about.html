@@ -1,0 +1,120 @@
+<!-- ══════════════════════════════════════════
+     WHY OHH ITALY
+══════════════════════════════════════════ -->
+<style>
+.ohh-why {
+  padding: 112px 5%;
+  background: var(--cream);
+}
+.ohh-why-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.ohh-why-left {}
+.ohh-why-left h2 {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+.ohh-why-left h2 em { font-style: italic; color: var(--terracotta); }
+.ohh-why-left p {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-bottom: 36px;
+  font-weight: 300;
+}
+.ohh-why-signature {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+.ohh-why-signature img { height: 52px; width: auto; object-fit: contain; opacity: .8; }
+.ohh-why-signature-info strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--text); }
+.ohh-why-signature-info span { font-size: 12px; color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase; }
+
+.ohh-why-right {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.ohh-why-card {
+  display: flex;
+  gap: 22px;
+  padding: 28px;
+  background: #fff;
+  border: 1px solid var(--border);
+  transition: border-color .3s, box-shadow .3s;
+}
+.ohh-why-card:hover { border-color: var(--terracotta); box-shadow: 0 8px 32px rgba(196,98,45,0.1); }
+.ohh-why-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(196,98,45,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--terracotta);
+}
+.ohh-why-icon svg { width: 22px; height: 22px; fill: var(--terracotta); }
+.ohh-why-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--text); margin-bottom: 6px; }
+.ohh-why-card p { font-size: 14px; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
+
+@media (max-width: 860px) { .ohh-why-inner { grid-template-columns: 1fr; gap: 48px; } .ohh-why { padding: 72px 5%; } }
+</style>
+
+<section class="ohh-why" id="why-us">
+  <div class="ohh-why-inner">
+    <div class="ohh-why-left">
+      <span class="section-label">Why OHH! Italy</span>
+      <h2>We don't plan trips.<br>We craft <em>unforgettable</em><br>memories.</h2>
+      <p>Italy is not a destination — it's a feeling. The scent of fresh espresso in a Florentine piazza. The silence of a private chapel in Umbria. A table set just for you on a cliff above the Amalfi coast. We know where to find these moments, and how to make them yours.</p>
+      <a href="#contact" class="btn-primary">Tell Us Your Dream Trip</a>
+      <div class="ohh-why-signature" style="margin-top:32px">
+        <img src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/Signature1.png" alt="Founder signature">
+        <div class="ohh-why-signature-info">
+          <strong>The OHH! Italy Team</strong>
+          <span>Your Italian Insiders</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ohh-why-right">
+      <div class="ohh-why-card">
+        <div class="ohh-why-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+        </div>
+        <div>
+          <h4>100% Private & Exclusive</h4>
+          <p>Every journey is yours alone. No group tours, no shared buses. Your itinerary, your pace, your Italy.</p>
+        </div>
+      </div>
+      <div class="ohh-why-card">
+        <div class="ohh-why-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+        </div>
+        <div>
+          <h4>Hidden Italy, Revealed</h4>
+          <p>Beyond the tourist trail. We take you to secret villages, family-run estates, and experiences money alone can't book.</p>
+        </div>
+      </div>
+      <div class="ohh-why-card">
+        <div class="ohh-why-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.35C18 2.54 15.96.5 13.65.5c-1.3 0-2.51.6-3.31 1.48L12 4l1.66-2.02c.46-.59 1.15-.98 1.99-.98 1.38 0 2.35 1.08 2.35 2.15 0 1.56-1.18 2.85-2.35 2.85H2v2h3.27L8 16h12l2-10h-2z"/></svg>
+        </div>
+        <div>
+          <h4>Luxury Seamlessly Arranged</h4>
+          <p>From the finest hotels to private transfers, Michelin-starred tables to exclusive museum access — all effortlessly handled.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

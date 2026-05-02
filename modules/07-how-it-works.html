@@ -1,0 +1,73 @@
+<!-- ══════════════════════════════════════════
+     HOW IT WORKS
+══════════════════════════════════════════ -->
+<style>
+.ohh-how {
+  padding: 112px 5%;
+  background: var(--dark);
+  position: relative;
+  overflow: hidden;
+}
+.ohh-how::before {
+  content: 'ITALIA';
+  position: absolute;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20vw;
+  font-weight: 700;
+  color: rgba(255,255,255,0.03);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.ohh-how-header { text-align: center; margin-bottom: 72px; }
+.ohh-how-header h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: #fff; }
+.ohh-how-header h2 em { font-style: italic; color: var(--gold); }
+.ohh-how-header p { font-size: 15px; color: rgba(255,255,255,.55); max-width: 480px; margin: 14px auto 0; line-height: 1.8; font-weight: 300; }
+
+.ohh-how-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; position: relative; z-index: 1; }
+.ohh-how-step { text-align: center; }
+.ohh-how-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5rem;
+  font-weight: 300;
+  color: rgba(201,162,87,0.2);
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.ohh-how-step h4 { font-size: 1.25rem; color: #fff; font-weight: 400; margin-bottom: 12px; }
+.ohh-how-step p { font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.8; font-weight: 300; }
+.ohh-how-cta { text-align: center; margin-top: 64px; position: relative; z-index: 1; }
+
+@media (max-width: 768px) { .ohh-how-steps { grid-template-columns: 1fr; gap: 36px; } .ohh-how { padding: 72px 5%; } }
+</style>
+
+<section class="ohh-how">
+  <div class="ohh-how-header">
+    <span class="section-label section-label--light">The Process</span>
+    <h2>Your dream trip,<br><em>three simple steps.</em></h2>
+    <p>From your first message to your last sunset in Italy, we handle every detail so you can simply enjoy.</p>
+  </div>
+
+  <div class="ohh-how-steps">
+    <div class="ohh-how-step">
+      <div class="ohh-how-num">01</div>
+      <h4>Tell Us Your Vision</h4>
+      <p>Share your travel dreams, dates, interests, and budget. The more you tell us, the better we can craft your perfect journey.</p>
+    </div>
+    <div class="ohh-how-step">
+      <div class="ohh-how-num">02</div>
+      <h4>We Design Your Itinerary</h4>
+      <p>Your dedicated Italian expert crafts a bespoke proposal — unique experiences, handpicked hotels, private guides — all curated for you.</p>
+    </div>
+    <div class="ohh-how-step">
+      <div class="ohh-how-num">03</div>
+      <h4>Live Your Italian Story</h4>
+      <p>Arrive in Italy and let the magic unfold. Every detail is handled, every moment is yours. All you have to do is say OHH!</p>
+    </div>
+  </div>
+
+  <div class="ohh-how-cta">
+    <a href="#contact" class="btn-primary">Begin My Italian Journey</a>
+  </div>
+</section>

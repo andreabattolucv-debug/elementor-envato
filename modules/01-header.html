@@ -1,0 +1,130 @@
+<!-- ══════════════════════════════════════════
+     HEADER
+══════════════════════════════════════════ -->
+<style>
+.ohh-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 9999;
+  transition: background .4s, box-shadow .4s;
+  padding: 0 5%;
+}
+.ohh-header.scrolled {
+  background: var(--dark);
+  box-shadow: 0 2px 24px rgba(0,0,0,0.28);
+}
+.ohh-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+.ohh-logo img {
+  height: 48px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.ohh-nav {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+.ohh-nav a {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.82);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color .2s;
+  white-space: nowrap;
+}
+.ohh-nav a:hover { color: var(--gold); }
+
+.ohh-header-cta {
+  display: inline-block;
+  padding: 10px 26px;
+  background: var(--terracotta);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 2px solid var(--terracotta);
+  transition: background .3s, color .3s;
+  white-space: nowrap;
+}
+.ohh-header-cta:hover { background: transparent; color: var(--terracotta); }
+
+.ohh-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.ohh-hamburger span { display: block; width: 24px; height: 2px; background: #fff; transition: all .3s; }
+
+@media (max-width: 900px) {
+  .ohh-hamburger { display: flex; }
+  .ohh-nav {
+    display: none;
+    position: absolute;
+    top: 80px; left: 0; right: 0;
+    background: var(--dark);
+    flex-direction: column;
+    gap: 0;
+    padding: 12px 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .ohh-nav.open { display: flex; }
+  .ohh-nav li { width: 100%; }
+  .ohh-nav a { display: block; padding: 13px 5%; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .ohh-header-cta { display: none; }
+  .ohh-navbar { position: relative; }
+}
+</style>
+
+<header class="ohh-header" id="ohhHeader">
+  <nav class="ohh-navbar">
+    <a href="#hero" class="ohh-logo">
+      <img src="https://ohhitaly.com/wp-content/uploads/2019/11/logo-ohh-italy-white-180x75.png"
+           alt="OHH! Italy — Luxury Italian Travel">
+    </a>
+
+    <ul class="ohh-nav" id="ohhNav">
+      <li><a href="#experiences">Experiences</a></li>
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#why-us">About Us</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a href="#contact" class="ohh-header-cta">Plan My Trip</a>
+
+    <button class="ohh-hamburger" id="ohhBurger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<script>
+(function(){
+  var h = document.getElementById('ohhHeader');
+  window.addEventListener('scroll', function(){
+    h.classList.toggle('scrolled', window.scrollY > 60);
+  });
+  var btn = document.getElementById('ohhBurger');
+  var nav = document.getElementById('ohhNav');
+  btn.addEventListener('click', function(){ nav.classList.toggle('open'); });
+  // close on link click
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ nav.classList.remove('open'); });
+  });
+})();
+</script>

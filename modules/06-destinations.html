@@ -1,0 +1,99 @@
+<!-- ══════════════════════════════════════════
+     DESTINATIONS
+══════════════════════════════════════════ -->
+<style>
+.ohh-dest {
+  padding: 112px 5%;
+  background: var(--cream);
+}
+.ohh-dest-header { text-align: center; margin-bottom: 56px; }
+.ohh-dest-header h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: var(--text); }
+.ohh-dest-header h2 em { font-style: italic; color: var(--terracotta); }
+.ohh-dest-header p { font-size: 15px; color: var(--text-muted); max-width: 520px; margin: 16px auto 0; line-height: 1.8; font-weight: 300; }
+
+.ohh-dest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 16px;
+}
+.ohh-dest-card { position: relative; overflow: hidden; }
+.ohh-dest-card--large { grid-column: span 2; }
+.ohh-dest-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; display: block; }
+.ohh-dest-card--large img { min-height: 320px; }
+.ohh-dest-card:not(.ohh-dest-card--large) img { min-height: 220px; }
+.ohh-dest-card:hover img { transform: scale(1.05); }
+.ohh-dest-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(12,10,8,.75) 0%, transparent 50%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 24px;
+  transition: background .3s;
+}
+.ohh-dest-card:hover .ohh-dest-overlay { background: linear-gradient(to top, rgba(12,10,8,.85) 0%, rgba(12,10,8,.1) 60%); }
+.ohh-dest-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: #fff; margin-bottom: 4px; }
+.ohh-dest-card--large .ohh-dest-name { font-size: 2.2rem; }
+.ohh-dest-region { font-size: 11px; color: var(--gold); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+.ohh-dest-link { position: absolute; inset: 0; z-index: 2; }
+
+@media (max-width: 768px) {
+  .ohh-dest-grid { grid-template-columns: 1fr 1fr; }
+  .ohh-dest-card--large { grid-column: span 2; }
+  .ohh-dest { padding: 72px 5%; }
+}
+@media (max-width: 480px) {
+  .ohh-dest-grid { grid-template-columns: 1fr; }
+  .ohh-dest-card--large { grid-column: span 1; }
+}
+</style>
+
+<section class="ohh-dest" id="destinations">
+  <div class="ohh-dest-header">
+    <span class="section-label">Where We Take You</span>
+    <h2>Italy's most <em>breathtaking</em><br>destinations.</h2>
+    <p>From the dramatic cliffs of Sicily to the rolling hills of Tuscany — we know every corner of this extraordinary country.</p>
+  </div>
+
+  <div class="ohh-dest-grid">
+    <div class="ohh-dest-card ohh-dest-card--large">
+      <img src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/8C5HB37.jpg" alt="Tuscany">
+      <div class="ohh-dest-overlay">
+        <span class="ohh-dest-region">Central Italy</span>
+        <h3 class="ohh-dest-name">Tuscany</h3>
+      </div>
+      <a href="#contact" class="ohh-dest-link" aria-label="Tuscany"></a>
+    </div>
+    <div class="ohh-dest-card">
+      <img src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/N939E9E.jpg" alt="Sicily">
+      <div class="ohh-dest-overlay">
+        <span class="ohh-dest-region">Southern Italy</span>
+        <h3 class="ohh-dest-name">Sicily</h3>
+      </div>
+      <a href="#contact" class="ohh-dest-link" aria-label="Sicily"></a>
+    </div>
+    <div class="ohh-dest-card">
+      <img src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/Q2WYWXG-e1711221458211.jpg" alt="Amalfi Coast">
+      <div class="ohh-dest-overlay">
+        <span class="ohh-dest-region">Campania</span>
+        <h3 class="ohh-dest-name">Amalfi Coast</h3>
+      </div>
+      <a href="#contact" class="ohh-dest-link" aria-label="Amalfi Coast"></a>
+    </div>
+    <div class="ohh-dest-card">
+      <img src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/B7XZECA.jpg" alt="Venice">
+      <div class="ohh-dest-overlay">
+        <span class="ohh-dest-region">Veneto</span>
+        <h3 class="ohh-dest-name">Venice</h3>
+      </div>
+      <a href="#contact" class="ohh-dest-link" aria-label="Venice"></a>
+    </div>
+    <div class="ohh-dest-card ohh-dest-card--large">
+      <img src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/EQ5HBBM.jpg" alt="Rome">
+      <div class="ohh-dest-overlay">
+        <span class="ohh-dest-region">Lazio</span>
+        <h3 class="ohh-dest-name">Rome</h3>
+      </div>
+      <a href="#contact" class="ohh-dest-link" aria-label="Rome"></a>
+    </div>
+  </div>
+</section>

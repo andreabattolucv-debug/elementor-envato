@@ -1,0 +1,79 @@
+<!-- ══════════════════════════════════════════
+     CONTACT — left side only
+     Il form WPForms va inserito nella sezione
+     Elementor creata DOPO questo widget HTML
+══════════════════════════════════════════ -->
+<style>
+.ohh-contact {
+  padding: 112px 5%;
+  background: var(--dark);
+  position: relative;
+  overflow: hidden;
+}
+.ohh-contact::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 45%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1534445867742-43195f401b6c?w=1200&q=70');
+  background-size: cover;
+  background-position: center;
+  opacity: .12;
+}
+.ohh-contact-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+}
+.ohh-contact-left h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.ohh-contact-left h2 em { font-style: italic; color: var(--gold); }
+.ohh-contact-left p {
+  font-size: 15px;
+  color: rgba(255,255,255,.6);
+  line-height: 1.85;
+  margin-bottom: 36px;
+  font-weight: 300;
+  font-family: 'Inter', sans-serif;
+}
+.ohh-contact-info { display: flex; flex-direction: column; gap: 14px; }
+.ohh-contact-info-item {
+  display: flex; align-items: center; gap: 12px;
+  color: rgba(255,255,255,.65);
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+}
+.ohh-contact-info-item svg { width: 16px; height: 16px; fill: var(--gold); flex-shrink: 0; }
+
+@media (max-width: 860px) { .ohh-contact { padding: 72px 5%; } }
+</style>
+
+<section class="ohh-contact" id="contact">
+  <div class="ohh-contact-inner">
+    <div class="ohh-contact-left">
+      <span class="section-label section-label--light">Start Planning</span>
+      <h2>Your Italy is<br>waiting to be <em>discovered.</em></h2>
+      <p>Tell us about your dream trip and within 24 hours a dedicated Italian travel expert will reach out to begin crafting your personal itinerary. No obligation, no pressure — just inspiration.</p>
+      <div class="ohh-contact-info">
+        <div class="ohh-contact-info-item">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          hello@ohhitaly.com
+        </div>
+        <div class="ohh-contact-info-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+          Response within 24 hours
+        </div>
+        <div class="ohh-contact-info-item">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          100% free consultation
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -4,88 +4,115 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OHH! Italy — Luxury Italian Travel, Curated for You</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #FAF7F2;
-      color: #2C2825;
-      overflow-x: hidden;
-    }
-    img { max-width: 100%; display: block; }
-    a { text-decoration: none; }
-    ul { list-style: none; }
-
-    :root {
-      --dark:       #12100E;
-      --cream:      #FAF7F2;
-      --terracotta: #C4622D;
-      --gold:       #C9A257;
-      --sage:       #7A8C78;
-      --white:      #FFFFFF;
-      --text:       #2C2825;
-      --text-muted: #7A7067;
-      --border:     rgba(44,40,37,0.12);
-    }
-
-    /* ── UTILITY ── */
-    .section-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--terracotta);
-      margin-bottom: 14px;
-      display: block;
-    }
-    .section-label--light { color: var(--gold); }
-
-    h1,h2,h3,h4 { font-family: 'Cormorant Garamond', serif; }
-
-    .btn-primary {
-      display: inline-block;
-      padding: 14px 36px;
-      background: var(--terracotta);
-      color: #fff;
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border: 2px solid var(--terracotta);
-      transition: background .3s, color .3s;
-      cursor: pointer;
-    }
-    .btn-primary:hover { background: transparent; color: var(--terracotta); }
-
-    .btn-outline {
-      display: inline-block;
-      padding: 13px 34px;
-      background: transparent;
-      color: var(--white);
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border: 2px solid rgba(255,255,255,0.55);
-      transition: border-color .3s, background .3s;
-    }
-    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
-
-    .btn-outline--dark {
-      color: var(--text);
-      border-color: var(--text);
-    }
-    .btn-outline--dark:hover { background: var(--text); color: #fff; }
-  </style>
 </head>
 <body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ════════════════════════════════════════
+     FULL-BLEED: break out of every Elementor
+     and Astra container
+  ════════════════════════════════════════ */
 
+  /* 1. The Elementor widget itself */
+  .elementor-widget-html,
+  .elementor-widget-html .elementor-widget-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
+    width: 100vw !important;
+    position: relative !important;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+  }
+
+  /* 2. Elementor section & column containers */
+  .elementor-section.elementor-section-boxed > .elementor-container,
+  .elementor-column-wrap,
+  .elementor-widget-wrap,
+  .e-con-inner,
+  .e-con {
+    max-width: 100% !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  /* 3. Astra theme global containers */
+  .ast-container,
+  .ast-flex,
+  .site-content,
+  #content,
+  #primary,
+  .entry-content,
+  .post-content,
+  main.site-main,
+  .elementor-page .elementor {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  /* 4. Astra adds padding-top to body for its fixed header — reset it
+        since we have our own fixed header */
+  body.elementor-page {
+    padding-top: 0 !important;
+  }
+
+  /* 5. Prevent Astra from overriding our heading styles */
+  .ohh-hero h1, .ohh-why-left h2, .ohh-exp-header h2,
+  .ohh-dest-header h2, .ohh-how-header h2, .ohh-testi-header h2,
+  .ohh-contact-left h2, .ohh-how-step h4, .ohh-why-card h4,
+  .ohh-exp-card h3, .ohh-dest-name {
+    line-height: inherit !important;
+    margin-top: 0 !important;
+    margin-bottom: inherit !important;
+    padding: 0 !important;
+    font-weight: inherit !important;
+  }
+
+  html { scroll-behavior: smooth; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  img { max-width: 100%; display: block; }
+  a { text-decoration: none; }
+  ul { list-style: none; }
+  :root {
+    --dark:       #12100E;
+    --cream:      #FAF7F2;
+    --terracotta: #C4622D;
+    --gold:       #C9A257;
+    --sage:       #7A8C78;
+    --white:      #FFFFFF;
+    --text:       #2C2825;
+    --text-muted: #7A7067;
+    --border:     rgba(44,40,37,0.12);
+  }
+  .section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--terracotta);
+    margin-bottom: 14px; display: block;
+  }
+  .section-label--light { color: var(--gold); }
+  h1,h2,h3,h4 { font-family: 'Cormorant Garamond', serif; }
+  .btn-primary {
+    display: inline-block; padding: 14px 36px;
+    background: var(--terracotta); color: #fff;
+    font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    border: 2px solid var(--terracotta); transition: background .3s, color .3s; cursor: pointer;
+  }
+  .btn-primary:hover { background: transparent; color: var(--terracotta); }
+  .btn-outline {
+    display: inline-block; padding: 13px 34px; background: transparent;
+    color: var(--white); font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    border: 2px solid rgba(255,255,255,0.55); transition: border-color .3s, background .3s;
+  }
+  .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+</style>
 
 <!-- ══════════════════════════════════════════
      HEADER
@@ -218,7 +245,6 @@
 })();
 </script>
 
-
 <!-- ══════════════════════════════════════════
      HERO
 ══════════════════════════════════════════ -->
@@ -244,24 +270,45 @@
     rgba(12,10,8,0.65) 100%
   );
 }
+/* Video play button */
 .ohh-hero-play {
-  display: inline-flex; align-items: center; gap: 12px;
-  color: rgba(255,255,255,0.75); font-family: 'Inter', sans-serif;
-  font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
-  cursor: pointer; transition: color .2s; background: none; border: none; padding: 0; text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255,255,255,0.75);
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color .2s;
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: none;
 }
 .ohh-hero-play:hover { color: #fff; }
 .ohh-hero-play-circle {
-  width: 52px; height: 52px; border-radius: 50%;
+  width: 52px; height: 52px;
+  border-radius: 50%;
   border: 1.5px solid rgba(255,255,255,0.5);
   display: flex; align-items: center; justify-content: center;
-  transition: background .3s, border-color .3s; flex-shrink: 0;
+  transition: background .3s, border-color .3s;
+  flex-shrink: 0;
 }
-.ohh-hero-play:hover .ohh-hero-play-circle { background: var(--terracotta); border-color: var(--terracotta); }
+.ohh-hero-play:hover .ohh-hero-play-circle {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+}
 .ohh-hero-play-circle svg { width: 18px; height: 18px; fill: #fff; margin-left: 3px; }
+
+/* Lightbox */
 .ohh-lightbox {
-  display: none; position: fixed; inset: 0; z-index: 99999;
-  background: rgba(0,0,0,0.92); align-items: center; justify-content: center;
+  display: none;
+  position: fixed; inset: 0; z-index: 99999;
+  background: rgba(0,0,0,0.92);
+  align-items: center; justify-content: center;
 }
 .ohh-lightbox.open { display: flex; }
 .ohh-lightbox-inner { position: relative; width: 90vw; max-width: 960px; aspect-ratio: 16/9; }
@@ -269,7 +316,8 @@
 .ohh-lightbox-close {
   position: absolute; top: -44px; right: 0;
   background: none; border: none; cursor: pointer;
-  color: #fff; font-size: 28px; line-height: 1; font-family: sans-serif;
+  color: #fff; font-size: 28px; line-height: 1;
+  font-family: sans-serif;
 }
 .ohh-lightbox-close:hover { color: var(--gold); }
 .ohh-hero-content {
@@ -354,6 +402,7 @@
 
 <section class="ohh-hero" id="hero">
   <div class="ohh-hero-overlay"></div>
+
   <div class="ohh-hero-content">
     <div class="ohh-hero-eyebrow">
       <span class="ohh-hero-eyebrow-line"></span>
@@ -374,19 +423,23 @@
       </a>
     </div>
   </div>
+
   <div class="ohh-hero-scroll">
     <div class="ohh-hero-scroll-line"></div>
     Scroll
   </div>
 </section>
 
+<!-- Video Lightbox -->
 <div class="ohh-lightbox" id="ohhLightbox" onclick="if(event.target===this){this.classList.remove('open');document.getElementById('ohhLbIframe').src=document.getElementById('ohhLbIframe').src}">
   <div class="ohh-lightbox-inner">
     <button class="ohh-lightbox-close" onclick="document.getElementById('ohhLightbox').classList.remove('open');var f=document.getElementById('ohhLbIframe');f.src=f.src">&#x2715;</button>
-    <iframe id="ohhLbIframe" src="https://www.youtube.com/embed/2b2gJu-g3qE?rel=0&showinfo=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <iframe id="ohhLbIframe"
+      src="https://www.youtube.com/embed/2b2gJu-g3qE?rel=0&showinfo=0"
+      allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
   </div>
 </div>
-
 
 <!-- ══════════════════════════════════════════
      TRUST BAR
@@ -442,7 +495,6 @@
     </div>
   </div>
 </div>
-
 
 <!-- ══════════════════════════════════════════
      WHY OHH ITALY
@@ -565,7 +617,6 @@
   </div>
 </section>
 
-
 <!-- ══════════════════════════════════════════
      FEATURED EXPERIENCES
 ══════════════════════════════════════════ -->
@@ -663,7 +714,6 @@
 
   </div>
 </section>
-
 
 <!-- ══════════════════════════════════════════
      DESTINATIONS
@@ -765,7 +815,6 @@
   </div>
 </section>
 
-
 <!-- ══════════════════════════════════════════
      HOW IT WORKS
 ══════════════════════════════════════════ -->
@@ -839,7 +888,6 @@
     <a href="#contact" class="btn-primary">Begin My Italian Journey</a>
   </div>
 </section>
-
 
 <!-- ══════════════════════════════════════════
      TESTIMONIALS
@@ -970,9 +1018,10 @@
 })();
 </script>
 
-
 <!-- ══════════════════════════════════════════
-     CONTACT FORM
+     CONTACT — left side only
+     Il form WPForms va inserito nella sezione
+     Elementor creata DOPO questo widget HTML
 ══════════════════════════════════════════ -->
 <style>
 .ohh-contact {
@@ -987,85 +1036,46 @@
   top: 0; right: 0;
   width: 45%;
   height: 100%;
-  background-image: url('https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/8C5HB37.jpg');
+  background-image: url('https://images.unsplash.com/photo-1534445867742-43195f401b6c?w=1200&q=70');
   background-size: cover;
   background-position: center;
-  opacity: .18;
+  opacity: .12;
 }
 .ohh-contact-inner {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
+  max-width: 640px;
 }
-.ohh-contact-left {}
-.ohh-contact-left h2 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; color: #fff; line-height: 1.2; margin-bottom: 20px; }
+.ohh-contact-left h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
 .ohh-contact-left h2 em { font-style: italic; color: var(--gold); }
-.ohh-contact-left p { font-size: 15px; color: rgba(255,255,255,.6); line-height: 1.85; margin-bottom: 36px; font-weight: 300; }
+.ohh-contact-left p {
+  font-size: 15px;
+  color: rgba(255,255,255,.6);
+  line-height: 1.85;
+  margin-bottom: 36px;
+  font-weight: 300;
+  font-family: 'Inter', sans-serif;
+}
 .ohh-contact-info { display: flex; flex-direction: column; gap: 14px; }
-.ohh-contact-info-item { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,.65); font-size: 14px; }
+.ohh-contact-info-item {
+  display: flex; align-items: center; gap: 12px;
+  color: rgba(255,255,255,.65);
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+}
 .ohh-contact-info-item svg { width: 16px; height: 16px; fill: var(--gold); flex-shrink: 0; }
 
-/* Form */
-.ohh-form { display: flex; flex-direction: column; gap: 16px; }
-.ohh-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.ohh-form label { display: none; }
-.ohh-form input,
-.ohh-form select,
-.ohh-form textarea {
-  width: 100%;
-  padding: 15px 18px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.14);
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  outline: none;
-  transition: border-color .3s, background .3s;
-  -webkit-appearance: none;
-}
-.ohh-form input::placeholder,
-.ohh-form textarea::placeholder { color: rgba(255,255,255,.38); }
-.ohh-form select { color: rgba(255,255,255,.6); }
-.ohh-form select option { background: var(--dark); color: #fff; }
-.ohh-form input:focus,
-.ohh-form select:focus,
-.ohh-form textarea:focus {
-  border-color: var(--gold);
-  background: rgba(255,255,255,0.1);
-}
-.ohh-form textarea { resize: vertical; min-height: 110px; }
-.ohh-form-submit {
-  width: 100%;
-  padding: 16px;
-  background: var(--terracotta);
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border: 2px solid var(--terracotta);
-  cursor: pointer;
-  transition: background .3s, color .3s;
-}
-.ohh-form-submit:hover { background: transparent; color: var(--terracotta); }
-.ohh-form-note { font-size: 12px; color: rgba(255,255,255,.3); text-align: center; }
-
-@media (max-width: 860px) {
-  .ohh-contact-inner { grid-template-columns: 1fr; gap: 48px; }
-  .ohh-contact::before { width: 100%; opacity: .08; }
-  .ohh-contact { padding: 72px 5%; }
-}
-@media (max-width: 480px) { .ohh-form-row { grid-template-columns: 1fr; } }
+@media (max-width: 860px) { .ohh-contact { padding: 72px 5%; } }
 </style>
 
 <section class="ohh-contact" id="contact">
   <div class="ohh-contact-inner">
-
     <div class="ohh-contact-left">
       <span class="section-label section-label--light">Start Planning</span>
       <h2>Your Italy is<br>waiting to be <em>discovered.</em></h2>
@@ -1085,63 +1095,8 @@
         </div>
       </div>
     </div>
-
-    <form class="ohh-form" onsubmit="ohhFormSubmit(event)">
-      <div class="ohh-form-row">
-        <div>
-          <label for="ohh-name">Full Name</label>
-          <input type="text" id="ohh-name" name="name" placeholder="Your Full Name" required>
-        </div>
-        <div>
-          <label for="ohh-email">Email</label>
-          <input type="email" id="ohh-email" name="email" placeholder="Your Email Address" required>
-        </div>
-      </div>
-      <div class="ohh-form-row">
-        <div>
-          <label for="ohh-country">Country</label>
-          <input type="text" id="ohh-country" name="country" placeholder="Your Country">
-        </div>
-        <div>
-          <label for="ohh-dates">Travel Dates</label>
-          <input type="text" id="ohh-dates" name="dates" placeholder="Approx. Travel Dates">
-        </div>
-      </div>
-      <div>
-        <label for="ohh-type">Experience Type</label>
-        <select id="ohh-type" name="type">
-          <option value="" disabled selected>Type of Experience</option>
-          <option>La Dolce Vita — Classic Italy</option>
-          <option>The Great Beauty — Art &amp; Culture</option>
-          <option>Honeymoon &amp; Romance</option>
-          <option>Family Adventure</option>
-          <option>Food &amp; Wine Journey</option>
-          <option>Sicily Charter</option>
-          <option>Fully Custom — Surprise Me</option>
-        </select>
-      </div>
-      <div>
-        <label for="ohh-message">Message</label>
-        <textarea id="ohh-message" name="message" placeholder="Tell us your travel dreams, special requests, or any questions you have…"></textarea>
-      </div>
-      <button type="submit" class="ohh-form-submit">Send My Request — It's Free</button>
-      <p class="ohh-form-note">We respond within 24 hours. Your information is never shared.</p>
-    </form>
-
   </div>
 </section>
-
-<script>
-function ohhFormSubmit(e) {
-  e.preventDefault();
-  var btn = e.target.querySelector('.ohh-form-submit');
-  btn.textContent = '✓ Request Sent — We\'ll Be in Touch!';
-  btn.style.background = '#7A8C78';
-  btn.style.borderColor = '#7A8C78';
-  btn.disabled = true;
-}
-</script>
-
 
 <!-- ══════════════════════════════════════════
      FOOTER
@@ -1206,7 +1161,8 @@ function ohhFormSubmit(e) {
   <div class="ohh-footer-grid">
     <div class="ohh-footer-brand">
       <a href="#hero" class="ohh-footer-brand-logo">
-        <img src="https://ohhitaly.com/wp-content/uploads/2019/11/logo-ohh-italy-white-180x75.png" alt="OHH! Italy">
+        <img src="https://ohhitaly.com/wp-content/uploads/2019/11/logo-ohh-italy-white-180x75.png"
+             alt="OHH! Italy">
       </a>
       <p>Your personal Italian travel concierge. We craft bespoke luxury journeys for travelers who want to experience Italy the way it was meant to be — extraordinary, intimate, and unforgettable.</p>
       <div class="ohh-footer-social">
@@ -1254,6 +1210,5 @@ function ohhFormSubmit(e) {
     </nav>
   </div>
 </footer>
-
 </body>
 </html>
