@@ -278,7 +278,7 @@ body.elementor-page{padding-top:0!important;}
 </style>
 
 <!-- ══════════════════════════════════════════
-     HERO
+     HERO — video background
 ══════════════════════════════════════════ -->
 <style>
 .ohh-hero {
@@ -288,70 +288,41 @@ body.elementor-page{padding-top:0!important;}
   align-items: center;
   overflow: hidden;
   background: var(--dark);
-  background-image: url('https://images.unsplash.com/photo-1534445867742-43195f401b6c?w=1800&q=80');
-  background-size: cover;
-  background-position: center;
 }
+
+/* YouTube iframe scaled to cover full section */
+.ohh-hero-video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.ohh-hero-video-bg iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* 16:9 — whichever axis is smaller, scale up to cover */
+  width: 100vw;
+  height: 56.25vw;   /* 100vw / 16 * 9 */
+  min-height: 100vh;
+  min-width: 177.78vh; /* 100vh / 9 * 16 */
+  transform: translate(-50%, -50%);
+  border: none;
+}
+
 .ohh-hero-overlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(
     135deg,
-    rgba(12,10,8,0.78) 0%,
-    rgba(12,10,8,0.50) 60%,
-    rgba(12,10,8,0.65) 100%
+    rgba(12,10,8,0.72) 0%,
+    rgba(12,10,8,0.45) 60%,
+    rgba(12,10,8,0.60) 100%
   );
 }
-/* Video play button */
-.ohh-hero-play {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  color: rgba(255,255,255,0.75);
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: color .2s;
-  background: none;
-  border: none;
-  padding: 0;
-  text-decoration: none;
-}
-.ohh-hero-play:hover { color: #fff; }
-.ohh-hero-play-circle {
-  width: 52px; height: 52px;
-  border-radius: 50%;
-  border: 1.5px solid rgba(255,255,255,0.5);
-  display: flex; align-items: center; justify-content: center;
-  transition: background .3s, border-color .3s;
-  flex-shrink: 0;
-}
-.ohh-hero-play:hover .ohh-hero-play-circle {
-  background: var(--terracotta);
-  border-color: var(--terracotta);
-}
-.ohh-hero-play-circle svg { width: 18px; height: 18px; fill: #fff; margin-left: 3px; }
 
-/* Lightbox */
-.ohh-lightbox {
-  display: none;
-  position: fixed; inset: 0; z-index: 99999;
-  background: rgba(0,0,0,0.92);
-  align-items: center; justify-content: center;
-}
-.ohh-lightbox.open { display: flex; }
-.ohh-lightbox-inner { position: relative; width: 90vw; max-width: 960px; aspect-ratio: 16/9; }
-.ohh-lightbox-inner iframe { width: 100%; height: 100%; border: none; }
-.ohh-lightbox-close {
-  position: absolute; top: -44px; right: 0;
-  background: none; border: none; cursor: pointer;
-  color: #fff; font-size: 28px; line-height: 1;
-  font-family: sans-serif;
-}
-.ohh-lightbox-close:hover { color: var(--gold); }
 .ohh-hero-content {
   position: relative;
   z-index: 2;
@@ -381,8 +352,8 @@ body.elementor-page{padding-top:0!important;}
   font-size: clamp(3rem, 7vw, 6.5rem);
   font-weight: 300;
   color: #fff;
-  line-height: 1.05;
-  margin-bottom: 10px;
+  line-height: 0.92;
+  margin-bottom: 28px;
 }
 .ohh-hero h1 em {
   font-style: italic;
@@ -427,12 +398,23 @@ body.elementor-page{padding-top:0!important;}
 
 @media (max-width: 768px) {
   .ohh-hero-content { padding: 120px 5% 60px; }
-  .ohh-hero h1 { font-size: clamp(2.5rem, 10vw, 3.5rem); }
+  .ohh-hero h1 { font-size: clamp(2.5rem, 10vw, 3.5rem); line-height: 0.95; }
   .ohh-hero-scroll { display: none; }
 }
 </style>
 
 <section class="ohh-hero" id="hero">
+
+  <!-- YouTube video background -->
+  <div class="ohh-hero-video-bg">
+    <iframe
+      src="https://www.youtube.com/embed/OVGC9wDL_jc?autoplay=1&mute=1&loop=1&playlist=OVGC9wDL_jc&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&enablejsapi=1"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+      title="Italy background video">
+    </iframe>
+  </div>
+
   <div class="ohh-hero-overlay"></div>
 
   <div class="ohh-hero-content">
@@ -446,32 +428,14 @@ body.elementor-page{padding-top:0!important;}
       <a href="#contact" class="btn-primary">Start Planning My Trip</a>
       <a href="#experiences" class="btn-outline">Explore Experiences</a>
     </div>
-    <div style="margin-top:36px">
-      <a class="ohh-hero-play" onclick="document.getElementById('ohhLightbox').classList.add('open'); return false;" href="#">
-        <div class="ohh-hero-play-circle">
-          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-        </div>
-        Watch Our Story
-      </a>
-    </div>
   </div>
 
   <div class="ohh-hero-scroll">
     <div class="ohh-hero-scroll-line"></div>
     Scroll
   </div>
-</section>
 
-<!-- Video Lightbox -->
-<div class="ohh-lightbox" id="ohhLightbox" onclick="if(event.target===this){this.classList.remove('open');document.getElementById('ohhLbIframe').src=document.getElementById('ohhLbIframe').src}">
-  <div class="ohh-lightbox-inner">
-    <button class="ohh-lightbox-close" onclick="document.getElementById('ohhLightbox').classList.remove('open');var f=document.getElementById('ohhLbIframe');f.src=f.src">&#x2715;</button>
-    <iframe id="ohhLbIframe"
-      src="https://www.youtube.com/embed/2b2gJu-g3qE?rel=0&showinfo=0"
-      allow="autoplay; encrypted-media" allowfullscreen>
-    </iframe>
-  </div>
-</div>
+</section>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
