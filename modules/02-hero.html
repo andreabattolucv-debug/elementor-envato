@@ -27,12 +27,9 @@ body.elementor-page{padding-top:0!important;}
   align-items: center;
   overflow: hidden;
   background: var(--dark);
-  background-image: url('https://images.unsplash.com/photo-1534445867742-43195f401b6c?w=1800&q=80');
-  background-size: cover;
-  background-position: center;
 }
 
-/* YouTube iframe scaled to cover full section */
+/* Dailymotion iframe scaled to cover full section */
 .ohh-hero-video-bg {
   position: absolute;
   inset: 0;
@@ -44,11 +41,10 @@ body.elementor-page{padding-top:0!important;}
   position: absolute;
   top: 50%;
   left: 50%;
-  /* 16:9 — whichever axis is smaller, scale up to cover */
   width: 100vw;
-  height: 56.25vw;   /* 100vw / 16 * 9 */
+  height: 56.25vw;
   min-height: 100vh;
-  min-width: 177.78vh; /* 100vh / 9 * 16 */
+  min-width: 177.78vh;
   transform: translate(-50%, -50%);
   border: none;
 }
@@ -146,6 +142,16 @@ body.elementor-page{padding-top:0!important;}
 </style>
 
 <section class="ohh-hero" id="hero">
+
+  <!-- Dailymotion video background -->
+  <div class="ohh-hero-video-bg">
+    <iframe
+      src="https://www.dailymotion.com/embed/video/x97qjy2?autoplay=1&mute=1&loop=1&controls=0&ui-start-screen-info=0&ui-logo=0&endscreen-enable=0&sharing-enable=0&queue-enable=0&chromeless=1"
+      allow="autoplay"
+      allowfullscreen
+      title="Italy hero video">
+    </iframe>
+  </div>
 
   <div class="ohh-hero-overlay"></div>
 
