@@ -29,11 +29,8 @@ PREVIEW_WRAP_END = """
 """
 
 def build():
-    # Get all module files sorted by name (skip 00-globals, merged into 01-header)
-    module_files = sorted(
-        f for f in glob.glob(os.path.join(MODULES_DIR, '*.html'))
-        if os.path.basename(f) != '00-globals.html'
-    )
+    # Get all module files sorted by name
+    module_files = sorted(glob.glob(os.path.join(MODULES_DIR, '*.html')))
 
     if not module_files:
         print("❌ No module files found in /modules/")
