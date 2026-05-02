@@ -1019,7 +1019,9 @@
 
 
 <!-- ══════════════════════════════════════════
-     CONTACT FORM
+     CONTACT — left side only
+     Il form WPForms va inserito nella sezione
+     Elementor creata DOPO questo widget HTML
 ══════════════════════════════════════════ -->
 <style>
 .ohh-contact {
@@ -1034,85 +1036,46 @@
   top: 0; right: 0;
   width: 45%;
   height: 100%;
-  background-image: url('https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/8C5HB37.jpg');
+  background-image: url('https://images.unsplash.com/photo-1534445867742-43195f401b6c?w=1200&q=70');
   background-size: cover;
   background-position: center;
-  opacity: .18;
+  opacity: .12;
 }
 .ohh-contact-inner {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
+  max-width: 640px;
 }
-.ohh-contact-left {}
-.ohh-contact-left h2 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; color: #fff; line-height: 1.2; margin-bottom: 20px; }
+.ohh-contact-left h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
 .ohh-contact-left h2 em { font-style: italic; color: var(--gold); }
-.ohh-contact-left p { font-size: 15px; color: rgba(255,255,255,.6); line-height: 1.85; margin-bottom: 36px; font-weight: 300; }
+.ohh-contact-left p {
+  font-size: 15px;
+  color: rgba(255,255,255,.6);
+  line-height: 1.85;
+  margin-bottom: 36px;
+  font-weight: 300;
+  font-family: 'Inter', sans-serif;
+}
 .ohh-contact-info { display: flex; flex-direction: column; gap: 14px; }
-.ohh-contact-info-item { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,.65); font-size: 14px; }
+.ohh-contact-info-item {
+  display: flex; align-items: center; gap: 12px;
+  color: rgba(255,255,255,.65);
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+}
 .ohh-contact-info-item svg { width: 16px; height: 16px; fill: var(--gold); flex-shrink: 0; }
 
-/* Form */
-.ohh-form { display: flex; flex-direction: column; gap: 16px; }
-.ohh-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.ohh-form label { display: none; }
-.ohh-form input,
-.ohh-form select,
-.ohh-form textarea {
-  width: 100%;
-  padding: 15px 18px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.14);
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  outline: none;
-  transition: border-color .3s, background .3s;
-  -webkit-appearance: none;
-}
-.ohh-form input::placeholder,
-.ohh-form textarea::placeholder { color: rgba(255,255,255,.38); }
-.ohh-form select { color: rgba(255,255,255,.6); }
-.ohh-form select option { background: var(--dark); color: #fff; }
-.ohh-form input:focus,
-.ohh-form select:focus,
-.ohh-form textarea:focus {
-  border-color: var(--gold);
-  background: rgba(255,255,255,0.1);
-}
-.ohh-form textarea { resize: vertical; min-height: 110px; }
-.ohh-form-submit {
-  width: 100%;
-  padding: 16px;
-  background: var(--terracotta);
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border: 2px solid var(--terracotta);
-  cursor: pointer;
-  transition: background .3s, color .3s;
-}
-.ohh-form-submit:hover { background: transparent; color: var(--terracotta); }
-.ohh-form-note { font-size: 12px; color: rgba(255,255,255,.3); text-align: center; }
-
-@media (max-width: 860px) {
-  .ohh-contact-inner { grid-template-columns: 1fr; gap: 48px; }
-  .ohh-contact::before { width: 100%; opacity: .08; }
-  .ohh-contact { padding: 72px 5%; }
-}
-@media (max-width: 480px) { .ohh-form-row { grid-template-columns: 1fr; } }
+@media (max-width: 860px) { .ohh-contact { padding: 72px 5%; } }
 </style>
 
 <section class="ohh-contact" id="contact">
   <div class="ohh-contact-inner">
-
     <div class="ohh-contact-left">
       <span class="section-label section-label--light">Start Planning</span>
       <h2>Your Italy is<br>waiting to be <em>discovered.</em></h2>
@@ -1132,62 +1095,8 @@
         </div>
       </div>
     </div>
-
-    <form class="ohh-form" onsubmit="ohhFormSubmit(event)">
-      <div class="ohh-form-row">
-        <div>
-          <label for="ohh-name">Full Name</label>
-          <input type="text" id="ohh-name" name="name" placeholder="Your Full Name" required>
-        </div>
-        <div>
-          <label for="ohh-email">Email</label>
-          <input type="email" id="ohh-email" name="email" placeholder="Your Email Address" required>
-        </div>
-      </div>
-      <div class="ohh-form-row">
-        <div>
-          <label for="ohh-country">Country</label>
-          <input type="text" id="ohh-country" name="country" placeholder="Your Country">
-        </div>
-        <div>
-          <label for="ohh-dates">Travel Dates</label>
-          <input type="text" id="ohh-dates" name="dates" placeholder="Approx. Travel Dates">
-        </div>
-      </div>
-      <div>
-        <label for="ohh-type">Experience Type</label>
-        <select id="ohh-type" name="type">
-          <option value="" disabled selected>Type of Experience</option>
-          <option>La Dolce Vita — Classic Italy</option>
-          <option>The Great Beauty — Art &amp; Culture</option>
-          <option>Honeymoon &amp; Romance</option>
-          <option>Family Adventure</option>
-          <option>Food &amp; Wine Journey</option>
-          <option>Sicily Charter</option>
-          <option>Fully Custom — Surprise Me</option>
-        </select>
-      </div>
-      <div>
-        <label for="ohh-message">Message</label>
-        <textarea id="ohh-message" name="message" placeholder="Tell us your travel dreams, special requests, or any questions you have…"></textarea>
-      </div>
-      <button type="submit" class="ohh-form-submit">Send My Request — It's Free</button>
-      <p class="ohh-form-note">We respond within 24 hours. Your information is never shared.</p>
-    </form>
-
   </div>
 </section>
-
-<script>
-function ohhFormSubmit(e) {
-  e.preventDefault();
-  var btn = e.target.querySelector('.ohh-form-submit');
-  btn.textContent = '✓ Request Sent — We\'ll Be in Touch!';
-  btn.style.background = '#7A8C78';
-  btn.style.borderColor = '#7A8C78';
-  btn.disabled = true;
-}
-</script>
 
 
 <!-- ══════════════════════════════════════════
