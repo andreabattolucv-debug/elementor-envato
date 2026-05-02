@@ -1,0 +1,1188 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  img { max-width: 100%; display: block; }
+  a { text-decoration: none; }
+  ul { list-style: none; }
+  :root {
+    --dark:       #12100E;
+    --cream:      #FAF7F2;
+    --terracotta: #C4622D;
+    --gold:       #C9A257;
+    --sage:       #7A8C78;
+    --white:      #FFFFFF;
+    --text:       #2C2825;
+    --text-muted: #7A7067;
+    --border:     rgba(44,40,37,0.12);
+  }
+  .section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--terracotta);
+    margin-bottom: 14px; display: block;
+  }
+  .section-label--light { color: var(--gold); }
+  h1,h2,h3,h4 { font-family: 'Cormorant Garamond', serif; }
+  .btn-primary {
+    display: inline-block; padding: 14px 36px;
+    background: var(--terracotta); color: #fff;
+    font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    border: 2px solid var(--terracotta); transition: background .3s, color .3s; cursor: pointer;
+  }
+  .btn-primary:hover { background: transparent; color: var(--terracotta); }
+  .btn-outline {
+    display: inline-block; padding: 13px 34px; background: transparent;
+    color: var(--white); font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    border: 2px solid rgba(255,255,255,0.55); transition: border-color .3s, background .3s;
+  }
+  .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+</style>
+
+<!-- ══════════════════════════════════════════
+     HEADER
+══════════════════════════════════════════ -->
+<style>
+.ohh-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 9999;
+  transition: background .4s, box-shadow .4s;
+  padding: 0 5%;
+}
+.ohh-header.scrolled {
+  background: var(--dark);
+  box-shadow: 0 2px 24px rgba(0,0,0,0.28);
+}
+.ohh-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+.ohh-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+.ohh-logo span { color: var(--terracotta); }
+
+.ohh-nav {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+.ohh-nav a {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.82);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color .2s;
+  white-space: nowrap;
+}
+.ohh-nav a:hover { color: var(--gold); }
+
+.ohh-header-cta {
+  display: inline-block;
+  padding: 10px 26px;
+  background: var(--terracotta);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 2px solid var(--terracotta);
+  transition: background .3s, color .3s;
+  white-space: nowrap;
+}
+.ohh-header-cta:hover { background: transparent; color: var(--terracotta); }
+
+.ohh-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.ohh-hamburger span { display: block; width: 24px; height: 2px; background: #fff; transition: all .3s; }
+
+@media (max-width: 900px) {
+  .ohh-hamburger { display: flex; }
+  .ohh-nav {
+    display: none;
+    position: absolute;
+    top: 80px; left: 0; right: 0;
+    background: var(--dark);
+    flex-direction: column;
+    gap: 0;
+    padding: 12px 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .ohh-nav.open { display: flex; }
+  .ohh-nav li { width: 100%; }
+  .ohh-nav a { display: block; padding: 13px 5%; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .ohh-header-cta { display: none; }
+  .ohh-navbar { position: relative; }
+}
+</style>
+
+<header class="ohh-header" id="ohhHeader">
+  <nav class="ohh-navbar">
+    <a href="#hero" class="ohh-logo">OHH<span>!</span> Italy</a>
+
+    <ul class="ohh-nav" id="ohhNav">
+      <li><a href="#experiences">Experiences</a></li>
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#why-us">About Us</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a href="#contact" class="ohh-header-cta">Plan My Trip</a>
+
+    <button class="ohh-hamburger" id="ohhBurger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<script>
+(function(){
+  var h = document.getElementById('ohhHeader');
+  window.addEventListener('scroll', function(){
+    h.classList.toggle('scrolled', window.scrollY > 60);
+  });
+  var btn = document.getElementById('ohhBurger');
+  var nav = document.getElementById('ohhNav');
+  btn.addEventListener('click', function(){ nav.classList.toggle('open'); });
+  // close on link click
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ nav.classList.remove('open'); });
+  });
+})();
+</script>
+
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<style>
+.ohh-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--dark);
+}
+.ohh-hero-video-wrap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.ohh-hero-video-wrap iframe {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(1.3);
+  width: 100vw;
+  height: 56.25vw;
+  min-height: 100vh;
+  min-width: 177.78vh;
+  border: none;
+}
+.ohh-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(12,10,8,0.72) 0%,
+    rgba(12,10,8,0.45) 60%,
+    rgba(12,10,8,0.6) 100%
+  );
+}
+.ohh-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 120px 5% 80px;
+  max-width: 780px;
+}
+.ohh-hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.ohh-hero-eyebrow-line {
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+}
+.ohh-hero-eyebrow span {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.ohh-hero h1 {
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.05;
+  margin-bottom: 10px;
+}
+.ohh-hero h1 em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold);
+}
+.ohh-hero-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.8;
+  max-width: 520px;
+  margin-bottom: 44px;
+}
+.ohh-hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.ohh-hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 5%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255,255,255,0.5);
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.ohh-hero-scroll-line {
+  width: 1px;
+  height: 48px;
+  background: rgba(255,255,255,0.3);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse { 0%,100%{opacity:.3} 50%{opacity:1} }
+
+@media (max-width: 768px) {
+  .ohh-hero-content { padding: 120px 5% 60px; }
+  .ohh-hero h1 { font-size: clamp(2.5rem, 10vw, 3.5rem); }
+  .ohh-hero-scroll { display: none; }
+}
+</style>
+
+<section class="ohh-hero" id="hero">
+  <div class="ohh-hero-video-wrap">
+    <iframe
+      src="https://www.youtube.com/embed/2b2gJu-g3qE?autoplay=1&mute=1&loop=1&playlist=2b2gJu-g3qE&controls=0&showinfo=0&rel=0&disablekb=1&iv_load_policy=3"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+      title="Italy — OHH! Italy">
+    </iframe>
+  </div>
+  <div class="ohh-hero-overlay"></div>
+
+  <div class="ohh-hero-content">
+    <div class="ohh-hero-eyebrow">
+      <span class="ohh-hero-eyebrow-line"></span>
+      <span>Luxury Italian Travel Concierge</span>
+    </div>
+    <h1>Italy,<br><em>beyond the<br>ordinary.</em></h1>
+    <p class="ohh-hero-sub">Stop touring Italy. Start living it. We craft deeply personal journeys — from secret hilltop villas in Tuscany to private dining with Michelin-starred chefs — for travelers who expect more than a guidebook.</p>
+    <div class="ohh-hero-actions">
+      <a href="#contact" class="btn-primary">Start Planning My Trip</a>
+      <a href="#experiences" class="btn-outline">Explore Experiences</a>
+    </div>
+  </div>
+
+  <div class="ohh-hero-scroll">
+    <div class="ohh-hero-scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     TRUST BAR
+══════════════════════════════════════════ -->
+<style>
+.ohh-trust {
+  background: var(--dark);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 28px 5%;
+}
+.ohh-trust-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.ohh-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,0.55);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.ohh-trust-item svg { width: 18px; height: 18px; fill: var(--gold); flex-shrink: 0; }
+.ohh-trust-divider { width: 1px; height: 28px; background: rgba(255,255,255,0.1); }
+
+@media (max-width: 640px) { .ohh-trust-divider { display: none; } .ohh-trust-item { font-size: 12px; } }
+</style>
+
+<div class="ohh-trust">
+  <div class="ohh-trust-inner">
+    <div class="ohh-trust-item">
+      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      500+ Bespoke Itineraries
+    </div>
+    <div class="ohh-trust-divider"></div>
+    <div class="ohh-trust-item">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+      20 Regions Covered Across Italy
+    </div>
+    <div class="ohh-trust-divider"></div>
+    <div class="ohh-trust-item">
+      <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+      Dedicated Local Experts
+    </div>
+    <div class="ohh-trust-divider"></div>
+    <div class="ohh-trust-item">
+      <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+      100% Tailor-Made — No Group Tours
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     WHY OHH ITALY
+══════════════════════════════════════════ -->
+<style>
+.ohh-why {
+  padding: 112px 5%;
+  background: var(--cream);
+}
+.ohh-why-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.ohh-why-left {}
+.ohh-why-left h2 {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+.ohh-why-left h2 em { font-style: italic; color: var(--terracotta); }
+.ohh-why-left p {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-bottom: 36px;
+  font-weight: 300;
+}
+.ohh-why-signature {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+.ohh-why-signature img { height: 52px; width: auto; object-fit: contain; opacity: .8; }
+.ohh-why-signature-info strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--text); }
+.ohh-why-signature-info span { font-size: 12px; color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase; }
+
+.ohh-why-right {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.ohh-why-card {
+  display: flex;
+  gap: 22px;
+  padding: 28px;
+  background: #fff;
+  border: 1px solid var(--border);
+  transition: border-color .3s, box-shadow .3s;
+}
+.ohh-why-card:hover { border-color: var(--terracotta); box-shadow: 0 8px 32px rgba(196,98,45,0.1); }
+.ohh-why-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(196,98,45,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--terracotta);
+}
+.ohh-why-icon svg { width: 22px; height: 22px; fill: var(--terracotta); }
+.ohh-why-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--text); margin-bottom: 6px; }
+.ohh-why-card p { font-size: 14px; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
+
+@media (max-width: 860px) { .ohh-why-inner { grid-template-columns: 1fr; gap: 48px; } .ohh-why { padding: 72px 5%; } }
+</style>
+
+<section class="ohh-why" id="why-us">
+  <div class="ohh-why-inner">
+    <div class="ohh-why-left">
+      <span class="section-label">Why OHH! Italy</span>
+      <h2>We don't plan trips.<br>We craft <em>unforgettable</em><br>memories.</h2>
+      <p>Italy is not a destination — it's a feeling. The scent of fresh espresso in a Florentine piazza. The silence of a private chapel in Umbria. A table set just for you on a cliff above the Amalfi coast. We know where to find these moments, and how to make them yours.</p>
+      <a href="#contact" class="btn-primary">Tell Us Your Dream Trip</a>
+      <div class="ohh-why-signature" style="margin-top:32px">
+        <img src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/Signature1.png" alt="Founder signature">
+        <div class="ohh-why-signature-info">
+          <strong>The OHH! Italy Team</strong>
+          <span>Your Italian Insiders</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ohh-why-right">
+      <div class="ohh-why-card">
+        <div class="ohh-why-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+        </div>
+        <div>
+          <h4>100% Private & Exclusive</h4>
+          <p>Every journey is yours alone. No group tours, no shared buses. Your itinerary, your pace, your Italy.</p>
+        </div>
+      </div>
+      <div class="ohh-why-card">
+        <div class="ohh-why-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+        </div>
+        <div>
+          <h4>Hidden Italy, Revealed</h4>
+          <p>Beyond the tourist trail. We take you to secret villages, family-run estates, and experiences money alone can't book.</p>
+        </div>
+      </div>
+      <div class="ohh-why-card">
+        <div class="ohh-why-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.35C18 2.54 15.96.5 13.65.5c-1.3 0-2.51.6-3.31 1.48L12 4l1.66-2.02c.46-.59 1.15-.98 1.99-.98 1.38 0 2.35 1.08 2.35 2.15 0 1.56-1.18 2.85-2.35 2.85H2v2h3.27L8 16h12l2-10h-2z"/></svg>
+        </div>
+        <div>
+          <h4>Luxury Seamlessly Arranged</h4>
+          <p>From the finest hotels to private transfers, Michelin-starred tables to exclusive museum access — all effortlessly handled.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     FEATURED EXPERIENCES
+══════════════════════════════════════════ -->
+<style>
+.ohh-exp {
+  padding: 112px 5%;
+  background: #fff;
+}
+.ohh-exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 56px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.ohh-exp-header h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: var(--text); line-height: 1.2; }
+.ohh-exp-header h2 em { font-style: italic; color: var(--terracotta); }
+
+.ohh-exp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+.ohh-exp-card { position: relative; overflow: hidden; background: var(--dark); }
+.ohh-exp-card-img {
+  width: 100%; aspect-ratio: 3/4; object-fit: cover;
+  transition: transform .6s ease, opacity .4s;
+  opacity: .85;
+}
+.ohh-exp-card:hover .ohh-exp-card-img { transform: scale(1.06); opacity: 1; }
+
+.ohh-exp-card-body {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 32px 28px;
+  background: linear-gradient(to top, rgba(12,10,8,.85) 0%, rgba(12,10,8,0) 55%);
+}
+.ohh-exp-tag {
+  display: inline-block; background: var(--terracotta); color: #fff;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 4px 10px; margin-bottom: 12px; align-self: flex-start;
+}
+.ohh-exp-card h3 { font-size: 1.5rem; font-weight: 400; color: #fff; margin-bottom: 8px; line-height: 1.2; }
+.ohh-exp-card p { font-size: 13px; color: rgba(255,255,255,.72); line-height: 1.6; margin-bottom: 20px; font-weight: 300; }
+.ohh-exp-card-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--gold); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  transition: gap .2s;
+}
+.ohh-exp-card-link:hover { gap: 14px; }
+.ohh-exp-card-link svg { width: 14px; height: 14px; stroke: var(--gold); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+@media (max-width: 900px) { .ohh-exp-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .ohh-exp-grid { grid-template-columns: 1fr; } .ohh-exp { padding: 72px 5%; } }
+</style>
+
+<section class="ohh-exp" id="experiences">
+  <div class="ohh-exp-header">
+    <div>
+      <span class="section-label">Curated Experiences</span>
+      <h2>The journeys<br>our guests <em>never forget.</em></h2>
+    </div>
+    <a href="#contact" class="btn-outline--dark btn-outline" style="color:var(--text);border-color:var(--border);">See All Experiences</a>
+  </div>
+
+  <div class="ohh-exp-grid">
+
+    <div class="ohh-exp-card">
+      <img class="ohh-exp-card-img" src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/N939E9E.jpg" alt="La Dolce Vita">
+      <div class="ohh-exp-card-body">
+        <span class="ohh-exp-tag">Most Popular</span>
+        <h3>La Dolce Vita</h3>
+        <p>Rome, Florence &amp; the Amalfi Coast — a timeless journey through Italy's most iconic landscapes and flavors.</p>
+        <a href="#contact" class="ohh-exp-card-link">Enquire Now <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+
+    <div class="ohh-exp-card">
+      <img class="ohh-exp-card-img" src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/Q2WYWXG-e1711221458211.jpg" alt="The Great Beauty">
+      <div class="ohh-exp-card-body">
+        <span class="ohh-exp-tag">Art & Culture</span>
+        <h3>The Great Beauty</h3>
+        <p>Private after-hours museum access, Renaissance masterpieces, and authentic encounters with Italian artists and artisans.</p>
+        <a href="#contact" class="ohh-exp-card-link">Enquire Now <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+
+    <div class="ohh-exp-card">
+      <img class="ohh-exp-card-img" src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/B7XZECA.jpg" alt="Honeymoon in Tuscany">
+      <div class="ohh-exp-card-body">
+        <span class="ohh-exp-tag">Romance</span>
+        <h3>Honeymoon in Tuscany</h3>
+        <p>A private villa among the vineyards, candlelit dinners under Tuscan stars, and wine tastings reserved just for two.</p>
+        <a href="#contact" class="ohh-exp-card-link">Enquire Now <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     DESTINATIONS
+══════════════════════════════════════════ -->
+<style>
+.ohh-dest {
+  padding: 112px 5%;
+  background: var(--cream);
+}
+.ohh-dest-header { text-align: center; margin-bottom: 56px; }
+.ohh-dest-header h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: var(--text); }
+.ohh-dest-header h2 em { font-style: italic; color: var(--terracotta); }
+.ohh-dest-header p { font-size: 15px; color: var(--text-muted); max-width: 520px; margin: 16px auto 0; line-height: 1.8; font-weight: 300; }
+
+.ohh-dest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 16px;
+}
+.ohh-dest-card { position: relative; overflow: hidden; }
+.ohh-dest-card--large { grid-column: span 2; }
+.ohh-dest-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; display: block; }
+.ohh-dest-card--large img { min-height: 320px; }
+.ohh-dest-card:not(.ohh-dest-card--large) img { min-height: 220px; }
+.ohh-dest-card:hover img { transform: scale(1.05); }
+.ohh-dest-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(12,10,8,.75) 0%, transparent 50%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 24px;
+  transition: background .3s;
+}
+.ohh-dest-card:hover .ohh-dest-overlay { background: linear-gradient(to top, rgba(12,10,8,.85) 0%, rgba(12,10,8,.1) 60%); }
+.ohh-dest-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: #fff; margin-bottom: 4px; }
+.ohh-dest-card--large .ohh-dest-name { font-size: 2.2rem; }
+.ohh-dest-region { font-size: 11px; color: var(--gold); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+.ohh-dest-link { position: absolute; inset: 0; z-index: 2; }
+
+@media (max-width: 768px) {
+  .ohh-dest-grid { grid-template-columns: 1fr 1fr; }
+  .ohh-dest-card--large { grid-column: span 2; }
+  .ohh-dest { padding: 72px 5%; }
+}
+@media (max-width: 480px) {
+  .ohh-dest-grid { grid-template-columns: 1fr; }
+  .ohh-dest-card--large { grid-column: span 1; }
+}
+</style>
+
+<section class="ohh-dest" id="destinations">
+  <div class="ohh-dest-header">
+    <span class="section-label">Where We Take You</span>
+    <h2>Italy's most <em>breathtaking</em><br>destinations.</h2>
+    <p>From the dramatic cliffs of Sicily to the rolling hills of Tuscany — we know every corner of this extraordinary country.</p>
+  </div>
+
+  <div class="ohh-dest-grid">
+    <div class="ohh-dest-card ohh-dest-card--large">
+      <img src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/8C5HB37.jpg" alt="Tuscany">
+      <div class="ohh-dest-overlay">
+        <span class="ohh-dest-region">Central Italy</span>
+        <h3 class="ohh-dest-name">Tuscany</h3>
+      </div>
+      <a href="#contact" class="ohh-dest-link" aria-label="Tuscany"></a>
+    </div>
+    <div class="ohh-dest-card">
+      <img src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/N939E9E.jpg" alt="Sicily">
+      <div class="ohh-dest-overlay">
+        <span class="ohh-dest-region">Southern Italy</span>
+        <h3 class="ohh-dest-name">Sicily</h3>
+      </div>
+      <a href="#contact" class="ohh-dest-link" aria-label="Sicily"></a>
+    </div>
+    <div class="ohh-dest-card">
+      <img src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/Q2WYWXG-e1711221458211.jpg" alt="Amalfi Coast">
+      <div class="ohh-dest-overlay">
+        <span class="ohh-dest-region">Campania</span>
+        <h3 class="ohh-dest-name">Amalfi Coast</h3>
+      </div>
+      <a href="#contact" class="ohh-dest-link" aria-label="Amalfi Coast"></a>
+    </div>
+    <div class="ohh-dest-card">
+      <img src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/B7XZECA.jpg" alt="Venice">
+      <div class="ohh-dest-overlay">
+        <span class="ohh-dest-region">Veneto</span>
+        <h3 class="ohh-dest-name">Venice</h3>
+      </div>
+      <a href="#contact" class="ohh-dest-link" aria-label="Venice"></a>
+    </div>
+    <div class="ohh-dest-card ohh-dest-card--large">
+      <img src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/EQ5HBBM.jpg" alt="Rome">
+      <div class="ohh-dest-overlay">
+        <span class="ohh-dest-region">Lazio</span>
+        <h3 class="ohh-dest-name">Rome</h3>
+      </div>
+      <a href="#contact" class="ohh-dest-link" aria-label="Rome"></a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     HOW IT WORKS
+══════════════════════════════════════════ -->
+<style>
+.ohh-how {
+  padding: 112px 5%;
+  background: var(--dark);
+  position: relative;
+  overflow: hidden;
+}
+.ohh-how::before {
+  content: 'ITALIA';
+  position: absolute;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20vw;
+  font-weight: 700;
+  color: rgba(255,255,255,0.03);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.ohh-how-header { text-align: center; margin-bottom: 72px; }
+.ohh-how-header h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: #fff; }
+.ohh-how-header h2 em { font-style: italic; color: var(--gold); }
+.ohh-how-header p { font-size: 15px; color: rgba(255,255,255,.55); max-width: 480px; margin: 14px auto 0; line-height: 1.8; font-weight: 300; }
+
+.ohh-how-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; position: relative; z-index: 1; }
+.ohh-how-step { text-align: center; }
+.ohh-how-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5rem;
+  font-weight: 300;
+  color: rgba(201,162,87,0.2);
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.ohh-how-step h4 { font-size: 1.25rem; color: #fff; font-weight: 400; margin-bottom: 12px; }
+.ohh-how-step p { font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.8; font-weight: 300; }
+.ohh-how-cta { text-align: center; margin-top: 64px; position: relative; z-index: 1; }
+
+@media (max-width: 768px) { .ohh-how-steps { grid-template-columns: 1fr; gap: 36px; } .ohh-how { padding: 72px 5%; } }
+</style>
+
+<section class="ohh-how">
+  <div class="ohh-how-header">
+    <span class="section-label section-label--light">The Process</span>
+    <h2>Your dream trip,<br><em>three simple steps.</em></h2>
+    <p>From your first message to your last sunset in Italy, we handle every detail so you can simply enjoy.</p>
+  </div>
+
+  <div class="ohh-how-steps">
+    <div class="ohh-how-step">
+      <div class="ohh-how-num">01</div>
+      <h4>Tell Us Your Vision</h4>
+      <p>Share your travel dreams, dates, interests, and budget. The more you tell us, the better we can craft your perfect journey.</p>
+    </div>
+    <div class="ohh-how-step">
+      <div class="ohh-how-num">02</div>
+      <h4>We Design Your Itinerary</h4>
+      <p>Your dedicated Italian expert crafts a bespoke proposal — unique experiences, handpicked hotels, private guides — all curated for you.</p>
+    </div>
+    <div class="ohh-how-step">
+      <div class="ohh-how-num">03</div>
+      <h4>Live Your Italian Story</h4>
+      <p>Arrive in Italy and let the magic unfold. Every detail is handled, every moment is yours. All you have to do is say OHH!</p>
+    </div>
+  </div>
+
+  <div class="ohh-how-cta">
+    <a href="#contact" class="btn-primary">Begin My Italian Journey</a>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════════ -->
+<style>
+.ohh-testi { padding: 112px 5%; background: var(--cream); }
+.ohh-testi-header { text-align: center; margin-bottom: 64px; }
+.ohh-testi-header h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: var(--text); }
+.ohh-testi-header h2 em { font-style: italic; color: var(--terracotta); }
+
+.ohh-testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.ohh-testi-card {
+  background: #fff;
+  padding: 36px 32px;
+  border: 1px solid var(--border);
+  position: relative;
+  transition: box-shadow .3s, border-color .3s;
+}
+.ohh-testi-card:hover { box-shadow: 0 12px 48px rgba(0,0,0,0.08); border-color: var(--terracotta); }
+.ohh-testi-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+  color: var(--terracotta);
+  line-height: 1;
+  margin-bottom: -10px;
+  opacity: .4;
+}
+.ohh-testi-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+.ohh-testi-stars { color: var(--gold); font-size: 16px; margin-bottom: 16px; }
+.ohh-testi-author strong { display: block; font-size: 14px; font-weight: 600; color: var(--text); }
+.ohh-testi-author span { font-size: 12px; color: var(--text-muted); letter-spacing: 0.05em; }
+
+.ohh-testi-bar {
+  display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap;
+  padding: 40px 0 0;
+  margin-top: 56px;
+  border-top: 1px solid var(--border);
+}
+.ohh-testi-stat { text-align: center; }
+.ohh-testi-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: var(--terracotta); line-height: 1; }
+.ohh-testi-stat-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+@media (max-width: 900px) { .ohh-testi-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .ohh-testi-grid { grid-template-columns: 1fr; } .ohh-testi { padding: 72px 5%; } }
+</style>
+
+<section class="ohh-testi" id="testimonials">
+  <div class="ohh-testi-header">
+    <span class="section-label">Guest Stories</span>
+    <h2>What travelers say<br>about their <em>Italian experience.</em></h2>
+  </div>
+
+  <div class="ohh-testi-grid">
+    <div class="ohh-testi-card">
+      <div class="ohh-testi-quote">"</div>
+      <p class="ohh-testi-text">OHH! Italy didn't just plan our honeymoon — they gave us the most magical two weeks of our lives. The private villa in Chianti, the cooking class with a local nonna, the sunset boat in Positano. Absolutely flawless.</p>
+      <div class="ohh-testi-stars">★★★★★</div>
+      <div class="ohh-testi-author">
+        <strong>James &amp; Clara W.</strong>
+        <span>New York, USA — Honeymoon in Tuscany</span>
+      </div>
+    </div>
+    <div class="ohh-testi-card">
+      <div class="ohh-testi-quote">"</div>
+      <p class="ohh-testi-text">I've traveled all over the world, but Italy with OHH! was different. They took us to places I didn't even know existed — a 14th-century library in Rome, a truffle hunt in Umbria. Truly remarkable.</p>
+      <div class="ohh-testi-stars">★★★★★</div>
+      <div class="ohh-testi-author">
+        <strong>Margaret L.</strong>
+        <span>London, UK — The Great Beauty Tour</span>
+      </div>
+    </div>
+    <div class="ohh-testi-card">
+      <div class="ohh-testi-quote">"</div>
+      <p class="ohh-testi-text">From the moment we arrived to the last espresso at the airport, everything was perfect. Our guide felt like a friend, not a service. We're already planning our return trip with them.</p>
+      <div class="ohh-testi-stars">★★★★★</div>
+      <div class="ohh-testi-author">
+        <strong>The Nakamura Family</strong>
+        <span>Tokyo, Japan — La Dolce Vita</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ohh-testi-bar">
+    <div class="ohh-testi-stat">
+      <div class="ohh-testi-stat-num" data-target="500">0</div>
+      <div class="ohh-testi-stat-label">Journeys Crafted</div>
+    </div>
+    <div class="ohh-testi-stat">
+      <div class="ohh-testi-stat-num">5.0</div>
+      <div class="ohh-testi-stat-label">Average Review Score</div>
+    </div>
+    <div class="ohh-testi-stat">
+      <div class="ohh-testi-stat-num" data-target="94">0</div>
+      <div class="ohh-testi-stat-label">% Guests Return</div>
+    </div>
+    <div class="ohh-testi-stat">
+      <div class="ohh-testi-stat-num" data-target="20">0</div>
+      <div class="ohh-testi-stat-label">Italian Regions Covered</div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.ohh-testi-stat-num[data-target]');
+  var seen = new Set();
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting || seen.has(e.target)) return;
+      seen.add(e.target);
+      var el = e.target, target = parseInt(el.getAttribute('data-target')), n = 0;
+      var t = setInterval(function(){
+        n = Math.min(n + Math.max(1, Math.ceil(target/60)), target);
+        el.textContent = n + (target >= 94 ? '%' : '+');
+        if (n >= target) clearInterval(t);
+      }, 22);
+    });
+  }, { threshold: 0.5 });
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+
+
+<!-- ══════════════════════════════════════════
+     CONTACT FORM
+══════════════════════════════════════════ -->
+<style>
+.ohh-contact {
+  padding: 112px 5%;
+  background: var(--dark);
+  position: relative;
+  overflow: hidden;
+}
+.ohh-contact::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 45%;
+  height: 100%;
+  background-image: url('https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/8C5HB37.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: .18;
+}
+.ohh-contact-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.ohh-contact-left {}
+.ohh-contact-left h2 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; color: #fff; line-height: 1.2; margin-bottom: 20px; }
+.ohh-contact-left h2 em { font-style: italic; color: var(--gold); }
+.ohh-contact-left p { font-size: 15px; color: rgba(255,255,255,.6); line-height: 1.85; margin-bottom: 36px; font-weight: 300; }
+.ohh-contact-info { display: flex; flex-direction: column; gap: 14px; }
+.ohh-contact-info-item { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,.65); font-size: 14px; }
+.ohh-contact-info-item svg { width: 16px; height: 16px; fill: var(--gold); flex-shrink: 0; }
+
+/* Form */
+.ohh-form { display: flex; flex-direction: column; gap: 16px; }
+.ohh-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.ohh-form label { display: none; }
+.ohh-form input,
+.ohh-form select,
+.ohh-form textarea {
+  width: 100%;
+  padding: 15px 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  outline: none;
+  transition: border-color .3s, background .3s;
+  -webkit-appearance: none;
+}
+.ohh-form input::placeholder,
+.ohh-form textarea::placeholder { color: rgba(255,255,255,.38); }
+.ohh-form select { color: rgba(255,255,255,.6); }
+.ohh-form select option { background: var(--dark); color: #fff; }
+.ohh-form input:focus,
+.ohh-form select:focus,
+.ohh-form textarea:focus {
+  border-color: var(--gold);
+  background: rgba(255,255,255,0.1);
+}
+.ohh-form textarea { resize: vertical; min-height: 110px; }
+.ohh-form-submit {
+  width: 100%;
+  padding: 16px;
+  background: var(--terracotta);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 2px solid var(--terracotta);
+  cursor: pointer;
+  transition: background .3s, color .3s;
+}
+.ohh-form-submit:hover { background: transparent; color: var(--terracotta); }
+.ohh-form-note { font-size: 12px; color: rgba(255,255,255,.3); text-align: center; }
+
+@media (max-width: 860px) {
+  .ohh-contact-inner { grid-template-columns: 1fr; gap: 48px; }
+  .ohh-contact::before { width: 100%; opacity: .08; }
+  .ohh-contact { padding: 72px 5%; }
+}
+@media (max-width: 480px) { .ohh-form-row { grid-template-columns: 1fr; } }
+</style>
+
+<section class="ohh-contact" id="contact">
+  <div class="ohh-contact-inner">
+
+    <div class="ohh-contact-left">
+      <span class="section-label section-label--light">Start Planning</span>
+      <h2>Your Italy is<br>waiting to be <em>discovered.</em></h2>
+      <p>Tell us about your dream trip and within 24 hours a dedicated Italian travel expert will reach out to begin crafting your personal itinerary. No obligation, no pressure — just inspiration.</p>
+      <div class="ohh-contact-info">
+        <div class="ohh-contact-info-item">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          hello@ohhitaly.com
+        </div>
+        <div class="ohh-contact-info-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+          Response within 24 hours
+        </div>
+        <div class="ohh-contact-info-item">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          100% free consultation
+        </div>
+      </div>
+    </div>
+
+    <form class="ohh-form" onsubmit="ohhFormSubmit(event)">
+      <div class="ohh-form-row">
+        <div>
+          <label for="ohh-name">Full Name</label>
+          <input type="text" id="ohh-name" name="name" placeholder="Your Full Name" required>
+        </div>
+        <div>
+          <label for="ohh-email">Email</label>
+          <input type="email" id="ohh-email" name="email" placeholder="Your Email Address" required>
+        </div>
+      </div>
+      <div class="ohh-form-row">
+        <div>
+          <label for="ohh-country">Country</label>
+          <input type="text" id="ohh-country" name="country" placeholder="Your Country">
+        </div>
+        <div>
+          <label for="ohh-dates">Travel Dates</label>
+          <input type="text" id="ohh-dates" name="dates" placeholder="Approx. Travel Dates">
+        </div>
+      </div>
+      <div>
+        <label for="ohh-type">Experience Type</label>
+        <select id="ohh-type" name="type">
+          <option value="" disabled selected>Type of Experience</option>
+          <option>La Dolce Vita — Classic Italy</option>
+          <option>The Great Beauty — Art &amp; Culture</option>
+          <option>Honeymoon &amp; Romance</option>
+          <option>Family Adventure</option>
+          <option>Food &amp; Wine Journey</option>
+          <option>Sicily Charter</option>
+          <option>Fully Custom — Surprise Me</option>
+        </select>
+      </div>
+      <div>
+        <label for="ohh-message">Message</label>
+        <textarea id="ohh-message" name="message" placeholder="Tell us your travel dreams, special requests, or any questions you have…"></textarea>
+      </div>
+      <button type="submit" class="ohh-form-submit">Send My Request — It's Free</button>
+      <p class="ohh-form-note">We respond within 24 hours. Your information is never shared.</p>
+    </form>
+
+  </div>
+</section>
+
+<script>
+function ohhFormSubmit(e) {
+  e.preventDefault();
+  var btn = e.target.querySelector('.ohh-form-submit');
+  btn.textContent = '✓ Request Sent — We\'ll Be in Touch!';
+  btn.style.background = '#7A8C78';
+  btn.style.borderColor = '#7A8C78';
+  btn.disabled = true;
+}
+</script>
+
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<style>
+.ohh-footer { background: #0C0A08; color: rgba(255,255,255,0.5); padding: 72px 5% 0; }
+.ohh-footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.ohh-footer-brand-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 16px;
+  display: block;
+}
+.ohh-footer-brand-logo span { color: var(--terracotta); }
+.ohh-footer-brand p { font-size: 14px; line-height: 1.8; color: rgba(255,255,255,.45); font-weight: 300; max-width: 300px; margin-bottom: 28px; }
+
+.ohh-footer-social { display: flex; gap: 10px; }
+.ohh-footer-social a {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.14);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,.5);
+  transition: background .2s, border-color .2s, color .2s;
+}
+.ohh-footer-social a:hover { background: var(--terracotta); border-color: var(--terracotta); color: #fff; }
+.ohh-footer-social svg { width: 15px; height: 15px; fill: currentColor; }
+
+.ohh-footer-col h5 {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px; font-weight: 600; color: #fff;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 20px; padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.ohh-footer-links { display: flex; flex-direction: column; gap: 10px; }
+.ohh-footer-links a { font-size: 14px; color: rgba(255,255,255,.45); font-weight: 300; transition: color .2s, padding-left .2s; }
+.ohh-footer-links a:hover { color: var(--gold); padding-left: 6px; }
+
+.ohh-footer-bottom {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 0; flex-wrap: wrap; gap: 12px;
+}
+.ohh-footer-copy { font-size: 12px; color: rgba(255,255,255,.25); }
+.ohh-footer-copy a { color: var(--terracotta); }
+.ohh-footer-legal { display: flex; gap: 24px; }
+.ohh-footer-legal a { font-size: 12px; color: rgba(255,255,255,.25); transition: color .2s; }
+.ohh-footer-legal a:hover { color: rgba(255,255,255,.6); }
+
+@media (max-width: 860px) { .ohh-footer-grid { grid-template-columns: 1fr 1fr; } .ohh-footer-brand { grid-column: 1/-1; } }
+@media (max-width: 480px) { .ohh-footer-grid { grid-template-columns: 1fr; } .ohh-footer-bottom { flex-direction: column; align-items: flex-start; } }
+</style>
+
+<footer class="ohh-footer">
+  <div class="ohh-footer-grid">
+    <div class="ohh-footer-brand">
+      <span class="ohh-footer-brand-logo">OHH<span>!</span> Italy</span>
+      <p>Your personal Italian travel concierge. We craft bespoke luxury journeys for travelers who want to experience Italy the way it was meant to be — extraordinary, intimate, and unforgettable.</p>
+      <div class="ohh-footer-social">
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="ohh-footer-col">
+      <h5>Experiences</h5>
+      <ul class="ohh-footer-links">
+        <li><a href="#contact">La Dolce Vita</a></li>
+        <li><a href="#contact">The Great Beauty</a></li>
+        <li><a href="#contact">Honeymoon in Tuscany</a></li>
+        <li><a href="#contact">Sicily Charter</a></li>
+        <li><a href="#contact">Food &amp; Wine Tours</a></li>
+        <li><a href="#contact">Custom Itineraries</a></li>
+      </ul>
+    </div>
+
+    <div class="ohh-footer-col">
+      <h5>Navigate</h5>
+      <ul class="ohh-footer-links">
+        <li><a href="#why-us">About Us</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#testimonials">Guest Reviews</a></li>
+        <li><a href="#contact">Plan My Trip</a></li>
+        <li><a href="https://ohhitaly.com/blog" target="_blank">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ohh-footer-bottom">
+    <p class="ohh-footer-copy">&copy; 2024 <a href="https://ohhitaly.com">OHH! Italy</a>. All rights reserved. Luxury Italian Travel Concierge.</p>
+    <nav class="ohh-footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+    </nav>
+  </div>
+</footer>
