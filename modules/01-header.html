@@ -223,15 +223,39 @@
 <script>
 (function(){
   var h = document.getElementById('ohhHeader');
-  window.addEventListener('scroll', function(){
-    h.classList.toggle('scrolled', window.scrollY > 60);
-  });
-  var btn = document.getElementById('ohhBurger');
-  var nav = document.getElementById('ohhNav');
-  btn.addEventListener('click', function(){ nav.classList.toggle('open'); });
-  // close on link click
-  nav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){ nav.classList.remove('open'); });
-  });
+
+  // Elementor applies CSS transforms on ancestor containers which breaks
+  // position:fixed — moving the header to <body> fixes it completely
+  function mountHeader() {
+    if (h && h.parentNode !== document.body) {
+      document.body.insertBefore(h, document.body.firstChild);
+    }
+    init();
+  }
+
+  function init() {
+    // Scroll: transparent → dark
+    function onScroll() {
+      h.classList.toggle('scrolled', window.scrollY > 60);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // apply immediately on load
+
+    // Mobile hamburger
+    var btn = document.getElementById('ohhBurger');
+    var nav = document.getElementById('ohhNav');
+    if (btn && nav) {
+      btn.addEventListener('click', function(){ nav.classList.toggle('open'); });
+      nav.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){ nav.classList.remove('open'); });
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', mountHeader);
+  } else {
+    mountHeader();
+  }
 })();
 </script>
