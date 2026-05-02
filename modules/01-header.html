@@ -274,15 +274,42 @@
     }
   }
 
+  function injectHeadCSS() {
+    // Inject into <head> so it has highest priority over Astra inline styles
+    var style = document.createElement('style');
+    style.textContent = [
+      '#masthead,',
+      '.site-header,',
+      '.ast-site-header-wrap,',
+      '.main-header-bar-wrap,',
+      '.ast-above-header-wrap,',
+      '.ast-below-header-wrap,',
+      '.elementor-page #masthead,',
+      '.elementor-page .site-header {',
+      '  display:none!important;',
+      '  height:0!important;',
+      '  min-height:0!important;',
+      '  overflow:hidden!important;',
+      '}',
+      'html, body, .elementor-page {',
+      '  padding-top:0!important;',
+      '  margin-top:0!important;',
+      '}'
+    ].join('');
+    document.head.appendChild(style);
+  }
+
   function init() {
+    injectHeadCSS();
     hideAstraHeader();
     mountHeader();
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
+  // Run as early as possible — don't wait for DOMContentLoaded
+  if (document.head) {
     init();
+  } else {
+    document.addEventListener('DOMContentLoaded', init);
   }
 })();
 </script>

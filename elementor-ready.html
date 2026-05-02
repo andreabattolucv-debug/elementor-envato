@@ -274,15 +274,42 @@
     }
   }
 
+  function injectHeadCSS() {
+    // Inject into <head> so it has highest priority over Astra inline styles
+    var style = document.createElement('style');
+    style.textContent = [
+      '#masthead,',
+      '.site-header,',
+      '.ast-site-header-wrap,',
+      '.main-header-bar-wrap,',
+      '.ast-above-header-wrap,',
+      '.ast-below-header-wrap,',
+      '.elementor-page #masthead,',
+      '.elementor-page .site-header {',
+      '  display:none!important;',
+      '  height:0!important;',
+      '  min-height:0!important;',
+      '  overflow:hidden!important;',
+      '}',
+      'html, body, .elementor-page {',
+      '  padding-top:0!important;',
+      '  margin-top:0!important;',
+      '}'
+    ].join('');
+    document.head.appendChild(style);
+  }
+
   function init() {
+    injectHeadCSS();
     hideAstraHeader();
     mountHeader();
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
+  // Run as early as possible — don't wait for DOMContentLoaded
+  if (document.head) {
     init();
+  } else {
+    document.addEventListener('DOMContentLoaded', init);
   }
 })();
 </script>
@@ -316,26 +343,9 @@ body.elementor-page{padding-top:0!important;}
   align-items: center;
   overflow: hidden;
   background: var(--dark);
-}
-
-/* Dailymotion iframe scaled to cover full section */
-.ohh-hero-video-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-.ohh-hero-video-bg iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100vw;
-  height: 56.25vw;
-  min-height: 100vh;
-  min-width: 177.78vh;
-  transform: translate(-50%, -50%);
-  border: none;
+  background-image: url('https://ohhitaly.com/wp-content/uploads/2026/05/dan-novac-1naE8177_bI-unsplash-scaled.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 .ohh-hero-overlay {
@@ -431,18 +441,6 @@ body.elementor-page{padding-top:0!important;}
 </style>
 
 <section class="ohh-hero" id="hero">
-
-  <!-- Dailymotion video background -->
-  <div class="ohh-hero-video-bg">
-    <iframe
-      src="https://www.dailymotion.com/embed/video/x97qjy2?autoplay=1&mute=1&loop=1&controls=0&ui-start-screen-info=0&ui-logo=0&endscreen-enable=0&sharing-enable=0&queue-enable=0&chromeless=1"
-      allow="autoplay"
-      allowfullscreen
-      title="Italy hero video">
-    </iframe>
-    <!-- blocks all iframe UI controls (mute button, overlays) -->
-    <div style="position:absolute;inset:0;z-index:1;pointer-events:none;"></div>
-  </div>
 
   <div class="ohh-hero-overlay"></div>
 
