@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delux Luxury Hotel & Resort</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Georgia', serif; background: #fff; color: #111; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ─── GLOBAL TOKENS ─── */
+    :root {
+      --gold:    #C9A84C;
+      --dark:    #0F1923;
+      --light-bg:#F7F4EE;
+      --text:    #555;
+      --white:   #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ================================================
+     HEADER
+     ================================================ -->
+<style>
+.dlx-header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: var(--dark);
+  width: 100%;
+}
+.dlx-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 5%;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.dlx-topbar-address {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+  font-family: sans-serif;
+}
+.dlx-topbar-address svg { width: 14px; height: 14px; fill: var(--gold); flex-shrink: 0; }
+.dlx-topbar-social { display: flex; align-items: center; gap: 14px; }
+.dlx-topbar-social a {
+  color: rgba(255,255,255,0.55);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+.dlx-topbar-social a:hover { color: var(--gold); }
+.dlx-topbar-social svg { width: 16px; height: 16px; fill: currentColor; }
+
+.dlx-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  height: 72px;
+}
+.dlx-logo img { height: 44px; width: auto; }
+.dlx-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.dlx-nav a {
+  color: rgba(255,255,255,0.82);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: sans-serif;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.dlx-nav a:hover { color: var(--gold); }
+.dlx-header-btn {
+  display: inline-block;
+  padding: 11px 28px;
+  background: var(--gold);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: sans-serif;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  border: 2px solid var(--gold);
+  transition: background 0.3s, color 0.3s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.dlx-header-btn:hover { background: transparent; color: var(--gold); }
+.dlx-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.dlx-hamburger span { display: block; width: 24px; height: 2px; background: #fff; transition: all 0.3s; }
+
+@media (max-width: 900px) {
+  .dlx-topbar { display: none; }
+  .dlx-hamburger { display: flex; }
+  .dlx-nav {
+    display: none;
+    position: absolute;
+    top: 72px; left: 0; right: 0;
+    background: var(--dark);
+    flex-direction: column;
+    gap: 0;
+    padding: 16px 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .dlx-nav.open { display: flex; }
+  .dlx-nav li { width: 100%; }
+  .dlx-nav a { display: block; padding: 12px 5%; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 15px; }
+  .dlx-header-btn { display: none; }
+  .dlx-navbar { position: relative; }
+}
+</style>
+
+<header class="dlx-header">
+  <div class="dlx-topbar">
+    <div class="dlx-topbar-address">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+      Creative District Ahmad Yani No. 456, Bali, Indonesia
+    </div>
+    <div class="dlx-topbar-social">
+      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12z"/></svg></a>
+      <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+    </div>
+  </div>
+  <nav class="dlx-navbar">
+    <a href="/" class="dlx-logo">
+      <img src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/Logo-Delux.png" alt="Delux Luxury Hotel & Resort">
+    </a>
+    <ul class="dlx-nav" id="dlxNav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Hotel &amp; Resort</a></li>
+      <li><a href="#">Dining</a></li>
+      <li><a href="#">Events</a></li>
+      <li><a href="#">Experiences</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <a href="#booking" class="dlx-header-btn">Reserve Now</a>
+    <button class="dlx-hamburger" id="dlxHamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+<script>
+(function(){
+  var btn = document.getElementById('dlxHamburger');
+  var nav = document.getElementById('dlxNav');
+  if (btn && nav) btn.addEventListener('click', function(){ nav.classList.toggle('open'); });
+})();
+</script>
+
+
+<!-- ================================================
+     HERO
+     ================================================ -->
+<style>
+.dlx-hero-section {
+  position: relative;
+  min-height: 84vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--dark);
+}
+.dlx-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+.dlx-hero-video iframe {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(1.6);
+  width: 100vw;
+  height: 56.25vw;
+  min-height: 100%;
+  min-width: 177.78vh;
+  border: none;
+  pointer-events: none;
+}
+.dlx-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 15, 30, 0.52);
+  z-index: 1;
+}
+.dlx-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 5%;
+  max-width: 680px;
+}
+.dlx-hero-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.dlx-hero-location svg { width: 15px; height: 15px; fill: var(--gold); }
+.dlx-hero-content h1 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+.dlx-hero-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  background: var(--gold);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: sans-serif;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  border: 2px solid var(--gold);
+  transition: background 0.3s, color 0.3s;
+}
+.dlx-hero-btn:hover { background: transparent; color: var(--gold); }
+
+@media (max-width: 768px) {
+  .dlx-hero-section { min-height: 60vh; }
+  .dlx-hero-content { text-align: center; max-width: 100%; }
+  .dlx-hero-location { justify-content: center; }
+}
+</style>
+
+<section class="dlx-hero-section" id="home">
+  <div class="dlx-hero-video">
+    <iframe src="https://www.youtube.com/embed/H1CIBqDeWQ0?autoplay=1&mute=1&loop=1&playlist=H1CIBqDeWQ0&controls=0&showinfo=0&rel=0&start=5"
+            allow="autoplay; encrypted-media" allowfullscreen title="Hero Video"></iframe>
+  </div>
+  <div class="dlx-hero-overlay"></div>
+  <div class="dlx-hero-content">
+    <div class="dlx-hero-location">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+      Bali, Indonesia
+    </div>
+    <h1>Delux Luxury Hotel &amp; Resort</h1>
+    <a href="#about" class="dlx-hero-btn">Discover More</a>
+  </div>
+</section>
+
+
+<!-- ================================================
+     ABOUT US
+     ================================================ -->
+<style>
+.dlx-about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  padding: 96px 5%;
+  align-items: center;
+}
+.dlx-about-label {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+  font-family: sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.dlx-about h2 {
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  font-weight: 700;
+  color: #111;
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+.dlx-about-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 32px;
+  font-family: sans-serif;
+}
+.dlx-about-sig {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-top: 1px solid #e5e0d8;
+  padding-top: 24px;
+}
+.dlx-about-sig img { height: 52px; width: auto; object-fit: contain; }
+.dlx-about-sig strong { display: block; font-size: 15px; color: #111; font-family: sans-serif; }
+.dlx-about-sig span { font-size: 12px; color: #999; letter-spacing: 0.07em; text-transform: uppercase; font-family: sans-serif; }
+
+.dlx-about-right { display: flex; flex-direction: column; gap: 32px; }
+.dlx-about-video { position: relative; aspect-ratio: 16/9; background: #111; overflow: hidden; }
+.dlx-about-video iframe { width: 100%; height: 100%; border: none; }
+.dlx-about-video-label {
+  font-size: 12px; font-weight: 700; color: var(--gold);
+  letter-spacing: 0.1em; text-transform: uppercase; margin-top: -12px;
+  font-family: sans-serif;
+}
+blockquote.dlx-about-quote {
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-style: italic;
+  color: #111;
+  font-weight: 600;
+  line-height: 1.4;
+  border-left: 3px solid var(--gold);
+  padding-left: 20px;
+}
+.dlx-about-quote-body {
+  font-size: 14px; color: var(--text); line-height: 1.75; margin-top: 12px;
+  font-family: sans-serif;
+}
+
+@media (max-width: 768px) {
+  .dlx-about { grid-template-columns: 1fr; gap: 40px; padding: 60px 5%; }
+}
+</style>
+
+<section class="dlx-about" id="about">
+  <div>
+    <p class="dlx-about-label">What's on at The Resort</p>
+    <h2>Introducing an Exclusive Offer by Delux Luxury Hotel &amp; Resort</h2>
+    <p class="dlx-about-text">Experience the pinnacle of luxury at Delux Resort. Surrounded by lush tropical landscapes in Bali, our resort offers world-class amenities, personalized service, and unforgettable experiences crafted for the discerning traveler.</p>
+    <div class="dlx-about-sig">
+      <img src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/Signature1.png" alt="Firma Richard Johnson">
+      <div>
+        <strong>Richard Johnson</strong>
+        <span>CEO Delux</span>
+      </div>
+    </div>
+  </div>
+  <div class="dlx-about-right">
+    <div>
+      <div class="dlx-about-video">
+        <iframe src="https://www.youtube.com/embed/H1CIBqDeWQ0?rel=0&showinfo=0" allowfullscreen loading="lazy" title="Watch Tour"></iframe>
+      </div>
+      <p class="dlx-about-video-label">▶ Watch Tour</p>
+    </div>
+    <div>
+      <blockquote class="dlx-about-quote">"Etiam imperdiet turpis mauris, euismod porttitor ex rutrum."</blockquote>
+      <p class="dlx-about-quote-body">Fusce egestas tincidunt velit, id venenatis lacus pellentesque viverra. Praesent ornare sed erat non fermentum. Donec feugiat tortor justo, rhoncus elementum metus consequat a.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+     OUR ROOMS
+     ================================================ -->
+<style>
+.dlx-rooms-wrap {
+  padding: 96px 5%;
+  background: var(--light-bg);
+}
+.dlx-rooms-header { text-align: center; margin-bottom: 52px; }
+.dlx-rooms-label {
+  color: var(--gold); font-size: 12px; font-weight: 700; font-family: sans-serif;
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px;
+}
+.dlx-rooms-header h2 {
+  font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 700; color: #111;
+  margin-bottom: 14px;
+}
+.dlx-rooms-header p { font-size: 15px; color: var(--text); max-width: 580px; margin: 0 auto; line-height: 1.75; font-family: sans-serif; }
+.dlx-rooms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.dlx-room-card {
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.dlx-room-card:hover { transform: translateY(-6px); box-shadow: 0 14px 44px rgba(0,0,0,0.14); }
+.dlx-room-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; }
+.dlx-room-info { padding: 24px; }
+.dlx-room-info h3 { font-size: 1.1rem; font-weight: 700; color: #111; margin-bottom: 10px; }
+.dlx-room-info p { font-size: 14px; color: var(--text); line-height: 1.65; margin-bottom: 20px; font-family: sans-serif; }
+.dlx-room-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--gold); font-size: 12px; font-weight: 700; font-family: sans-serif;
+  letter-spacing: 0.07em; text-transform: uppercase; transition: gap 0.2s;
+}
+.dlx-room-link:hover { gap: 14px; }
+.dlx-room-link svg { width: 15px; height: 15px; stroke: var(--gold); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+@media (max-width: 900px) { .dlx-rooms-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .dlx-rooms-grid { grid-template-columns: 1fr; } .dlx-rooms-wrap { padding: 60px 5%; } }
+</style>
+
+<section class="dlx-rooms-wrap" id="rooms">
+  <div class="dlx-rooms-header">
+    <p class="dlx-rooms-label">Our Luxury Room</p>
+    <h2>Discover Luxury Redefined in Our Exquisite Rooms</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula odio ac consectetur commodo. Sed diam elit, tincidunt quis accumsan non, porta in neque.</p>
+  </div>
+  <div class="dlx-rooms-grid">
+    <div class="dlx-room-card">
+      <img class="dlx-room-img" src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/N939E9E.jpg" alt="Presidential Suite">
+      <div class="dlx-room-info">
+        <h3>Presidential Suite</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</p>
+        <a href="#" class="dlx-room-link">Discover <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+    <div class="dlx-room-card">
+      <img class="dlx-room-img" src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/Q2WYWXG-e1711221458211.jpg" alt="Executive Suite">
+      <div class="dlx-room-info">
+        <h3>Executive Suite</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</p>
+        <a href="#" class="dlx-room-link">Discover <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+    <div class="dlx-room-card">
+      <img class="dlx-room-img" src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/B7XZECA.jpg" alt="Junior Suite">
+      <div class="dlx-room-info">
+        <h3>Junior Suite</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</p>
+        <a href="#" class="dlx-room-link">Discover <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+     DINING & DRINKS
+     ================================================ -->
+<style>
+.dlx-dining-wrap { background: var(--light-bg); padding: 96px 5%; }
+.dlx-dining-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.dlx-dining-label {
+  color: var(--gold); font-size: 12px; font-weight: 700; font-family: sans-serif;
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px;
+}
+.dlx-dining-left h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 700; color: #111; line-height: 1.25; margin-bottom: 20px; }
+.dlx-dining-left p { font-size: 15px; color: var(--text); line-height: 1.8; margin-bottom: 32px; font-family: sans-serif; }
+.dlx-dining-btn {
+  display: inline-block; padding: 13px 32px; background: var(--gold); color: #fff;
+  font-size: 13px; font-weight: 700; font-family: sans-serif; letter-spacing: 0.07em;
+  text-transform: uppercase; border: 2px solid var(--gold); transition: background 0.3s, color 0.3s;
+}
+.dlx-dining-btn:hover { background: transparent; color: var(--gold); }
+.dlx-counters { display: flex; flex-direction: column; gap: 36px; }
+.dlx-counter-item { border-left: 3px solid var(--gold); padding-left: 24px; }
+.dlx-counter-number { font-size: 3rem; font-weight: 800; color: #111; line-height: 1; margin-bottom: 6px; }
+.dlx-counter-number sup { color: var(--gold); font-size: 1.8rem; }
+.dlx-counter-title { font-size: 14px; color: var(--text); font-family: sans-serif; }
+
+@media (max-width: 768px) { .dlx-dining-inner { grid-template-columns: 1fr; gap: 44px; } .dlx-dining-wrap { padding: 60px 5%; } }
+</style>
+
+<section class="dlx-dining-wrap" id="dining">
+  <div class="dlx-dining-inner">
+    <div class="dlx-dining-left">
+      <p class="dlx-dining-label">Dining &amp; Drinks</p>
+      <h2>Indulge in Luxury Dining at Our Luxury Restaurant</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula odio ac consectetur commodo. Sed diam elit, tincidunt quis accumsan non, porta in neque. Nam in ex nec elit lobortis dignissim eu quis magna.</p>
+      <a href="#" class="dlx-dining-btn">Explore Our Restaurant</a>
+    </div>
+    <div class="dlx-counters">
+      <div class="dlx-counter-item">
+        <div class="dlx-counter-number" data-target="52">0<sup>+</sup></div>
+        <div class="dlx-counter-title">Luxurious Suites &amp; Exclusive Villas</div>
+      </div>
+      <div class="dlx-counter-item">
+        <div class="dlx-counter-number" data-target="99">0<sup>%</sup></div>
+        <div class="dlx-counter-title">Average Guest Satisfaction Rate</div>
+      </div>
+      <div class="dlx-counter-item">
+        <div class="dlx-counter-number" data-target="43">0<sup>+</sup></div>
+        <div class="dlx-counter-title">Excellence Award in Luxury Hotel</div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var counters = document.querySelectorAll('.dlx-counter-number[data-target]');
+  var seen = new Set();
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting || seen.has(e.target)) return;
+      seen.add(e.target);
+      var el = e.target;
+      var target = parseInt(el.getAttribute('data-target'));
+      var sup = el.querySelector('sup') ? el.querySelector('sup').outerHTML : '';
+      var current = 0;
+      var step = Math.max(1, Math.ceil(target / 60));
+      var t = setInterval(function(){
+        current = Math.min(current + step, target);
+        el.innerHTML = current + sup;
+        if (current >= target) clearInterval(t);
+      }, 20);
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(function(c){ io.observe(c); });
+})();
+</script>
+
+
+<!-- ================================================
+     REVIEW
+     ================================================ -->
+<style>
+.dlx-review-wrap { background: var(--light-bg); padding: 96px 5%; }
+.dlx-review-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.dlx-review-left { position: relative; }
+.dlx-review-main-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+.dlx-tcard {
+  position: absolute; bottom: -28px; right: -28px;
+  background: #fff; padding: 28px; max-width: 300px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+}
+.dlx-tcard-stars { color: var(--gold); font-size: 17px; margin-bottom: 10px; }
+.dlx-tcard-text { font-size: 13px; color: var(--text); line-height: 1.7; font-style: italic; margin-bottom: 14px; font-family: sans-serif; }
+.dlx-tcard-name { font-size: 14px; font-weight: 700; color: #111; font-family: sans-serif; }
+.dlx-tcard-role { font-size: 12px; color: #aaa; font-family: sans-serif; }
+
+.dlx-review-label {
+  color: var(--gold); font-size: 12px; font-weight: 700; font-family: sans-serif;
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px;
+}
+.dlx-review-right h2 { font-size: clamp(1.5rem, 2.5vw, 2.1rem); font-weight: 700; color: #111; margin-bottom: 18px; line-height: 1.25; }
+.dlx-review-right p { font-size: 15px; color: var(--text); line-height: 1.8; margin-bottom: 32px; font-family: sans-serif; }
+.dlx-rating-row {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  background: #fff; padding: 18px 22px; margin-bottom: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.dlx-rating-label { font-size: 14px; font-weight: 700; color: #111; font-family: sans-serif; }
+.dlx-rating-stars { color: var(--gold); font-size: 19px; }
+.dlx-rating-score { font-size: 13px; color: #999; margin-left: auto; font-family: sans-serif; }
+.dlx-review-divider { height: 1px; background: #e0d9ce; margin: 22px 0; }
+.dlx-review-logos { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+.dlx-review-logos img { height: 34px; width: auto; object-fit: contain; opacity: 0.65; transition: opacity 0.2s; }
+.dlx-review-logos img:hover { opacity: 1; }
+
+@media (max-width: 900px) {
+  .dlx-review-inner { grid-template-columns: 1fr; }
+  .dlx-tcard { position: static; margin-top: 20px; max-width: 100%; }
+  .dlx-review-wrap { padding: 60px 5%; }
+}
+</style>
+
+<section class="dlx-review-wrap" id="review">
+  <div class="dlx-review-inner">
+    <div class="dlx-review-left">
+      <img class="dlx-review-main-img" src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/8C5HB37.jpg" alt="Resort Review">
+      <div class="dlx-tcard">
+        <div class="dlx-tcard-stars">★★★★★</div>
+        <p class="dlx-tcard-text">"An extraordinary experience. The attention to detail, the warmth of the staff, and the breathtaking views made our stay absolutely unforgettable."</p>
+        <div class="dlx-tcard-name">Sarah M.</div>
+        <div class="dlx-tcard-role">Verified Guest</div>
+      </div>
+    </div>
+    <div class="dlx-review-right">
+      <p class="dlx-review-label">Delux Review</p>
+      <h2>Discover Why Our Guests Rave About Their Stay</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper enim sit amet dolor finibus, sed gravida elit accumsan. Nulla suscipit, magna sit amet rhoncus egestas.</p>
+      <div class="dlx-rating-row">
+        <div>
+          <div class="dlx-rating-label">People Rated Our Services</div>
+          <div class="dlx-rating-stars">★★★★★</div>
+        </div>
+        <div class="dlx-rating-score">Average Rating 5/5</div>
+      </div>
+      <div class="dlx-review-divider"></div>
+      <div class="dlx-review-logos">
+        <img src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/BX7T9Fa.png" alt="Platform 1">
+        <img src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/9364LH.png" alt="Platform 2">
+        <img src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/USPFWKH.png" alt="Platform 3">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+     CTA
+     ================================================ -->
+<style>
+.dlx-cta-wrap {
+  position: relative;
+  text-align: center;
+  padding: 130px 5%;
+  overflow: hidden;
+  background-image: url('https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/EQ5HBBM.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.dlx-cta-wrap::before { content: ''; position: absolute; inset: 0; background: rgba(10,15,30,0.58); }
+.dlx-cta-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+.dlx-cta-inner h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #fff; margin-bottom: 20px; line-height: 1.2; }
+.dlx-cta-inner p { font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 36px; font-family: sans-serif; }
+.dlx-cta-btn {
+  display: inline-block; padding: 15px 44px; background: var(--gold); color: #fff;
+  font-size: 14px; font-weight: 700; font-family: sans-serif; letter-spacing: 0.08em;
+  text-transform: uppercase; border: 2px solid var(--gold); transition: background 0.3s, color 0.3s;
+}
+.dlx-cta-btn:hover { background: transparent; color: var(--gold); }
+
+@media (max-width: 768px) { .dlx-cta-wrap { padding: 80px 5%; background-attachment: scroll; } }
+</style>
+
+<section class="dlx-cta-wrap" id="cta">
+  <div class="dlx-cta-inner">
+    <h2>Book Your Luxurious Escape Today!</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula odio ac consectetur commodo. Sed diam elit, tincidunt quis accumsan non, porta in neque. Nam in ex nec elit lobortis dignissim eu quis magna.</p>
+    <a href="#booking" class="dlx-cta-btn">Book Now</a>
+  </div>
+</section>
+
+
+<!-- ================================================
+     SPECIAL OFFER
+     ================================================ -->
+<style>
+.dlx-offers-wrap { padding: 96px 5%; }
+.dlx-offers-top { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: flex-end; margin-bottom: 48px; }
+.dlx-offers-label { color: var(--gold); font-size: 12px; font-weight: 700; font-family: sans-serif; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; }
+.dlx-offers-top h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 700; color: #111; line-height: 1.25; margin-bottom: 14px; }
+.dlx-offers-top p { font-size: 15px; color: var(--text); line-height: 1.75; font-family: sans-serif; }
+.dlx-offers-btn {
+  display: inline-block; padding: 13px 32px; background: var(--gold); color: #fff;
+  font-size: 13px; font-weight: 700; font-family: sans-serif; letter-spacing: 0.07em;
+  text-transform: uppercase; border: 2px solid var(--gold); white-space: nowrap;
+  transition: background 0.3s, color 0.3s;
+}
+.dlx-offers-btn:hover { background: transparent; color: var(--gold); }
+.dlx-offers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.dlx-offer-card { position: relative; overflow: hidden; aspect-ratio: 4/3; background: #ccc; }
+.dlx-offer-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.dlx-offer-card:hover img { transform: scale(1.05); }
+.dlx-offer-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.68) 0%, transparent 55%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 28px;
+}
+.dlx-offer-badge {
+  display: inline-block; background: var(--gold); color: #fff;
+  font-size: 11px; font-weight: 700; font-family: sans-serif; letter-spacing: 0.08em;
+  text-transform: uppercase; padding: 5px 12px; margin-bottom: 10px; align-self: flex-start;
+}
+.dlx-offer-title { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.dlx-offer-desc { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5; margin-bottom: 16px; font-family: sans-serif; }
+.dlx-offer-link { color: var(--gold); font-size: 12px; font-weight: 700; font-family: sans-serif; letter-spacing: 0.07em; text-transform: uppercase; }
+
+@media (max-width: 640px) {
+  .dlx-offers-grid { grid-template-columns: 1fr; }
+  .dlx-offers-top { grid-template-columns: 1fr; }
+  .dlx-offers-wrap { padding: 60px 5%; }
+}
+</style>
+
+<section class="dlx-offers-wrap" id="offers">
+  <div class="dlx-offers-top">
+    <div>
+      <p class="dlx-offers-label">Delux Special Offer</p>
+      <h2>Explore Our Exclusive Special Deals</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ullamcorper enim sit amet dolor finibus, sed gravida elit accumsan.</p>
+    </div>
+    <a href="#" class="dlx-offers-btn">Explore More</a>
+  </div>
+  <div class="dlx-offers-grid">
+    <div class="dlx-offer-card">
+      <img src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/N939E9E.jpg" alt="Romantic Getaway">
+      <div class="dlx-offer-overlay">
+        <span class="dlx-offer-badge">Special Offer</span>
+        <h3 class="dlx-offer-title">Romantic Getaway Package</h3>
+        <p class="dlx-offer-desc">Enjoy 3 nights in a private villa with breakfast and spa access included.</p>
+        <a href="#" class="dlx-offer-link">Book Now →</a>
+      </div>
+    </div>
+    <div class="dlx-offer-card">
+      <img src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/Q2WYWXG-e1711221458211.jpg" alt="Honeymoon Suite">
+      <div class="dlx-offer-overlay">
+        <span class="dlx-offer-badge">Limited Time</span>
+        <h3 class="dlx-offer-title">Honeymoon Luxury Suite</h3>
+        <p class="dlx-offer-desc">Celebrate your love with our exclusive honeymoon package and private butler service.</p>
+        <a href="#" class="dlx-offer-link">Book Now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+     EVENTS
+     ================================================ -->
+<style>
+.dlx-events-wrap { padding: 96px 5%; background: #111; }
+.dlx-events-header { text-align: center; margin-bottom: 52px; }
+.dlx-events-label { color: var(--gold); font-size: 12px; font-weight: 700; font-family: sans-serif; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; }
+.dlx-events-header h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 700; color: #fff; margin-bottom: 14px; }
+.dlx-events-header p { font-size: 15px; color: rgba(255,255,255,0.6); max-width: 580px; margin: 0 auto; line-height: 1.75; font-family: sans-serif; }
+.dlx-events-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.dlx-event-card { position: relative; overflow: hidden; aspect-ratio: 3/4; background: #333; }
+.dlx-event-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.dlx-event-card:hover img { transform: scale(1.06); }
+.dlx-event-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.08) 60%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 28px;
+}
+.dlx-event-title { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.dlx-event-desc { font-size: 13px; color: rgba(255,255,255,0.72); margin-bottom: 20px; line-height: 1.55; font-family: sans-serif; }
+.dlx-event-btn {
+  display: inline-block; padding: 10px 22px;
+  border: 1.5px solid var(--gold); color: var(--gold);
+  font-size: 12px; font-weight: 700; font-family: sans-serif; letter-spacing: 0.08em;
+  text-transform: uppercase; align-self: flex-start;
+  transition: background 0.3s, color 0.3s;
+}
+.dlx-event-btn:hover { background: var(--gold); color: #fff; }
+
+@media (max-width: 900px) { .dlx-events-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .dlx-events-grid { grid-template-columns: 1fr; } .dlx-events-wrap { padding: 60px 5%; } }
+</style>
+
+<section class="dlx-events-wrap" id="events">
+  <div class="dlx-events-header">
+    <p class="dlx-events-label">Elegance in Every Occasion</p>
+    <h2>Elevate Your Event at Our Luxurious Resort</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula odio ac consectetur commodo. Sed diam elit, tincidunt quis accumsan non, porta in neque.</p>
+  </div>
+  <div class="dlx-events-grid">
+    <div class="dlx-event-card">
+      <img src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/B7XZECA.jpg" alt="Dream Destination Wedding">
+      <div class="dlx-event-overlay">
+        <h3 class="dlx-event-title">Dream Destination Wedding</h3>
+        <p class="dlx-event-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</p>
+        <a href="#" class="dlx-event-btn">Get Married in Bali</a>
+      </div>
+    </div>
+    <div class="dlx-event-card">
+      <img src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/N939E9E.jpg" alt="Elegant Gala Dinner">
+      <div class="dlx-event-overlay">
+        <h3 class="dlx-event-title">Elegant Gala Dinner Under the Stars</h3>
+        <p class="dlx-event-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</p>
+        <a href="#" class="dlx-event-btn">Reserve Now</a>
+      </div>
+    </div>
+    <div class="dlx-event-card">
+      <img src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/Q2WYWXG-e1711221458211.jpg" alt="Exclusive Conference">
+      <div class="dlx-event-overlay">
+        <h3 class="dlx-event-title">Exclusive Conference &amp; Event</h3>
+        <p class="dlx-event-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</p>
+        <a href="#" class="dlx-event-btn">Call Us Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+     FOOTER
+     ================================================ -->
+<style>
+.dlx-footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 80px 5% 0; }
+.dlx-footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 48px; padding-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.dlx-footer-logo { height: 46px; width: auto; margin-bottom: 24px; }
+.dlx-footer-contacts { display: flex; flex-direction: column; gap: 13px; }
+.dlx-footer-contacts li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.5; font-family: sans-serif; }
+.dlx-footer-contacts svg { width: 15px; height: 15px; fill: var(--gold); flex-shrink: 0; margin-top: 2px; }
+.dlx-footer-contacts a { color: rgba(255,255,255,0.62); transition: color 0.2s; }
+.dlx-footer-contacts a:hover { color: var(--gold); }
+.dlx-footer-col h4 {
+  font-size: 13px; font-weight: 700; color: #fff; font-family: sans-serif;
+  letter-spacing: 0.09em; text-transform: uppercase; margin-bottom: 20px;
+  padding-bottom: 12px; border-bottom: 2px solid var(--gold); display: inline-block;
+}
+.dlx-footer-links { display: flex; flex-direction: column; gap: 10px; }
+.dlx-footer-links a { color: rgba(255,255,255,0.58); font-size: 14px; font-family: sans-serif; transition: color 0.2s, padding-left 0.2s; }
+.dlx-footer-links a:hover { color: var(--gold); padding-left: 6px; }
+.dlx-footer-bottom { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; flex-wrap: wrap; gap: 14px; }
+.dlx-footer-copy { font-size: 13px; color: rgba(255,255,255,0.38); font-family: sans-serif; }
+.dlx-footer-copy a { color: var(--gold); }
+.dlx-footer-social { display: flex; gap: 12px; align-items: center; }
+.dlx-footer-social a {
+  display: flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.55);
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.dlx-footer-social a:hover { background: var(--gold); border-color: var(--gold); color: #fff; }
+.dlx-footer-social svg { width: 15px; height: 15px; fill: currentColor; }
+
+@media (max-width: 900px) { .dlx-footer-grid { grid-template-columns: 1fr 1fr; } .dlx-footer-brand { grid-column: 1 / -1; } }
+@media (max-width: 540px) { .dlx-footer-grid { grid-template-columns: 1fr; } .dlx-footer { padding: 60px 5% 0; } .dlx-footer-bottom { justify-content: center; text-align: center; } }
+</style>
+
+<footer class="dlx-footer" id="footer">
+  <div class="dlx-footer-grid">
+    <div class="dlx-footer-brand">
+      <img class="dlx-footer-logo" src="https://askit.dextheme.net/delux/wp-content/uploads/sites/11/2024/03/Logo-Delux.png" alt="Delux Luxury Hotel & Resort">
+      <ul class="dlx-footer-contacts">
+        <li><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg><a href="#">Creative District Ahmad Yani No. 456, Bali, Indonesia</a></li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:hola@dominantsite.com">hola@dominantsite.com</a></li>
+        <li><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:5552784364">555-278-4364</a></li>
+      </ul>
+    </div>
+    <div class="dlx-footer-col">
+      <h4>Esplora</h4>
+      <ul class="dlx-footer-links">
+        <li><a href="#">Hotel &amp; Resort</a></li>
+        <li><a href="#">Dining</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Experiences</a></li>
+      </ul>
+    </div>
+    <div class="dlx-footer-col">
+      <h4>Informazioni</h4>
+      <ul class="dlx-footer-links">
+        <li><a href="#">Spa &amp; Fitness</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="dlx-footer-bottom">
+    <p class="dlx-footer-copy">&copy; 2024 <a href="#">Delux Luxury Hotel &amp; Resort</a>. All rights reserved.</p>
+    <div class="dlx-footer-social">
+      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12z"/></svg></a>
+      <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
