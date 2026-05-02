@@ -245,17 +245,53 @@
 
 <script>
 (function(){
-  var h = document.getElementById('ohhHeader');
-  window.addEventListener('scroll', function(){
-    h.classList.toggle('scrolled', window.scrollY > 60);
-  });
-  var btn = document.getElementById('ohhBurger');
-  var nav = document.getElementById('ohhNav');
-  btn.addEventListener('click', function(){ nav.classList.toggle('open'); });
-  // close on link click
-  nav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){ nav.classList.remove('open'); });
-  });
+  function hideAstraHeader() {
+    // Astra's native header — remove from layout completely
+    var selectors = ['#masthead', '.site-header', '.ast-site-header-wrap',
+                     '.main-header-bar-wrap', '.ast-above-header-wrap', '.ast-below-header-wrap'];
+    selectors.forEach(function(sel) {
+      var el = document.querySelector(sel);
+      if (el) { el.style.cssText = 'display:none!important;height:0!important;'; }
+    });
+    // Kill any padding-top Astra set on body
+    document.body.style.paddingTop = '0';
+    document.documentElement.style.paddingTop = '0';
+  }
+
+  function mountHeader() {
+    var h = document.getElementById('ohhHeader');
+    if (!h) return;
+    // Move header out of Elementor containers so position:fixed works correctly
+    if (h.parentNode !== document.body) {
+      document.body.insertBefore(h, document.body.firstChild);
+    }
+
+    // Scroll: transparent → dark
+    function onScroll() { h.classList.toggle('scrolled', window.scrollY > 60); }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Mobile hamburger
+    var btn = document.getElementById('ohhBurger');
+    var nav = document.getElementById('ohhNav');
+    if (btn && nav) {
+      btn.addEventListener('click', function(){ nav.classList.toggle('open'); });
+      nav.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){ nav.classList.remove('open'); });
+      });
+    }
+  }
+
+  function init() {
+    hideAstraHeader();
+    mountHeader();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
 </script>
 
@@ -412,6 +448,8 @@ body.elementor-page{padding-top:0!important;}
       allowfullscreen
       title="Italy hero video">
     </iframe>
+    <!-- blocks all iframe UI controls (mute button, overlays) -->
+    <div style="position:absolute;inset:0;z-index:1;pointer-events:none;"></div>
   </div>
 
   <div class="ohh-hero-overlay"></div>
