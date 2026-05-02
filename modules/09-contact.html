@@ -11,13 +11,13 @@ h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;}
 <!-- ══════════════════════════════════════════
      CONTACT — box sinistro (testo)
      Inserire nel column sinistro di Elementor.
-     Sfondo, overlay e column destro (WPForms)
-     vanno gestiti direttamente in Elementor.
+     Column destro (WPForms) gestito in Elementor.
 ══════════════════════════════════════════ -->
 <style>
 .ohh-contact-left {
   width: 100%;
-  height: 100%;
+  padding: 112px 10% 112px 5%;
+  background: var(--dark);
 }
 .ohh-contact-left h2 {
   font-size: clamp(2rem, 4vw, 3.2rem);
@@ -56,6 +56,10 @@ h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;}
   height: 16px;
   fill: var(--gold);
   flex-shrink: 0;
+}
+
+@media (max-width: 860px) {
+  .ohh-contact-left { padding: 72px 5%; }
 }
 </style>
 
