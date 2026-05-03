@@ -1,92 +1,13 @@
-<!-- ══════════════════════════════════════════
-     GLOBALS + HEADER  (globals merged here — no separate widget needed)
-══════════════════════════════════════════ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>
+(function(){
+  var s=document.createElement('script');
+  s.src='https://kit.fontawesome.com/placeholder.js';
+  // FontAwesome placeholder – replace with real kit if needed
+})();
+</script>
 <style>
-  /* ════════════════════════════════════════
-     FULL-BLEED: break out of every Elementor
-     and Astra container
-  ════════════════════════════════════════ */
-
-  /* 1. The Elementor widget itself */
-  .elementor-widget-html,
-  .elementor-widget-html .elementor-widget-container {
-    padding: 0 !important;
-    margin: 0 !important;
-    max-width: none !important;
-    width: 100vw !important;
-    position: relative !important;
-    left: 50% !important;
-    right: 50% !important;
-    margin-left: -50vw !important;
-    margin-right: -50vw !important;
-  }
-
-  /* 2. Elementor section & column containers */
-  .elementor-section.elementor-section-boxed > .elementor-container,
-  .elementor-column-wrap,
-  .elementor-widget-wrap,
-  .e-con-inner,
-  .e-con {
-    max-width: 100% !important;
-    padding: 0 !important;
-    width: 100% !important;
-  }
-
-  /* 3. Astra theme global containers */
-  .ast-container,
-  .ast-flex,
-  .site-content,
-  #content,
-  #primary,
-  .entry-content,
-  .post-content,
-  main.site-main,
-  .elementor-page .elementor {
-    max-width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    width: 100% !important;
-  }
-
-  /* 4. Hide Astra native header + reset any body padding it adds */
-  body.elementor-page,
-  body.elementor-page .site-header,
-  body.elementor-page #masthead,
-  body.elementor-page .ast-site-header-wrap,
-  body.elementor-page .main-header-bar-wrap,
-  body.elementor-page .ast-above-header-wrap,
-  body.elementor-page .ast-below-header-wrap {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-  }
-  body.elementor-page #masthead,
-  body.elementor-page .site-header,
-  body.elementor-page .ast-site-header-wrap {
-    display: none !important;
-  }
-
-  /* 5. Anchor scroll offset: compensate for our 80px fixed header */
-  [id] { scroll-margin-top: 88px; }
-
-  /* 6. Prevent Astra from overriding our heading styles */
-  .ohh-hero h1, .ohh-why-left h2, .ohh-exp-header h2,
-  .ohh-dest-header h2, .ohh-how-header h2, .ohh-testi-header h2,
-  .ohh-contact-left h2, .ohh-how-step h4, .ohh-why-card h4,
-  .ohh-exp-card h3, .ohh-dest-name {
-    line-height: inherit !important;
-    margin-top: 0 !important;
-    margin-bottom: inherit !important;
-    padding: 0 !important;
-    font-weight: inherit !important;
-  }
-
-  html { scroll-behavior: smooth; }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  img { max-width: 100%; display: block; }
-  a { text-decoration: none; }
-  ul { list-style: none; }
   :root {
     --dark:       #12100E;
     --cream:      #FAF7F2;
@@ -98,6 +19,10 @@
     --text-muted: #7A7067;
     --border:     rgba(44,40,37,0.12);
   }
+  *, *::before, *::after { box-sizing: border-box; }
+  img { max-width: 100%; display: block; }
+  a { text-decoration: none; }
+  ul { list-style: none; }
   .section-label {
     font-family: 'Inter', sans-serif;
     font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
@@ -108,12 +33,12 @@
   h1,h2,h3,h4 { font-family: 'Cormorant Garamond', serif; }
   .btn-primary {
     display: inline-block; padding: 14px 36px;
-    background: var(--terracotta); color: #fff;
+    background: #ffd92f; color: var(--dark);
     font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
     letter-spacing: 0.1em; text-transform: uppercase;
-    border: 2px solid var(--terracotta); transition: background .3s, color .3s; cursor: pointer;
+    border: 2px solid #ffd92f; transition: background .3s, color .3s; cursor: pointer;
   }
-  .btn-primary:hover { background: transparent; color: var(--terracotta); }
+  .btn-primary:hover { background: transparent; color: #ffd92f; }
   .btn-outline {
     display: inline-block; padding: 13px 34px; background: transparent;
     color: var(--white); font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
@@ -168,148 +93,124 @@
 .ohh-header-cta {
   display: inline-block;
   padding: 10px 26px;
-  background: var(--terracotta);
-  color: #fff;
+  background: #ffd92f;
+  color: var(--dark);
   font-family: 'Inter', sans-serif;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  border: 2px solid var(--terracotta);
+  border: 2px solid #ffd92f;
   transition: background .3s, color .3s;
   white-space: nowrap;
 }
-.ohh-header-cta:hover { background: transparent; color: var(--terracotta); }
+.ohh-header-cta:hover { background: transparent; color: #ffd92f; }
 
 .ohh-hamburger {
   display: none;
   flex-direction: column;
   gap: 5px;
-  background: none;
-  border: none;
   cursor: pointer;
   padding: 4px;
 }
-.ohh-hamburger span { display: block; width: 24px; height: 2px; background: #fff; transition: all .3s; }
+.ohh-hamburger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: #fff;
+  transition: transform .3s, opacity .3s;
+}
+
+.ohh-mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--dark);
+  z-index: 9998;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+.ohh-mobile-menu.open { display: flex; }
+.ohh-mobile-menu a {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.82);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.ohh-mobile-menu .ohh-mobile-close {
+  position: absolute;
+  top: 28px; right: 5%;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  line-height: 1;
+}
 
 @media (max-width: 900px) {
-  .ohh-hamburger { display: flex; }
-  .ohh-nav {
-    display: none;
-    position: absolute;
-    top: 80px; left: 0; right: 0;
-    background: var(--dark);
-    flex-direction: column;
-    gap: 0;
-    padding: 12px 0;
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-  .ohh-nav.open { display: flex; }
-  .ohh-nav li { width: 100%; }
-  .ohh-nav a { display: block; padding: 13px 5%; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .ohh-nav { display: none; }
   .ohh-header-cta { display: none; }
-  .ohh-navbar { position: relative; }
+  .ohh-hamburger { display: flex; }
 }
 </style>
 
-<header class="ohh-header" id="ohhHeader">
+<!-- ══════════════════════════════════════════
+     HEADER — fixed nav + mobile menu
+══════════════════════════════════════════ -->
+<header class="ohh-header" id="ohh-header">
   <nav class="ohh-navbar">
     <a href="#hero" class="ohh-logo">
-      <img src="https://ohhitaly.com/wp-content/uploads/2019/11/logo-ohh-italy-white-180x75.png"
-           alt="OHH! Italy — Luxury Italian Travel">
+      <img src="https://ohhitaly.com/wp-content/uploads/2019/11/logo-ohh-italy-white-180x75.png" alt="OHH! Italy">
     </a>
-
-    <ul class="ohh-nav" id="ohhNav">
-      <li><a href="#experiences">Experiences</a></li>
-      <li><a href="#destinations">Destinations</a></li>
-      <li><a href="#why-us">About Us</a></li>
-      <li><a href="#testimonials">Reviews</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-
+    <div class="ohh-nav">
+      <a href="#experiences">Experiences</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#about">About Us</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
     <a href="#contact" class="ohh-header-cta">Plan My Trip</a>
-
-    <button class="ohh-hamburger" id="ohhBurger" aria-label="Menu">
+    <div class="ohh-hamburger" id="ohh-hamburger">
       <span></span><span></span><span></span>
-    </button>
+    </div>
   </nav>
 </header>
 
+<div class="ohh-mobile-menu" id="ohh-mobile-menu">
+  <span class="ohh-mobile-close" id="ohh-mobile-close">&times;</span>
+  <a href="#experiences" onclick="closeMobileMenu()">Experiences</a>
+  <a href="#destinations" onclick="closeMobileMenu()">Destinations</a>
+  <a href="#about" onclick="closeMobileMenu()">About Us</a>
+  <a href="#testimonials" onclick="closeMobileMenu()">Reviews</a>
+  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+  <a href="#contact" class="btn-primary" onclick="closeMobileMenu()">Plan My Trip</a>
+</div>
+
 <script>
 (function(){
-  function hideAstraHeader() {
-    // Astra's native header — remove from layout completely
-    var selectors = ['#masthead', '.site-header', '.ast-site-header-wrap',
-                     '.main-header-bar-wrap', '.ast-above-header-wrap', '.ast-below-header-wrap'];
-    selectors.forEach(function(sel) {
-      var el = document.querySelector(sel);
-      if (el) { el.style.cssText = 'display:none!important;height:0!important;'; }
-    });
-    // Kill any padding-top Astra set on body
-    document.body.style.paddingTop = '0';
-    document.documentElement.style.paddingTop = '0';
-  }
+  var header = document.getElementById('ohh-header');
+  var hamburger = document.getElementById('ohh-hamburger');
+  var mobileMenu = document.getElementById('ohh-mobile-menu');
+  var closeBtn = document.getElementById('ohh-mobile-close');
 
-  function mountHeader() {
-    var h = document.getElementById('ohhHeader');
-    if (!h) return;
-    // Move header out of Elementor containers so position:fixed works correctly
-    if (h.parentNode !== document.body) {
-      document.body.insertBefore(h, document.body.firstChild);
-    }
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 40) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  });
 
-    // Scroll: transparent → dark
-    function onScroll() { h.classList.toggle('scrolled', window.scrollY > 60); }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+  hamburger.addEventListener('click', function(){
+    mobileMenu.classList.add('open');
+  });
 
-    // Mobile hamburger
-    var btn = document.getElementById('ohhBurger');
-    var nav = document.getElementById('ohhNav');
-    if (btn && nav) {
-      btn.addEventListener('click', function(){ nav.classList.toggle('open'); });
-      nav.querySelectorAll('a').forEach(function(a){
-        a.addEventListener('click', function(){ nav.classList.remove('open'); });
-      });
-    }
-  }
+  closeBtn.addEventListener('click', function(){
+    mobileMenu.classList.remove('open');
+  });
 
-  function injectHeadCSS() {
-    // Inject into <head> so it has highest priority over Astra inline styles
-    var style = document.createElement('style');
-    style.textContent = [
-      '#masthead,',
-      '.site-header,',
-      '.ast-site-header-wrap,',
-      '.main-header-bar-wrap,',
-      '.ast-above-header-wrap,',
-      '.ast-below-header-wrap,',
-      '.elementor-page #masthead,',
-      '.elementor-page .site-header {',
-      '  display:none!important;',
-      '  height:0!important;',
-      '  min-height:0!important;',
-      '  overflow:hidden!important;',
-      '}',
-      'html, body, .elementor-page {',
-      '  padding-top:0!important;',
-      '  margin-top:0!important;',
-      '}'
-    ].join('');
-    document.head.appendChild(style);
-  }
-
-  function init() {
-    injectHeadCSS();
-    hideAstraHeader();
-    mountHeader();
-  }
-
-  // Run as early as possible — don't wait for DOMContentLoaded
-  if (document.head) {
-    init();
-  } else {
-    document.addEventListener('DOMContentLoaded', init);
-  }
+  window.closeMobileMenu = function(){
+    mobileMenu.classList.remove('open');
+  };
 })();
 </script>
