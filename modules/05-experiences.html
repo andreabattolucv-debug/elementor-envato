@@ -13,7 +13,7 @@ body.elementor-page{padding-top:0!important;}
 .btn-primary{display:inline-block;padding:14px 36px;background:var(--btn-primary-bg);color:var(--dark);font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;border:2px solid var(--btn-primary-bg);transition:background .3s,color .3s;cursor:pointer;}
 .btn-primary:hover{background:transparent;color:var(--btn-primary-bg);}
 .btn-outline{display:inline-block;padding:13px 34px;background:transparent;color:var(--white);font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;border:2px solid rgba(255,255,255,0.55);transition:border-color .3s,background .3s;}
-.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,0.1);}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,0.1);color:#fff!important;}
 </style>
 
 <!-- ══════════════════════════════════════════
@@ -61,10 +61,11 @@ body.elementor-page{padding-top:0!important;}
 .ohh-exp-card-link {
   display: inline-flex; align-items: center; gap: 8px;
   color: var(--gold); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
-  transition: gap .2s;
+  transition: gap .2s, color .2s;
 }
-.ohh-exp-card-link:hover { gap: 14px; }
-.ohh-exp-card-link svg { width: 14px; height: 14px; stroke: var(--gold); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.ohh-exp-card-link:hover { gap: 14px; color: #fff !important; }
+.ohh-exp-card-link:hover svg { stroke: #fff !important; }
+.ohh-exp-card-link svg { width: 14px; height: 14px; stroke: var(--gold); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: stroke .2s; }
 
 @media (max-width: 900px) { .ohh-exp-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .ohh-exp-grid { grid-template-columns: 1fr; } .ohh-exp { padding: 72px 5%; } }
