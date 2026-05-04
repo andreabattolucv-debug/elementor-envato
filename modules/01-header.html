@@ -118,9 +118,9 @@
     display: inline-block; padding: 13px 34px; background: transparent;
     color: var(--white); font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
     letter-spacing: 0.1em; text-transform: uppercase;
-    border: 2px solid rgba(255,255,255,0.55); transition: border-color .3s, background .3s;
+    border: 2px solid rgba(255,255,255,0.55); transition: border-color .3s, background .3s, color .3s;
   }
-  .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+  .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); color: #fff !important; }
 </style>
 
 <style>
@@ -238,14 +238,12 @@
 <script>
 (function(){
   function hideAstraHeader() {
-    // Astra's native header — remove from layout completely
     var selectors = ['#masthead', '.site-header', '.ast-site-header-wrap',
                      '.main-header-bar-wrap', '.ast-above-header-wrap', '.ast-below-header-wrap'];
     selectors.forEach(function(sel) {
       var el = document.querySelector(sel);
       if (el) { el.style.cssText = 'display:none!important;height:0!important;'; }
     });
-    // Kill any padding-top Astra set on body
     document.body.style.paddingTop = '0';
     document.documentElement.style.paddingTop = '0';
   }
@@ -253,17 +251,12 @@
   function mountHeader() {
     var h = document.getElementById('ohhHeader');
     if (!h) return;
-    // Move header out of Elementor containers so position:fixed works correctly
     if (h.parentNode !== document.body) {
       document.body.insertBefore(h, document.body.firstChild);
     }
-
-    // Scroll: transparent → dark
     function onScroll() { h.classList.toggle('scrolled', window.scrollY > 60); }
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
-
-    // Mobile hamburger
     var btn = document.getElementById('ohhBurger');
     var nav = document.getElementById('ohhNav');
     if (btn && nav) {
@@ -275,7 +268,6 @@
   }
 
   function injectHeadCSS() {
-    // Inject into <head> so it has highest priority over Astra inline styles
     var style = document.createElement('style');
     style.textContent = [
       '#masthead,',
@@ -305,7 +297,6 @@
     mountHeader();
   }
 
-  // Run as early as possible — don't wait for DOMContentLoaded
   if (document.head) {
     init();
   } else {
