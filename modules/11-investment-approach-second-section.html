@@ -1,0 +1,339 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;700;800&display=swap');
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .faq-wrapper {
+    display: flex;
+    width: 100%;
+    font-family: 'Geist', sans-serif;
+    background-color: #f2f3f5;
+  }
+
+  /* ── SIDEBAR ── */
+  .faq-sidebar {
+    flex-shrink: 0;
+    width: 294px;
+    background-color: #ffffff;
+    padding: 0 0 0 15px;
+    position: relative;
+  }
+
+  .faq-tabs {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+  }
+
+  /* Separatore grigio verticale a destra — solo desktop */
+  .faq-tabs::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 4px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(224, 224, 224);
+    pointer-events: none;
+  }
+
+  .faq-tabs li {
+    position: relative;
+    padding: 28px 20px 28px 8px;
+    cursor: pointer;
+    border-bottom: 1px solid rgb(224, 224, 224);
+  }
+
+  .faq-tabs li:first-child {
+    border-top: 1px solid rgb(224, 224, 224);
+  }
+
+  /* Indicatore colorato attivo — solo desktop */
+  .faq-tabs li.active::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 4px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #004766;
+    z-index: 1;
+  }
+
+  /* ── TITOLI SIDEBAR ── */
+  .faq-tabs li h5 {
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #004766;
+    line-height: 1.3;
+    transition: color 0.2s ease, opacity 0.2s ease;
+    margin: 0;
+    font-family: 'Geist', sans-serif;
+  }
+
+  .faq-tabs li.active h5 {
+    color: #004766;
+    font-weight: 400;
+  }
+
+  .faq-tabs li:hover:not(.active) h5 {
+    opacity: 0.6;
+  }
+
+  /* Freccia — nascosta su desktop */
+  .faq-arrow {
+    display: none;
+  }
+
+  /* Pannello inline mobile — nascosto su desktop */
+  .faq-inline-panel {
+    display: none;
+  }
+
+  /* ── CONTENT PANEL DESKTOP ── */
+  .faq-content {
+    flex: 1;
+    background-color: #f2f3f5;
+    padding: 40px 15px 40px 80px;
+    min-height: 400px;
+  }
+
+  .faq-panel {
+    display: none;
+  }
+
+  .faq-panel.active {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .faq-panel p,
+  .faq-inline-panel p {
+    font-size: 17px;
+    font-weight: 400;
+    color: #707070;
+    line-height: 1.75;
+    max-width: 680px;
+    font-family: 'Geist', sans-serif;
+    text-align: justify;
+  }
+
+  /* ════════════════════════════
+     MOBILE
+  ════════════════════════════ */
+  @media (max-width: 768px) {
+
+    .faq-wrapper {
+      flex-direction: column;
+    }
+
+    /* Su mobile la sidebar occupa tutto e diventa accordion */
+    .faq-sidebar {
+      width: 100%;
+      padding: 0;
+      background-color: #ffffff;
+    }
+
+    /* Nascondo il separatore verticale */
+    .faq-tabs::after {
+      display: none;
+    }
+
+    /* Nascondo l'indicatore laterale */
+    .faq-tabs li.active::after {
+      display: none;
+    }
+
+    /* Header di ogni voce: titolo + freccia affiancati */
+    .faq-tabs li {
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .faq-tab-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Freccia visibile su mobile */
+    .faq-arrow {
+      display: block;
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      margin-left: 12px;
+      transition: transform 0.25s ease;
+    }
+
+    .faq-arrow svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Freccia verso l'alto quando attivo */
+    .faq-tabs li.active .faq-arrow {
+      transform: rotate(180deg);
+    }
+
+    /* Pannello inline — accordion sotto il titolo */
+    .faq-inline-panel {
+      display: none;
+      padding: 16px 0 8px 0;
+      overflow: hidden;
+    }
+
+    .faq-inline-panel.open {
+      display: block;
+    }
+
+    .faq-inline-panel p {
+      font-size: 16px;
+    }
+
+    /* Nascondo il content panel desktop su mobile */
+    .faq-content {
+      display: none;
+    }
+  }
+</style>
+
+<div class="faq-wrapper">
+
+  <!-- SIDEBAR -->
+  <div class="faq-sidebar">
+    <ul class="faq-tabs" id="faqTabs">
+
+      <li class="active" data-target="diversification">
+        <div class="faq-tab-header">
+          <h5>Diversification</h5>
+          <span class="faq-arrow">
+            <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="4,7 10,13 16,7" stroke="#004766" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <div class="faq-inline-panel open" id="inline-diversification">
+          <p>We diversify our exposure across assets, issuers, industries and jurisdictions to reduce risk and build portfolio resilience.</p>
+        </div>
+      </li>
+
+      <li data-target="hedging">
+        <div class="faq-tab-header">
+          <h5>Hedging</h5>
+          <span class="faq-arrow">
+            <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="4,7 10,13 16,7" stroke="#004766" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <div class="faq-inline-panel" id="inline-hedging">
+          <p>We maintain defensive net exposure at all times through active hedging, aiming to protect capital while retaining upside potential.</p>
+        </div>
+      </li>
+
+      <li data-target="quality">
+        <div class="faq-tab-header">
+          <h5>High quality</h5>
+          <span class="faq-arrow">
+            <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="4,7 10,13 16,7" stroke="#004766" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <div class="faq-inline-panel" id="inline-quality">
+          <p>We focus on quality, not distress, with the majority of the book invested in healthy companies and growing industries.</p>
+        </div>
+      </li>
+
+      <li data-target="reliability">
+        <div class="faq-tab-header">
+          <h5>Reliability</h5>
+          <span class="faq-arrow">
+            <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="4,7 10,13 16,7" stroke="#004766" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <div class="faq-inline-panel" id="inline-reliability">
+          <p>We make sure most of the exposure is to reliable, well-established jurisdictions.</p>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+  <!-- CONTENT PANEL DESKTOP -->
+  <div class="faq-content" id="faqContent">
+
+    <div class="faq-panel active" id="panel-diversification">
+      <p>We diversify our exposure across assets, issuers, industries and jurisdictions to reduce risk and build portfolio resilience. We enforce and maintain disciplined guidelines that set hard limits and deliver controlled concentration ranges.</p>
+    </div>
+
+    <div class="faq-panel" id="panel-hedging">
+      <p>We maintain defensive net exposure at all times through active hedging, aiming to protect capital while retaining upside potential. We consistently implement conservative levels of leverage at all time, while delivering equity-like performance.</p>
+    </div>
+
+    <div class="faq-panel" id="panel-quality">
+      <p>We focus on quality, not distress, with the majority of the book invested in healthy companies and growing industries.</p>
+    </div>
+
+    <div class="faq-panel" id="panel-reliability">
+      <p>We make sure most of the exposure is to reliable, stable and well-established jurisdictions with predictable regulatory environments and known creditor rights.</p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  (function () {
+    var tabs = document.querySelectorAll('#faqTabs li');
+    var panels = document.querySelectorAll('#faqContent .faq-panel');
+    var isMobile = function () { return window.innerWidth <= 768; };
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var target = this.getAttribute('data-target');
+
+        if (isMobile()) {
+          /* ── MOBILE: accordion ── */
+          var inlinePanel = document.getElementById('inline-' + target);
+          var isOpen = this.classList.contains('active');
+
+          /* Chiudi tutti */
+          tabs.forEach(function (t) {
+            t.classList.remove('active');
+            var ip = document.getElementById('inline-' + t.getAttribute('data-target'));
+            if (ip) ip.classList.remove('open');
+          });
+
+          /* Se non era aperto, aprilo */
+          if (!isOpen) {
+            this.classList.add('active');
+            if (inlinePanel) inlinePanel.classList.add('open');
+          }
+
+        } else {
+          /* ── DESKTOP: tab classico ── */
+          tabs.forEach(function (t) { t.classList.remove('active'); });
+          panels.forEach(function (p) { p.classList.remove('active'); });
+
+          this.classList.add('active');
+          var targetPanel = document.getElementById('panel-' + target);
+          if (targetPanel) targetPanel.classList.add('active');
+        }
+      });
+    });
+  })();
+</script>
