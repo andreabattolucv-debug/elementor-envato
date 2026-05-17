@@ -71,8 +71,27 @@ body.elementor-page{padding-top:0!important;}
 .ohh-footer-legal a { font-size: 12px; color: rgba(255,255,255,.25); transition: color .2s; }
 .ohh-footer-legal a:hover { color: rgba(255,255,255,.6); }
 
-@media (max-width: 860px) { .ohh-footer-grid { grid-template-columns: 1fr 1fr; } .ohh-footer-brand { grid-column: 1/-1; } }
-@media (max-width: 480px) { .ohh-footer-grid { grid-template-columns: 1fr; } .ohh-footer-bottom { flex-direction: column; align-items: flex-start; } }
+/* ── Tablet ── */
+@media (max-width: 860px) {
+  .ohh-footer-grid { grid-template-columns: 1fr 1fr; }
+  .ohh-footer-brand { grid-column: 1/-1; }
+}
+
+/* ── Mobile: nascondi la griglia di link, tieni solo il bottom bar ── */
+@media (max-width: 600px) {
+  .ohh-footer { padding: 0 5%; }
+  .ohh-footer-grid { display: none; }
+  .ohh-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 0 24px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    gap: 16px;
+  }
+  .ohh-footer-copy { font-size: 13px; line-height: 1.6; }
+  .ohh-footer-legal { gap: 20px; }
+  .ohh-footer-legal a { font-size: 13px; }
+}
 </style>
 
 <footer class="ohh-footer">
