@@ -17,117 +17,35 @@ body.elementor-page{padding-top:0!important;}
 </style>
 
 <!-- ══════════════════════════════════════════
-     FOOTER
+     FOOTER — bottom bar only
 ══════════════════════════════════════════ -->
 <style>
-.ohh-footer { background: #0C0A08; color: rgba(255,255,255,0.5); padding: 72px 5% 0; }
-.ohh-footer-grid {
-  display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr;
-  gap: 48px;
-  padding-bottom: 56px;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
+.ohh-footer {
+  background: #0C0A08;
+  padding: 0 5%;
+  border-top: 1px solid rgba(255,255,255,0.07);
 }
-.ohh-footer-brand-logo {
-  display: block;
-  margin-bottom: 20px;
-}
-.ohh-footer-brand-logo img {
-  height: 52px;
-  width: auto;
-  object-fit: contain;
-}
-.ohh-footer-brand p { font-size: 14px; line-height: 1.8; color: rgba(255,255,255,.45); font-weight: 300; max-width: 300px; margin-bottom: 28px; }
-
-.ohh-footer-social { display: flex; gap: 10px; }
-.ohh-footer-social a {
-  width: 36px; height: 36px; border-radius: 50%;
-  border: 1px solid rgba(255,255,255,.14);
-  display: flex; align-items: center; justify-content: center;
-  color: rgba(255,255,255,.5);
-  transition: background .2s, border-color .2s, color .2s;
-}
-.ohh-footer-social a:hover { background: var(--terracotta); border-color: var(--terracotta); color: #fff; }
-.ohh-footer-social svg { width: 15px; height: 15px; fill: currentColor; }
-
-.ohh-footer-col h5 {
-  font-family: 'Inter', sans-serif;
-  font-size: 11px; font-weight: 600; color: #fff;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  margin-bottom: 20px; padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-}
-.ohh-footer-links { display: flex; flex-direction: column; gap: 10px; }
-.ohh-footer-links a { font-size: 14px; color: rgba(255,255,255,.45); font-weight: 300; transition: color .2s, padding-left .2s; }
-.ohh-footer-links a:hover { color: var(--gold); padding-left: 6px; }
-
 .ohh-footer-bottom {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 22px 0; flex-wrap: wrap; gap: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  flex-wrap: wrap;
+  gap: 14px;
 }
-.ohh-footer-copy { font-size: 12px; color: rgba(255,255,255,.25); }
-.ohh-footer-copy a { color: var(--terracotta); }
+.ohh-footer-copy { font-size: 13px; line-height: 1.6; color: rgba(255,255,255,.25); font-family: 'Inter', sans-serif; }
+.ohh-footer-copy a { color: var(--terracotta); text-decoration: none; }
 .ohh-footer-legal { display: flex; gap: 24px; }
-.ohh-footer-legal a { font-size: 12px; color: rgba(255,255,255,.25); transition: color .2s; }
+.ohh-footer-legal a { font-size: 13px; color: rgba(255,255,255,.25); font-family: 'Inter', sans-serif; text-decoration: none; transition: color .2s; }
 .ohh-footer-legal a:hover { color: rgba(255,255,255,.6); }
 
-/* ── Tablet ── */
-@media (max-width: 860px) {
-  .ohh-footer-grid { grid-template-columns: 1fr 1fr; }
-  .ohh-footer-brand { grid-column: 1/-1; }
-}
-
-/* ── Mobile: nascondi la griglia di link, tieni solo il bottom bar ── */
 @media (max-width: 600px) {
-  .ohh-footer { padding: 0 5%; }
-  .ohh-footer-grid { display: none; }
-  .ohh-footer-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 28px 0 24px;
-    border-top: 1px solid rgba(255,255,255,0.07);
-    gap: 16px;
-  }
-  .ohh-footer-copy { font-size: 13px; line-height: 1.6; }
+  .ohh-footer-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
   .ohh-footer-legal { gap: 20px; }
-  .ohh-footer-legal a { font-size: 13px; }
 }
 </style>
 
 <footer class="ohh-footer">
-  <div class="ohh-footer-grid">
-    <div class="ohh-footer-brand">
-      <a href="#hero" class="ohh-footer-brand-logo">
-        <img src="https://ohhitaly.com/wp-content/uploads/2019/11/logo-ohh-italy-white-180x75.png"
-             alt="OHH! Italy">
-      </a>
-      <p>Your personal Italian travel concierge. We craft bespoke luxury journeys for travelers who want to experience Italy the way it was meant to be — extraordinary, intimate, and unforgettable.</p>
-    </div>
-
-    <div class="ohh-footer-col">
-      <h5>Experiences</h5>
-      <ul class="ohh-footer-links">
-        <li><a href="#contact">La Dolce Vita</a></li>
-        <li><a href="#contact">The Great Beauty</a></li>
-        <li><a href="#contact">Honeymoon in Tuscany</a></li>
-        <li><a href="#contact">Sicily Charter</a></li>
-        <li><a href="#contact">Food &amp; Wine Tours</a></li>
-        <li><a href="#contact">Custom Itineraries</a></li>
-      </ul>
-    </div>
-
-    <div class="ohh-footer-col">
-      <h5>Navigate</h5>
-      <ul class="ohh-footer-links">
-        <li><a href="#why-us">About Us</a></li>
-        <li><a href="#destinations">Destinations</a></li>
-        <li><a href="#testimonials">Guest Reviews</a></li>
-        <li><a href="#contact">Plan My Trip</a></li>
-        <li><a href="https://ohhitaly.com/blog" target="_blank">Blog</a></li>
-      </ul>
-    </div>
-  </div>
-
   <div class="ohh-footer-bottom">
     <p class="ohh-footer-copy">&copy; 2024 <a href="https://ohhitaly.com">OHH! Italy</a>. All rights reserved. Luxury Italian Travel Concierge.</p>
     <nav class="ohh-footer-legal">
