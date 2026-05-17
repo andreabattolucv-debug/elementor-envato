@@ -119,8 +119,23 @@ body.elementor-page{padding-top:0!important;}
 @keyframes scrollPulse { 0%,100%{opacity:.3} 50%{opacity:1} }
 
 @media (max-width: 768px) {
-  .ohh-hero-content { padding: 120px 5% 60px; }
-  .ohh-hero h1 { font-size: clamp(2.5rem, 10vw, 3.5rem); line-height: 0.75; }
+  .ohh-hero {
+    background-position: 65% center;
+    min-height: 100svh;
+  }
+  .ohh-hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(12,10,8,0.80) 0%,
+      rgba(12,10,8,0.65) 50%,
+      rgba(12,10,8,0.80) 100%
+    );
+  }
+  .ohh-hero-content { padding: 100px 5% 60px; max-width: 100%; }
+  .ohh-hero h1 { font-size: clamp(2.5rem, 10vw, 3.5rem); line-height: 0.85 !important; }
+  .ohh-hero-sub { font-size: 15px; margin-bottom: 36px; }
+  .ohh-hero-actions { flex-direction: column; gap: 12px; }
+  .ohh-hero-actions a { text-align: center; width: 100%; }
   .ohh-hero-scroll { display: none; }
 }
 </style>
