@@ -67,9 +67,13 @@
     display: none !important;
   }
 
-  /* Hide Elementor Theme Builder header — replaced by our custom fixed header */
-  .elementor-location-header {
+  /* Suppress every other header source — Theme Builder, ekit-nav-menu toggle */
+  .elementor-location-header,
+  [data-elementor-type="header"],
+  .elementskit-menu-toggle,
+  .elementskit-menu-hamburger {
     display: none !important;
+    pointer-events: none !important;
   }
 
   /* 5. Anchor scroll offset: compensate for our 80px fixed header */
@@ -215,23 +219,8 @@
 
 <script>
 (function(){
-  function hideAstraHeader() {
-    // Astra native header + Elementor Theme Builder header (replaced by our custom header)
-    var selectors = ['#masthead', '.site-header', '.ast-site-header-wrap',
-                     '.main-header-bar-wrap', '.ast-above-header-wrap', '.ast-below-header-wrap',
-                     '.elementor-location-header'];
-    selectors.forEach(function(sel) {
-      document.querySelectorAll(sel).forEach(function(el) {
-        el.style.cssText = 'display:none!important;height:0!important;';
-      });
-    });
-    // Kill any padding-top Astra set on body
-    document.body.style.paddingTop = '0';
-    document.documentElement.style.paddingTop = '0';
-  }
-
   function mountHeader() {
-    // Elementor editor renders the widget twice — keep only the first instance
+    // Deduplicate: Elementor editor may render the widget twice
     var all = document.querySelectorAll('[id="ohhHeader"]');
     for (var i = 1; i < all.length; i++) {
       all[i].parentNode && all[i].parentNode.removeChild(all[i]);
@@ -239,7 +228,8 @@
 
     var h = document.getElementById('ohhHeader');
     if (!h) return;
-    // Move header out of Elementor containers so position:fixed works correctly
+    // Move our header to body root so position:fixed works and it escapes
+    // any Elementor/Astra container (including the Theme Builder header)
     if (h.parentNode !== document.body) {
       document.body.insertBefore(h, document.body.firstChild);
     }
@@ -250,38 +240,61 @@
     onScroll();
   }
 
-  function injectHeadCSS() {
-    // Inject into <head> so it has highest priority over Astra inline styles
-    var style = document.createElement('style');
-    style.textContent = [
+  function killForeignHeaders() {
+    // Hide every header source that isn't ours:
+    // Astra native, Elementor Theme Builder header (any selector variant),
+    // and any ekit-nav-menu mobile toggle still in the DOM.
+    var css = [
       '#masthead,',
       '.site-header,',
       '.ast-site-header-wrap,',
       '.main-header-bar-wrap,',
       '.ast-above-header-wrap,',
       '.ast-below-header-wrap,',
-      '.elementor-page #masthead,',
-      '.elementor-page .site-header {',
+      '.elementor-location-header,',
+      '[data-elementor-type="header"],',
+      '.elementskit-menu-toggle,',
+      '.elementskit-menu-hamburger {',
       '  display:none!important;',
       '  height:0!important;',
       '  min-height:0!important;',
       '  overflow:hidden!important;',
+      '  pointer-events:none!important;',
       '}',
-      'html, body, .elementor-page {',
-      '  padding-top:0!important;',
-      '  margin-top:0!important;',
-      '}'
+      'html,body,.elementor-page{padding-top:0!important;margin-top:0!important;}'
     ].join('');
+
+    var style = document.createElement('style');
+    style.textContent = css;
     document.head.appendChild(style);
+
+    // Also force-hide via inline style (overrides Elementor's own !important rules)
+    var jsSelectors = [
+      '#masthead', '.site-header', '.ast-site-header-wrap',
+      '.main-header-bar-wrap', '.ast-above-header-wrap', '.ast-below-header-wrap',
+      '.elementor-location-header', '[data-elementor-type="header"]',
+      '.elementskit-menu-toggle', '.elementskit-menu-hamburger'
+    ];
+    jsSelectors.forEach(function(sel) {
+      document.querySelectorAll(sel).forEach(function(el) {
+        // Don't hide our own header if it happens to match
+        if (el.id !== 'ohhHeader' && !el.contains(document.getElementById('ohhHeader'))) {
+          el.style.cssText = 'display:none!important;height:0!important;';
+        }
+      });
+    });
+
+    document.body.style.paddingTop = '0';
+    document.documentElement.style.paddingTop = '0';
   }
 
   function init() {
-    injectHeadCSS();
-    hideAstraHeader();
+    // Mount our header first (moves it out of any Elementor container),
+    // then kill everything else — order matters.
     mountHeader();
+    killForeignHeaders();
   }
 
-  // Run as early as possible — don't wait for DOMContentLoaded
   if (document.head) {
     init();
   } else {
