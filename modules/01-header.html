@@ -180,34 +180,12 @@
 }
 .ohh-header-cta:hover { background: transparent; color: var(--btn-primary-bg); }
 
-.ohh-hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-}
-.ohh-hamburger span { display: block; width: 24px; height: 2px; background: #fff; transition: all .3s; }
-
 @media (max-width: 900px) {
-  .ohh-hamburger { display: flex; }
-  .ohh-nav {
-    display: none;
-    position: absolute;
-    top: 80px; left: 0; right: 0;
-    background: var(--dark);
-    flex-direction: column;
-    gap: 0;
-    padding: 12px 0;
-    border-top: 1px solid rgba(255,255,255,0.08);
+  .ohh-nav { display: none; }
+  .ohh-header-cta {
+    padding: 9px 18px;
+    font-size: 11px;
   }
-  .ohh-nav.open { display: flex; }
-  .ohh-nav li { width: 100%; }
-  .ohh-nav a { display: block; padding: 13px 5%; border-bottom: 1px solid rgba(255,255,255,0.05); }
-  .ohh-header-cta { display: none; }
-  .ohh-navbar { position: relative; }
 }
 </style>
 
@@ -227,10 +205,6 @@
     </ul>
 
     <a href="#contact" class="ohh-header-cta">Plan My Trip</a>
-
-    <button class="ohh-hamburger" id="ohhBurger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
   </nav>
 </header>
 
@@ -261,16 +235,6 @@
     function onScroll() { h.classList.toggle('scrolled', window.scrollY > 60); }
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
-
-    // Mobile hamburger
-    var btn = document.getElementById('ohhBurger');
-    var nav = document.getElementById('ohhNav');
-    if (btn && nav) {
-      btn.addEventListener('click', function(){ nav.classList.toggle('open'); });
-      nav.querySelectorAll('a').forEach(function(a){
-        a.addEventListener('click', function(){ nav.classList.remove('open'); });
-      });
-    }
   }
 
   function injectHeadCSS() {
