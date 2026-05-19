@@ -1,0 +1,170 @@
+<style>
+/* ── Reset minimo ── */
+#hd2 *, #hd2 *::before, #hd2 *::after { box-sizing: border-box; margin: 0; padding: 0; }
+#hd2 a { text-decoration: none; }
+#hd2 ul { list-style: none; }
+#hd2 img { display: block; max-width: 100%; }
+
+/* ── Header shell ── */
+#hd2 {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 99999;
+  padding: 0 5%;
+  transition: background .35s ease, box-shadow .35s ease;
+}
+#hd2.hd2-scrolled {
+  background: #12100E;
+  box-shadow: 0 2px 20px rgba(0,0,0,.35);
+}
+
+/* ── Inner row ── */
+.hd2-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  gap: 24px;
+}
+
+/* ── Logo ── */
+.hd2-logo img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ── Nav links ── */
+.hd2-nav {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  flex: 1;
+  justify-content: center;
+}
+.hd2-nav a {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.82);
+  white-space: nowrap;
+  transition: color .2s;
+}
+.hd2-nav a:hover { color: #DAA520; }
+
+/* ── CTA ── */
+.hd2-cta {
+  display: inline-block;
+  padding: 10px 28px;
+  background: #DAA520;
+  color: #12100E;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: 2px solid #DAA520;
+  white-space: nowrap;
+  transition: background .25s, color .25s;
+  flex-shrink: 0;
+}
+.hd2-cta:hover { background: transparent; color: #DAA520; }
+
+/* ── Mobile: nasconde il nav, mostra solo logo + CTA ── */
+@media (max-width: 900px) {
+  .hd2-nav { display: none; }
+  .hd2-cta { padding: 9px 18px; font-size: 11px; }
+}
+
+/* ── Sopprimi qualsiasi altro header che Elementor/WordPress carica ── */
+.elementor-location-header,
+[data-elementor-type="header"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+</style>
+
+<header id="hd2">
+  <div class="hd2-bar">
+
+    <a href="#hero" class="hd2-logo">
+      <img
+        src="https://ohhitaly.com/wp-content/uploads/2019/11/logo-ohh-italy-white-180x75.png"
+        alt="OHH! Italy — Luxury Italian Travel Concierge"
+      >
+    </a>
+
+    <nav class="hd2-nav" aria-label="Primary navigation">
+      <a href="#experiences">Experiences</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#why-us">About Us</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#contact" class="hd2-cta">Plan My Trip</a>
+
+  </div>
+</header>
+
+<script>
+(function () {
+  /* 1. Porta l'header a body root — necessario per position:fixed in Elementor */
+  function mount() {
+    var h = document.getElementById('hd2');
+    if (!h) return;
+    if (h.parentNode !== document.body) {
+      document.body.insertBefore(h, document.body.firstChild);
+    }
+    window.addEventListener('scroll', function () {
+      h.classList.toggle('hd2-scrolled', window.scrollY > 60);
+    }, { passive: true });
+    h.classList.toggle('hd2-scrolled', window.scrollY > 60);
+  }
+
+  /* 2. Inietta CSS in <head> per sopprimere l'header Theme Builder con priorità massima */
+  function suppressThemeBuilderHeader() {
+    var s = document.createElement('style');
+    s.textContent =
+      '.elementor-location-header,' +
+      '[data-elementor-type="header"],' +
+      '.elementskit-menu-toggle,' +
+      '.elementskit-menu-hamburger {' +
+      '  display:none!important;' +
+      '  visibility:hidden!important;' +
+      '  height:0!important;' +
+      '  overflow:hidden!important;' +
+      '  pointer-events:none!important;' +
+      '}';
+    document.head.appendChild(s);
+
+    /* Forza anche via inline style (supera eventuali !important di Elementor) */
+    [
+      '.elementor-location-header',
+      '[data-elementor-type="header"]',
+      '.elementskit-menu-toggle',
+      '.elementskit-menu-hamburger'
+    ].forEach(function (sel) {
+      document.querySelectorAll(sel).forEach(function (el) {
+        var h2 = document.getElementById('hd2');
+        if (el !== h2 && !el.contains(h2)) {
+          el.setAttribute('style', 'display:none!important;height:0!important;');
+        }
+      });
+    });
+  }
+
+  /* 3. Esegui: prima mount (libera il nostro header), poi sopprimi gli altri */
+  mount();
+  suppressThemeBuilderHeader();
+
+  /* 4. Ripeti la soppressione dopo che Elementor finisce di caricare i widget */
+  window.addEventListener('DOMContentLoaded', suppressThemeBuilderHeader);
+  window.addEventListener('load', suppressThemeBuilderHeader);
+})();
+</script>
